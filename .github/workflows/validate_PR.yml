@@ -1,0 +1,103 @@
+name: Validate PR
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  validate-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Branch Name
+        id: check-branch
+        run: |
+          allowed_strings=("html-css" "git-week1" "git-week2" "javascript1-week1" "javascript1-week2" "javascript1-week3" "javascript1-week4" "javascript2-week1" "javascript2-week2" "javascript2-week3" "javascript3-week1" "javascript3-week2" "javascript3-week3" "typescript" "databases-week1" "databases-week2" "databases-week3" "node.js-week1" "node.js-week2" "node.js-week3" "react1-week1" "react1-week2" "react1-week3" "react2-week1" "react2-week2" "react2-week3")
+          branch_name=$(jq -r '.pull_request.head.ref' $GITHUB_EVENT_PATH)
+          echo $branch_name
+          invalid_branch=true 
+          for str in "${allowed_strings[@]}"; do
+            if [[ "$branch_name" == "$str"* ]]; then
+              invalid_branch=false 
+              echo "Match found for $str"
+              break
+            fi
+          done
+          echo "invalid_branch=$invalid_branch" >> $GITHUB_ENV
+
+      - name: Set PR Title if Valid Branch
+        if: env.invalid_branch == 'false'
+        run: |
+          PR_NUMBER=$(jq -r '.pull_request.number' $GITHUB_EVENT_PATH)
+          branch_name=$(jq -r '.pull_request.head.ref' $GITHUB_EVENT_PATH)
+          curl -X PATCH -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/$PR_NUMBER" \
+            -d "{\"title\":\"$branch_name\"}"
+
+      - name: Apply Labels and Close Invalid PR
+        if: env.invalid_branch == 'true'
+        run: |
+          PR_NUMBER=$(jq -r '.pull_request.number' $GITHUB_EVENT_PATH)
+          label="invalid branch"
+
+          echo "Applying label '$label' to PR $PR_NUMBER"
+          curl -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/$PR_NUMBER/labels" \
+            -d "[\"$label\"]"
+
+          echo "Closing PR $PR_NUMBER because of an invalid branch name"
+          curl -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/$PR_NUMBER" \
+            -d '{"state":"closed"}'
+
+  check-pr-date:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check Branch and Date
+        id: check-pr
+        run: |
+          CONFIG_FILE=".github/workflows/config.json"
+          PR_BRANCH=$(jq -r '.pull_request.head.ref' $GITHUB_EVENT_PATH)
+          PR_CREATED=$(jq -r '.pull_request.created_at' $GITHUB_EVENT_PATH)
+          MODULE_INTERVALS=$(cat "$CONFIG_FILE")
+          echo PR branch $PR_BRANCH
+          echo PR created $PR_CREATED
+
+          late_PR=false
+          for row in $(echo "${MODULE_INTERVALS}" | jq -r '.[] | @base64'); do
+            _jq() {
+              echo ${row} | base64 --decode | jq -r ${1}
+            }
+
+            MODULE_NAME=$(_jq '.name')
+            MODULE_END=$(_jq '.end')
+            echo module name $MODULE_NAME
+            echo module end $MODULE_END
+
+            if [[ "$PR_BRANCH" == *"$MODULE_NAME"* ]]; then
+              PR_CREATED_UNIX=$(date -d "$PR_CREATED" +%s)
+              MODULE_END_UNIX=$(date -d "$MODULE_END" +%s)
+
+              if [[ "$PR_CREATED_UNIX" -gt "$MODULE_END_UNIX" ]]; then
+                late_PR=true
+                echo "Labeling PR with 'late PR' because it matches module '$MODULE_NAME' but is outside the module duration"
+                break
+              fi
+            fi
+          done
+
+          echo late PR $late_PR
+          echo "late_PR=$late_PR" >> $GITHUB_ENV
+
+      - name: Label PR with 'late PR'
+        if: env.late_PR == 'true'
+        run: |
+          PR_NUMBER=$(jq -r '.pull_request.number' $GITHUB_EVENT_PATH)
+          curl -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/$PR_NUMBER/labels" \
+            -d '["late PR"]'
