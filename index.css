@@ -136,6 +136,10 @@ a.link {
             height: auto;
             line-height: 0.7;
         }
+        img.funbit1{
+            width: 350px;
+            height: 350px;
+        }
     
         .footer {
             padding: 7px;
@@ -165,6 +169,11 @@ a.link {
         justify-content: space-between;
         height: auto;
         line-height: 0.9;
+    }
+
+    img.funbit1{
+        width: 400px;
+        height: 400px
     }
 
     .footer {
