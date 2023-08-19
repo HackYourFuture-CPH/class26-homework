@@ -1,0 +1,204 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul, ol {
+    list-style: none; 
+}
+/* nav */
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(9, 26, 61);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+   
+  }
+  
+  .nav-list {
+    display: flex;
+    margin-right: 2rem;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  
+  
+    .nav-list {
+      margin: 0 1rem;
+    }
+  
+  
+  .nav-list a {
+    display: block;
+    font-size: 1.5rem;
+    padding: 2rem;
+    color: whitesmoke;
+  }
+  
+  .nav-list a:hover {
+    background: rgba(0, 0, 255, 0.424);
+    border-radius: 50px;
+  }
+
+  /* My Skills */
+
+.my-skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40rem;
+    background-color: whitesmoke;
+    font-family: 'Roboto Condensed', sans-serif;
+    
+  }
+  
+  .my-skills > p {
+    font-size: 3rem;
+    font-weight: 200;
+    text-align: center;
+    color: rgba(0, 0, 255, 0.424);
+    margin: 1rem;
+  }
+
+
+ /* Projects section */
+
+.projects-section {
+    text-align: center;
+    background: rgba(165, 165, 172, 0.424);
+    width: 100%;
+    
+  }
+  
+  .projects-section-header {
+    font-family: 'Roboto Condensed', sans-serif;
+  height: 2rem;
+    
+  }
+  
+  
+  .projects-grid {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 0.2rem;
+  }
+  
+  
+  
+  .project-image {
+    display: flex;
+    justify-content: center;
+    height: 15 rem;
+    width: 20rem;
+    margin: 1rem;
+  }
+  
+  .project-title {
+    font-size: 2rem;
+    margin: 1rem 0.5rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: black;
+    font-weight: 800;
+  }
+  
+  /* Contact section */
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 20rem;
+    padding: 0;
+    background: rgba(16, 137, 154, 0.663);
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  
+  .contact-section-header > h2 {
+    font-size: 3rem;
+  }
+  
+  
+  .contact-section-header > p {
+    font-style: italic;
+  }
+  
+  .contact-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 980px;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    
+  }
+  
+  .contact-details {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 1px #1f1f1f;
+    transition: transform 0.3s ease-out;
+    color: whitesmoke;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  
+  .contact-details:hover {
+    transform: translateY(8px);
+  }
+
+  /* Footer */
+
+footer {
+    font-weight: 300;
+    display: flex;
+    justify-content: space-evenly;
+    background: rgb(255, 255, 255);;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  
+  footer > p {
+    margin: 2rem;
+  }
+  
+  footer i {
+    vertical-align: middle;
+  }
+  
+/* Mobile */
+
+  @media (max-width: 80em) {
+    html {
+        width: 100%;
+        font-size: 60%;
+        margin: 0 auto;
+    }
+  }
+@media (max-width: 61.25em) {
+    html {
+      font-size: 58%;
+      width: 100%;
+    
+        margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 28.75em) {
+    html {
+      font-size: 55%;
+      width: 100%;
+        margin: 0 auto;
+    }
+  }
