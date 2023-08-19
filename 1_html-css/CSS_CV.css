@@ -1,0 +1,150 @@
+body {
+  background: #f5f6f7;
+  color: #1b1b32;
+  font-family: Helvetica;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  background-color: #1b1b32;
+
+  position: fixed;
+  top: 0;
+}
+#header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+header p {
+  color: #f5f6f7;
+}
+
+#image {
+  width: 40%;
+  background-color: #0a0a23;
+  padding: 0.4rem;
+  object-fit: cover;
+}
+
+h1 {
+  color: #f1be32;
+  font-size: min(5vw, 1.2em);
+  text-align: center;
+}
+
+nav {
+  width: 50%;
+  max-width: 300px;
+  height: 50px;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-inline-start: 0;
+  margin-block: 0;
+  height: 100%;
+}
+
+nav > ul > li {
+  color: #dfdfe2;
+  margin: 0 0.2rem;
+  padding: 0.2rem;
+  display: block;
+}
+
+nav > ul > li:hover {
+  background-color: #dfdfe2;
+  color: #1b1b32;
+  cursor: pointer;
+}
+
+li > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  padding-top: 50px;
+  width: 80%;
+  margin: auto;
+}
+
+section {
+  margin: 0 auto 10px auto;
+  max-width: 600px;
+}
+
+h1,
+h2 {
+  font-family: Verdana, Tahoma;
+}
+
+h2 {
+  border-bottom: 4px solid #dfdfe2;
+  margin-top: 0px;
+  padding-top: 60px;
+}
+section {
+  width: 80%;
+  margin: 0 auto 10px auto;
+  max-width: 600px;
+}
+#header {
+  color: #f5f6f7;
+}
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.info p {
+  width: 50%;
+  margin-top: 0;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.portfolio > div {
+  width: 45%;
+}
+
+.port-img {
+  width: 100%;
+  background-color: #0a0a23;
+  padding: 0.4rem;
+  object-fit: cover;
+}
+#links {
+  color: beige;
+  text-align: center;
+}
+#SoMe {
+  display: flex;
+  padding: 0.4rem;
+  object-fit: cover;
+  justify-content: center;
+}
+#SoMe a {
+  width: 100px;
+  height: 100px;
+  margin-right: 100px;
+}
+#SoMe img {
+  width: 100%;
+  height: 100%;
+}
