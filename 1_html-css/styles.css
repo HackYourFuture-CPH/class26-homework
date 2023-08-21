@@ -1,0 +1,170 @@
+body {
+    margin: 15;
+    font-family: Arial, Holvetica ;
+    background-image: linear-gradient(to bottom right,#D0F1F5, #D0F1F5,#A3DCE2, #1CD0E4,#52C1CD)
+  }
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  .active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .topnav .icon {
+    display: none;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    right: 0;
+    text-align: left;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) { display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+    #home img {
+     width: 100%;
+     object-fit: cover;
+     margin: 50px, 50px, 50px, 50px;
+     padding-top: 50px;
+     padding-bottom: 0;
+   }
+  #home {
+   display: block;
+  }
+  
+  h2 {
+   text-align: center;
+   font-size: 3rem;
+   color: #3B909A;
+   margin: 80px, 0, 20px, 0;
+  }
+  
+  #about {
+    background-color: white;
+    padding-top: 80px;
+    padding-bottom: 90px;
+    padding-left: 150px;
+    padding-right: 150px;
+    font-size: 20px;
+    font-family: Courier New;
+  }
+  
+  p {
+   font-size: 20px;
+   font-family: Courier New;
+  }
+  
+  #skills {
+    padding: 0;
+    display: flex;
+  }
+  
+  .left {
+    width: 50%;
+    float: left;
+    font-size: 70px;
+    background-color: #77C2CA;
+    text-align: center;
+  }
+  .right {
+    width: 50%;
+    float: right;
+    font-size: 70px;
+    background-color: white;
+    text-align: center;
+  }
+  
+  gallery {
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 200px;
+    padding: 20px 10px;
+  }
+  
+    #gallery img {
+    width: 45%;
+    padding-left: 40px;
+    }
+  
+     @media screen and (max-width: 600px) {
+     #gallery img {
+      max-width: 200px;
+    }
+    }
+   .survey-form {
+     width: 49%;
+    float: right;
+    font-size: 30px;
+    text-align: center;
+    margin-top: -2px;
+   }
+  .tribute-page {
+    width: 49%;
+    float: left;
+    font-size: 30px;
+    text-align: center;
+    margin-top: -2px;
+  }
+  .last {
+    margin-top: 100px;
+    margin-bottom: 15px;
+  }
+  #contact {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 100px;
+    background-color: #77C2CA;
+  }
+  #contact img {
+    width: 15%;
+    max-width: 80px;
+    }
+  
+  .left-contact {
+    width: 40%;
+    float: left;
+    font-size: 70px;
+    text-align: right;
+  }
+  
+  .right-contact {
+    width: 40%;
+    float: right;
+    font-size: 70px;
+    text-align: left;
+    }
