@@ -1,24 +1,20 @@
 /* Reset some default styles */
+body {
+font-family: Comic sans MS, sans-serif;
+background-color: #f0f0f0;
+background-image: url(https://www.w3schools.com/css/lights600x400.jpg);
+background-repeat: no-repeat;
+background-size:  cover;
+color: #FFFFFF;
+height: 700px;
+width: auto;
+}
+
 body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
 }
-
-body {
-    font-family: Comic sans MS, sans-serif;
-    background-color: #f0f0f0;
-    background-image: url(https://www.w3schools.com/css/lights600x400.jpg);
-  background-repeat: no-repeat;
-  background-size:  cover;
-  color: #FFFFFF;
-  height: 700px;
-  width: auto;
-  
-      
-      
-}
-
-
+   
 header {
     background-color: #FFC0CB;
     color: #48D1CC;
@@ -35,7 +31,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 0;
     padding: 0;
@@ -87,20 +83,17 @@ footer {
     padding: 1rem 0;
     background-color: lightblue;
     color: red;
-    padding-right: 15px;
-    margin-bottom: 5px;
+    padding-right: 0.9375em;
+    margin-bottom: 0.3125em;
 }
-
 
 #about{
     margin-top: 120px;
 }
 
-
 #projects{
     margin-top: 120px;
     margin-bottom: 150px;
-
 }
 
 #contact{
@@ -108,12 +101,9 @@ footer {
     text-decoration: none;
 }
 
-
 h2{
     font-size: 50px;
 }
-
-
 
 section a {
     text-decoration: none;
