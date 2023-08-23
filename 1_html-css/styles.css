@@ -150,6 +150,10 @@ br {
 #socialmedia i {
   color: aliceblue;
 }
+
+.home {
+  display: none;
+}
 /*menu styling end*/
 
 /*nav bar styling end*/
@@ -404,7 +408,7 @@ form > div {
 
   #socialmedia {
     display: flex;
-    width: 100vw;
+    width: 100%;
     height: 6rem;
     padding: 0%;
     margin: 0;
@@ -421,4 +425,63 @@ form > div {
   #socialmedia ul > li {
     padding: 0 30px;
   }
+  .home {
+    display: block;
+  }
+  .profilePicture {
+    display: none;
+  }
+
+  h3 {
+    font-family: var(--font-family-title);
+    font-size: 28px;
+  }
+
+  #about {
+    padding: 0;
+  }
+
+  #about p {
+    padding: 5px 20px;
+    text-align: justify;
+    font-size: 15px;
+  }
+  .heading {
+    font-size: 35px;
+  }
+
+  #education .heading {
+    color: var(--text-color-main);
+  }
+
+  #education ul{
+    padding 10px;
+  }
+
+  #education h4 {
+    font-size: 22px;
+    text-align: left;
+  }
+
+  #education p {
+    font-size: 18px;
+    text-align: left;
+    word-spacing: 0;
+  }
+
+
+
+  .subt {
+    font-size: 22px;
+  }
+  
+  .subt ~ p{
+    font-size: 18px;;
+  }
+
+  #experience ul {
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+
 }
