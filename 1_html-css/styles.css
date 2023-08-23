@@ -22,6 +22,9 @@ body {
 .container {
   margin: 0;
   padding: o;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -59,7 +62,7 @@ br {
 
 .nav-bar {
   margin: 0;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -105,10 +108,10 @@ br {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 80%;
+  width: 80vw;
 }
 .menu-list {
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-around;
 }
@@ -130,7 +133,7 @@ br {
 
 #socialmedia {
   padding: 2px;
-  width: 5%;
+  width: 5vw;
   height: auto;
   font-size: 30px;
   background-color: var(--hilight-text-color);
@@ -154,7 +157,7 @@ br {
 /*intro banner styling start*/
 #intro-banner {
   padding-top: 150px;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -194,7 +197,7 @@ br {
 /*intro banner styling ends*/
 /*about me section*/
 #about {
-  width: 100%;
+  width: 100vw;
   padding: 100px 0 100px 0;
   display: flex;
   flex-direction: column;
@@ -217,7 +220,7 @@ br {
   justify-content: center;
   align-items: center;
   background-color: #c94c4c;
-  width: 100%;
+  width: 100vw;
   text-align: justify;
   font-size: 25px;
   padding-top: 5rem;
@@ -232,7 +235,7 @@ br {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   text-align: justify;
   font-size: 25px;
 }
@@ -255,7 +258,7 @@ br {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   text-align: justify;
   font-size: 25px;
 }
@@ -272,28 +275,25 @@ br {
   align-items: center;
   justify-content: space-around;
   margin: 50px;
-  width: 80%;
-}
-
-.work-display {
-  background-color: #fff;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 50vw;
   padding: 20px;
   text-align: center;
-  max-width: 1020px;
-  width: 100%;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adding shadow effect */
-  text-align: center;
+  max-width: 100vw;
+  border-radius: 10px;
+}
+
+.work-display:hover {
+  box-shadow: 10px 8px 10px var(--hilight-text-color);
 }
 
 .work-display img {
-  max-width: 100%;
+  max-width: 50vw;
   height: auto;
   display: block;
   margin: 0 auto;
 }
 
-.display-text a {
+.display-text p {
   color: #0d0d0d;
   font-size: 40px;
 }
@@ -305,7 +305,7 @@ br {
 #techStack {
   padding: 20px;
   display: flex;
-  width: 100%;
+  width: 100vw;
   background-color: var(--hilight-text-color);
   flex-direction: column;
   justify-content: center;
@@ -320,8 +320,8 @@ br {
 }
 
 .type .tech-img img {
-  width: 200px;
-  height: 200px;
+  width: 10vw;
+  height: 16.67vh;
 }
 
 /* tech stack ends */
@@ -340,17 +340,17 @@ form {
   justify-content: space-around;
   align-items: center;
   padding: 150px 10px;
-  width: 80%;
+  width: 80vw;
 }
 
 input {
-  width: 70%;
+  width: 20vw;
   padding: 40px;
   font-size: 20px;
   margin: 10px;
 }
 textarea {
-  width: 70%;
+  width: 20vw;
   padding: 40px;
   font-size: 20px;
   margin: 10px;
@@ -361,7 +361,7 @@ input[type="submit"] {
   padding: 12px 20px;
   background-color: var(--hilight-text-color);
   color: var(--text-color-main);
-  width: 40%;
+  width: 8vw;
 }
 form > div {
   display: flex;
@@ -378,93 +378,47 @@ form > div {
 /* Media query for screens smaller than 480px */
 @media (max-width: 480px) {
   .nav-bar {
-    margin: 0;
-    width: 20%;
-    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    padding: 0.5rem;
-    transition: backdrop-filter 5s ease-in, background-color 0.3s ease-out;
-    height: 100%;
-    backdrop-filter: blur(0);
-}
-  .nav-bar.blur {
-    backdrop-filter: blur(10px);
-    background-color: rgba(126, 123, 123, 0.5);
-    opacity: 1px;
-  }
-
-  /* Nav-bar logo styling start*/
-  .logo {
-    color: var(--text-color-secondory);
-    font: 1rem bold;
-    font-family: var(--font-family-title);
   }
 
   .logo a {
-    text-decoration: none;
-    color: var(--text-color-main);
-    font-family: var(--font-family-title);
+    font-size: 10px;
   }
 
-  .logo span {
-    padding: 10px;
-    color: var(--hilight-text-color);
-    margin-left: 10px;
-    font: bolder;
-    border: 5px white solid;
-    border-radius: 2px;
-  }
-
-  /* nav bar logo styling ends*/
-
-  /*menu styling start*/
-  .menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 80%;
-  }
   .menu-list {
-    width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-  }
-  .menu-item {
-    font-size: 25px;
-    list-style: none;
-    font-style: normal;
-  }
-  .menu-item a {
-    text-decoration: none;
-    color: var(--text-color-main);
-    font-family: var(--font-family-sub-title);
-    transition: 0.8s ease-in-out;
+    align-items: center;
+    width: fit-content;
+    padding: 0;
   }
 
-  .menu-item a:hover {
-    color: var(--hilight-text-color);
+  .menu-item {
+    font-size: 8px;
+    padding: 0 10px;
   }
 
   #socialmedia {
-    padding: 2px;
-    width: 5%;
-    height: auto;
-    font-size: 30px;
-    background-color: var(--hilight-text-color);
     display: flex;
-    flex-direction: column;
+    width: 100vw;
+    height: 6rem;
+    padding: 0%;
+    margin: 0;
     position: fixed;
-    z-index: 1;
-    margin-top: 400px;
-    color: var(--background-color-main);
-    border-radius: 0 20px;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+    bottom: 0;
   }
 
-  #socialmedia i {
-    color: aliceblue;
+  #socialmedia ul {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+  }
+
+  #socialmedia ul > li {
+    padding: 0 30px;
   }
 }
