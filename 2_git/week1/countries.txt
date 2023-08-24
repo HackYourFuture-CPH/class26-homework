@@ -3,3 +3,5 @@ Brussels
 Neatherland
 Norway
 Sweden
+Denmark
+Finland
