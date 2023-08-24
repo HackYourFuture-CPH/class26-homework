@@ -1,0 +1,189 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><!-- base href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form" -->
+  <script>
+    window.__frameId = 'fcc-main-frame';
+    window.onerror = function(msg) {
+      const string = msg.toLowerCase();
+      if (string.includes('script error')) {
+        msg = 'Build error, open your browser console to learn more.';
+      }
+      console.log(msg);
+      return true;
+    };
+    document.addEventListener('click', function(e) {
+      let element = e.target;
+      while(element && element.nodeName !== 'A') {
+        element = element.parentElement;
+      }
+      if (element && element.nodeName === 'A' && new URL(element.href).hash === '') {
+        e.preventDefault();
+        window.parent.window.alert(
+          i18nContent.t('misc.iframe-alert', { externalLink: element.href })
+        )
+      }
+      if (element) {
+        const href = element.getAttribute('href');
+        if (!href || href[0] !== '#' && !href.match(/^https?:\/\//)) {
+          e.preventDefault();
+        }
+      }
+    }, false);
+    document.addEventListener('submit', function(e) {
+      const action = e.target.getAttribute('action');
+      e.preventDefault();
+      if (action || action.match(/https?:\/\//)) {
+        window.parent.window.alert(
+          i18nContent.t('misc.iframe-form-submit-alert', { externalLink: action  })
+        )
+      }
+    }, false);
+  </script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Survey Form</title><link rel="stylesheet" data-href="styles.css"><style class="fcc-injected-styles">body {
+  font-family: Arial, sans-serif;
+  background-color: black;
+  margin: 0;
+  padding: 20px;
+  color: white; /* Set the color to white */
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-image: linear-gradient(
+    115deg,
+    rgba(121, 106, 106, 0.8),
+    rgba(142, 142, 156, 0.7)
+  ),
+  url(https://upload.wikimedia.org/wikipedia/commons/3/3a/Rosa_Precious_platinum.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: pink;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+p {
+  text-align: center;
+  color: white;
+}
+
+form {
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 0px;
+  font-size: 16px;
+}
+
+select {
+  height: 40px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+fieldset{
+   padding: 2rem 0;
+   border:none;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+</style></head>
+  
+  
+  
+  
+
+<body>
+  <h1 id="title">Survey Form</h1>
+  <p id="description">Thank you for taking the time to help us improve!</p>
+  <form id="survey-form">
+    <label for="name" id="name-label">Name:</label>
+    <input type="text" id="name" placeholder="Enter your name" required="">
+
+    <label for="email" id="email-label">Email:</label>
+    <input type="email" id="email" placeholder="Enter your email" required="">
+
+    <label for="number" id="number-label">Age:</label>
+    <input type="number" id="number" placeholder="Enter your age" min="1" max="120" required="">
+
+    <label for="dropdown">Current Role:</label>
+    <select id="dropdown">
+      <option value="" disabled="disabled" selected="selected">Select your role</option>
+      <option value="student">Student</option>
+      <option value="employee">Employee</option>
+      <option value="freelancer">Freelancer</option>
+      <option value="other">Other</option>
+    </select>
+
+    <fieldset>
+      <label>How likely are you to recommend us to a friend or colleague?</label>
+      <label><input type="radio" name="recommend" value="very-likely" required=""> Very Likely</label>
+      <label><input type="radio" name="recommend" value="likely" required=""> Likely</label>
+      <label><input type="radio" name="recommend" value="neutral" required=""> Neutral</label>
+      <label><input type="radio" name="recommend" value="unlikely" required=""> Unlikely</label>
+      <label><input type="radio" name="recommend" value="very-unlikely" required=""> Very Unlikely</label>
+    </fieldset>
+
+    <fieldset>
+      <label>What do you like the most about our platform? (Check all that apply)</label>
+      <label><input type="checkbox" name="like" value="ease-of-use"> Ease of use</label>
+      <label><input type="checkbox" name="like" value="content"> Quality content</label>
+      <label><input type="checkbox" name="like" value="design"> Attractive design</label>
+      <label><input type="checkbox" name="like" value="community"> Supportive community</label>
+      <label><input type="checkbox" name="like" value="other"> Other</label>
+    </fieldset>
+
+    <label for="comments">Additional Comments:</label>
+    <textarea id="comments" placeholder="Enter your comments"></textarea>
+
+    <button type="submit" id="submit">Submit</button>
+  </form>
+
+</body></html>

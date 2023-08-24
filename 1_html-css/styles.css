@@ -1,0 +1,177 @@
+/* var(--gradient) */
+/* :root {
+  --gradient: your gradient color here;
+} */
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  background-color: black;
+}
+
+header {
+  color: white;
+  background-color: black;
+  padding-top: 10px;
+  min-height: 70px;
+  position: absolute;
+}
+
+header li {
+  float: left;
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header a:hover{
+  color: #cccccc;
+  font-weight: bold;
+}
+
+header nav {
+  padding-top: 30px;
+  padding-left: 45px;
+}
+
+.hero-sec {
+  background-image: url(eva.jpg);
+  height: 100vh;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: right; 
+ 
+}
+
+#hero {
+  position: relative;
+  top: 100px;
+}
+
+h1 {
+  color: white;
+  font-size: 300%;
+  padding-top: 140px;
+  padding-left: 235px;
+}
+
+h2 {
+  color: white;
+  font-size: 200%;
+  margin-left:120px;
+  width: 400px;
+  font-family: Shadows Into Light; 
+  text-align: center;
+}
+
+h2:hover {
+  color: gray;
+}
+
+h4 {
+  font-size: 40px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 30px;
+  text-align: left;
+}
+
+.hero-sec2{
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+
+p {
+  margin-left: 200px;
+  width: 70%;
+  text-align: center;
+}
+.p-describe {
+  margin-left: 450px;
+  width: 30%;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.border {
+  border: 2px solid black;
+}
+
+.projects {
+  padding-top: 75px;
+}
+
+.project-list {
+  text-align: left;
+}
+
+.sect-three {
+  height: 25px;
+}
+
+footer {
+  color: white;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+@media (max-width: 576px) { 
+  header nav {
+    padding-left: 0;
+    padding-top: 0;
+  }
+  header li {
+    float: none;
+    display: block;
+  }
+  #list-one {
+    margin: 0;
+    padding: 0;
+  }
+  .sect-one {
+    height: 80vh;
+    background-size: 100%;
+    background-position: top center;
+  }
+  #hero {
+    position: relative;
+    top: 0;
+  }
+  h1 {
+  padding-top: 340px;
+  padding-left: initial;
+  text-align: center;
+  }
+  h2 {
+    width: auto;
+    text-align: center;
+  }
+  
+  p {
+  margin-left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+.p-describe {
+  margin-left: 0;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 5px;
+}
