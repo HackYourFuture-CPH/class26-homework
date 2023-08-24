@@ -1,5 +1,5 @@
 body {
-    
+
     background-image: url('women.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -39,7 +39,8 @@ nav {
     border-bottom: 1px solid black;
     box-shadow: 0 0 10px rgba(250, 247, 247, 0.963);
     cursor: pointer;
-    z-index: 1000; /* Add a higher z-index value */
+    z-index: 1000;
+    /* Add a higher z-index value */
 }
 
 nav .logo p {
@@ -54,7 +55,7 @@ nav .logo p {
 nav ul {
     display: flex;
     list-style: none;
-    
+
 }
 
 nav li {
@@ -130,7 +131,7 @@ header p {
     margin-bottom: 50px;
 }
 
-.skills h2{
+.skills h2 {
     margin-top: 200px;
 }
 
@@ -152,7 +153,7 @@ header p {
 }
 
 .contact-info {
-   /* max-width: 800px;
+    /* max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
@@ -213,7 +214,8 @@ header p {
 .skills h2,
 .contact-info h2,
 .portfolio h2 {
-    margin-top: 20px; /* Adjust the margin value as needed */
+    margin-top: 20px;
+    /* Adjust the margin value as needed */
 }
 
 .skills ul {
@@ -224,7 +226,8 @@ header p {
     gap: 10px;
     padding: 0;
     list-style: none;
-    margin-top: 20px; /* Add margin to the top of the ul */
+    margin-top: 20px;
+    /* Add margin to the top of the ul */
 }
 
 
@@ -254,19 +257,14 @@ html {
         margin-top: 10px;
     }
 
-    .about, .skills, .contact-info, .portfolio {
+    .about,
+    .skills,
+    .contact-info,
+    .portfolio {
         padding: 5% 3%;
     }
 
 
-  
+
 
 }
-
-
-
-
-
-
-
-
