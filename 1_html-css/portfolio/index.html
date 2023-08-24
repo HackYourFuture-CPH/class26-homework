@@ -1,105 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title> ksenia iorzh junior web develorer </title>
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="#about" id="about-link">about</a></li>
-                    <li><a href="#skills" id="skills-link">skills</a></li>
-                    <li
-                        ><a href="#portfolio" id="portfolio-link"
-                            >portfolio</a
-                        ></li
-                    >
-                    <li><a href="#contact" id="contact-link">contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div id="title" class="title_container">
-            <h1>ksenia iorzh</h1>
-            <p>junior web developer</p>
-        </div>
-        <div id="smiley_face" class="smiley_face">
-            <img src="./images/smiley_face.svg" alt="SVG Image" />
-        </div>
-        <div id="info">
-            <div id="about" class="about_container">
-                <h2>about</h2>
-                <p
-                    >i'm a junior web developer with a curiosity for building
-                    beautiful and thoughtful experiences. as i continue to
-                    explore the ever-evolving landscape of web development, i'm
-                    eager to contribute to projects that make a meaningful
-                    impact on the digital world.
-                </p>
-            </div>
-            <div id="skills" class="skills_container">
-                <h2>skills</h2>
-                <p>HTML/CSS/JS/Figma</p>
-            </div>
-            <div id="portfolio" class="portfolio_container">
-                <h2>portfolio</h2>
-                <a
-                    href="https://64dfbed2c1f4e511c72664da--coruscating-begonia-0cbf0f.netlify.app/"
-                    >survey form project</a
-                >
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ksenia iorzh junior web develorer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#about" id="about-link">about</a></li>
+          <li><a href="#skills" id="skills-link">skills</a></li>
+          <li><a href="#portfolio" id="portfolio-link">portfolio</a></li>
+          <li><a href="#contact" id="contact-link">contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="title" class="title_container">
+      <h1>ksenia iorzh</h1>
+      <p>junior web developer</p>
+    </div>
+    <div class="smiley_face">
+      <img src="./images/smiley_face.svg" alt="SVG Image" />
+    </div>
+    <div id="info">
+      <div id="about" class="about_container">
+        <h2>about</h2>
+        <p>
+          i'm a junior web developer with a curiosity for building beautiful and
+          thoughtful experiences. as i continue to explore the ever-evolving
+          landscape of web development, i'm eager to contribute to projects that
+          make a meaningful impact on the digital world.
+        </p>
+      </div>
+      <div id="skills" class="skills_container">
+        <h2>skills</h2>
+        <p>HTML/CSS/JS/Figma</p>
+      </div>
+      <div id="portfolio" class="portfolio_container">
+        <h2>portfolio</h2>
+        <a
+          href="https://64dfbed2c1f4e511c72664da--coruscating-begonia-0cbf0f.netlify.app/"
+          ><div class="project-link">
+            <img src="./images/survey_form_project.png" alt="project" /></div
+        ></a>
+      </div>
 
-            <div id="contact" class="contact_container">
-                <h2>contact</h2>
-                <ul>
-                    <li
-                        ><a
-                            href="https://www.linkedin.com/in/ksenia-iorzh-a57590145/"
-                            >linkedin</a
-                        ></li
-                    >
-                    <li
-                        ><a href="mailto:kseniaiorzh@gmail.com"
-                            >send me an email</a
-                        ></li
-                    >
-                </ul>
-            </div>
-        </div>
-        ><script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const aboutLink = document.getElementById('about-link');
-                const skillsLink = document.getElementById('skills-link');
-                const portfolioLink = document.getElementById('portfolio-link');
-                const contactLink = document.getElementById('contact-link');
+      <div id="contact" class="contact_container">
+        <h2>contact</h2>
+        <ul class="network-link_container">
+          <li>
+            <a href="https://www.linkedin.com/in/ksenia-iorzh-a57590145/">
+              <div class="network-link">
+                <img src="./images/linkedin_1.png" alt="LinkedIn" /></div
+            ></a>
+          </li>
+          <li>
+            <a href="mailto:kseniaiorzh@gmail.com">
+              <div class="network-link">
+                <img src="./images/mail_1.png" alt="mail" /></div
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    >
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const aboutLink = document.getElementById("about-link");
+        const skillsLink = document.getElementById("skills-link");
+        const portfolioLink = document.getElementById("portfolio-link");
+        const contactLink = document.getElementById("contact-link");
 
-                const aboutSection = document.getElementById('about');
-                const skillsSection = document.getElementById('skills');
-                const portfolioSection = document.getElementById('portfolio');
-                const contactSection = document.getElementById('contact');
+        const aboutSection = document.getElementById("about");
+        const skillsSection = document.getElementById("skills");
+        const portfolioSection = document.getElementById("portfolio");
+        const contactSection = document.getElementById("contact");
 
-                aboutLink.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    aboutSection.scrollIntoView({ behavior: 'smooth' });
-                });
+        aboutLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          aboutSection.scrollIntoView({ behavior: "smooth" });
+        });
 
-                skillsLink.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    skillsSection.scrollIntoView({ behavior: 'smooth' });
-                });
+        skillsLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          skillsSection.scrollIntoView({ behavior: "smooth" });
+        });
 
-                portfolioLink.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    portfolioSection.scrollIntoView({ behavior: 'smooth' });
-                });
+        portfolioLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          portfolioSection.scrollIntoView({ behavior: "smooth" });
+        });
 
-                contactLink.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                });
-            });
-        </script>
-    </body>
+        contactLink.addEventListener("click", function (event) {
+          event.preventDefault();
+          contactSection.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    </script>
+  </body>
 </html>
