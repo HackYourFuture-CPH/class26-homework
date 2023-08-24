@@ -1,0 +1,272 @@
+body {
+    
+    background-image: url('women.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*nav {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-image: linear-gradient(#033747, #012733);
+    border-bottom: 1px solid black;
+    box-shadow: 0 0 10px rgba(250, 247, 247, 0.963);
+    cursor: pointer;
+}*/
+
+nav {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(#033747, #012733);
+    border-bottom: 1px solid black;
+    box-shadow: 0 0 10px rgba(250, 247, 247, 0.963);
+    cursor: pointer;
+    z-index: 1000; /* Add a higher z-index value */
+}
+
+nav .logo p {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav li a {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    color: black;
+}
+
+span {
+    color: gold;
+}
+
+header {
+    padding: 4% 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: white;
+    margin: 10px 0;
+}
+
+header p {
+    font-size: 1rem;
+    color: white;
+}
+
+.about {
+    color: white;
+    text-align: center;
+    padding: 10% 5%;
+}
+
+.about h1 {
+    font-size: 3rem;
+    margin: 20px 0;
+}
+
+.about h3 {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+}
+
+.about h4 {
+    color: red;
+    font-size: 1.2rem;
+}
+
+.skills {
+    /*color: white;
+    max-width: 100%;
+    text-align: center;
+    padding: 5% 10%;
+    margin-bottom: 50px;*/
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 50px;
+    margin-bottom: 50px;
+}
+
+.skills h2{
+    margin-top: 200px;
+}
+
+.skills ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.skills li {
+    background-color: #05366f;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.contact-info {
+   /* max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    top: 50px;
+    margin-bottom: 5px;*/
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 50px;
+    margin-bottom: 50px;
+}
+
+.contact-info h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-info ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.contact-info li {
+    color: white;
+    font-size: 1rem;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info li i {
+    margin-right: 5px;
+}
+
+.portfolio {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 50px;
+    margin-bottom: 50px;
+}
+
+.skills h2,
+.contact-info h2,
+.portfolio h2 {
+    margin-top: 20px; /* Adjust the margin value as needed */
+}
+
+.skills ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+    margin-top: 20px; /* Add margin to the top of the ul */
+}
+
+
+.project {
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.contact-info li:hover {
+    color: blue;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .about, .skills, .contact-info, .portfolio {
+        padding: 5% 3%;
+    }
+
+
+  
+
+}
+
+
+
+
+
+
+
+
