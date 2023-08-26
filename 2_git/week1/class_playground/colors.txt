@@ -2,3 +2,4 @@ pink
 orange
 black
 white
+yellow
