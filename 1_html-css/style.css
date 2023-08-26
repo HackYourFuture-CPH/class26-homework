@@ -28,7 +28,7 @@ nav {
     box-shadow: 0 0 10px rgba(250, 247, 247, 0.963);
     cursor: pointer;
     z-index: 1000;
-    
+
 }
 
 nav .logo p {
@@ -103,7 +103,7 @@ header p {
 }
 
 .skills {
-    
+
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -137,7 +137,7 @@ header p {
 }
 
 .contact-info {
-    
+
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -192,7 +192,7 @@ header p {
 .contact-info h2,
 .portfolio h2 {
     margin-top: 20px;
-    
+
 }
 
 .skills ul {
@@ -204,7 +204,7 @@ header p {
     padding: 0;
     list-style: none;
     margin-top: 20px;
-    
+
 }
 
 
