@@ -1,0 +1,20 @@
+name: Assign reviewer after review
+
+on:
+  pull_request_review:
+    types:
+      - submitted
+
+jobs:
+  assign-reviewer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign Reviewer
+        run: |
+          reviewer_username="${{ github.event.review.user.login }}"
+          pull_number="${{ github.event.pull_request.number }}"
+          repo_owner="${{ github.repository_owner }}"
+          repo="${{ github.repository }}"
+          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -d "{\"assignees\":[\"${reviewer_username}\"]}" \
+            "https://api.github.com/repos/${repo}/issues/${pull_number}/assignees"
