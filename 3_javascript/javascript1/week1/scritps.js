@@ -24,3 +24,20 @@ if (shouldShowResultInDogYears) {
     `Your dog will be ${dogAgeInHumanYears} human years old in ${dogYearFuture}`
   );
 }
+
+//Housey pricey (A house price estimator)
+
+let yourName = prompt("your Name");
+let width = prompt("Enter width");
+let depth = prompt("Enter depth");
+let hight = prompt("Enter hight");
+let gardenSizeInM2 = prompt("Enter garden size in M2");
+let houseCost = prompt("enter house cost");
+let volumeInMeters = width * depth * hight;
+let housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
+
+if (houseCost > housePrice) {
+  alert(`${yourName} is paying too much`);
+} else {
+  alert(`${yourName} paying too little`);
+}
