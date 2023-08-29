@@ -27,7 +27,7 @@ if (shouldShowResultInDogYears) {
 
 //Housey pricey (A house price estimator)
 
-let friendsHouse = [
+friendsHouse = [
   {
     name: "Peter",
     housePrice: 2500000,
@@ -46,47 +46,67 @@ let friendsHouse = [
   },
 ];
 
-const Peterhousecost =
-  friendsHouse[0].width *
-    friendsHouse[0].height *
-    friendsHouse[0].depth *
-    2.5 *
-    1000 +
-  friendsHouse[0].gardenSizeInM2 * 300;
-
-const Juliahousecost =
-  friendsHouse[1].width *
-    friendsHouse[1].height *
-    friendsHouse[1].depth *
-    2.5 *
-    1000 +
-  friendsHouse[1].gardenSizeInM2 * 300;
-
-if (Peterhousecost > friendsHouse[0].housePrice) {
-  console.log(`${friendsHouse[0].name} is paying too much`);
-} else {
-  console.log(
-    `${friendsHouse[0].name} is paying ${Peterhousecost} which is reasonable`
+function calculateHouseCost(person) {
+  return (
+    person.width * person.height * person.depth * 2.5 * 1000 +
+    person.gardenSizeInM2 * 300
   );
 }
 
-if (Juliahousecost > friendsHouse[1].housePrice) {
+const peterHousecost = calculateHouseCost(friendsHouse[0]);
+const juliaHousecost = calculateHouseCost(friendsHouse[1]);
+
+console.log("Peter's house cost:", peterHousecost);
+console.log("Julia's house cost:", juliaHousecost);
+
+if (peterHousecost > friendsHouse[0].housePrice) {
+  console.log(`${friendsHouse[0].name} is paying too much`);
+} else {
   console.log(
-    `${friendsHouse[1].name} is paying ${Juliahousecost} which is too much`
+    `${friendsHouse[0].name} is paying ${peterHousecost} which is reasonable`
+  );
+}
+
+if (juliaHousecost > friendsHouse[1].housePrice) {
+  console.log(
+    `${friendsHouse[1].name} is paying ${juliaHousecost} which is too much`
   );
 } else {
   console.log(
-    `${friendsHouse[1].name} is paying ${Juliahousecost} which is reasonable`
+    `${friendsHouse[1].name} is paying ${juliaHousecost} which is reasonable`
   );
 }
 
 // Ez Namey (Startup name generator)
 
-let firstWords = ["Easy", "Awesome", "Corporate", "fun", "gun", "run"];
-let secondWords = ["ping", "pong", "Ding", "Dong", "stick", "apple", "banana"];
-const randomNumberone = Math.floor(Math.random() * 6);
-const randomNumbertwo = Math.floor(Math.random() * 7);
-let startupName = firstWords[randomNumberone] + secondWords[randomNumbertwo];
+const firstWords = [
+  "Easy",
+  "Awesome",
+  "Corporate",
+  "fun",
+  "gun",
+  "run",
+  "boom",
+  "bang",
+  "ring",
+  "box",
+];
+const secondWords = [
+  "ping",
+  "pong",
+  "Ding",
+  "Dong",
+  "stick",
+  "apple",
+  "banana",
+  "left",
+  "right",
+  "dog",
+  "cat",
+];
+const randomNumberone = Math.floor(Math.random() * firstWords.length);
+const randomNumbertwo = Math.floor(Math.random() * secondWords.length);
+const startupName = firstWords[randomNumberone] + secondWords[randomNumbertwo];
 
 console.log(
   `"The startup: "${startupName}" contains ${startupName.length} characters"`
