@@ -13,9 +13,9 @@ const dogYearFuture = 2027;
 const shouldShowResultInDogYears = true;
 
 let dogAgeInHumanYears = dogYearFuture - dogYearOfBirth;
+let dogAgeInDogYears = dogAgeInHumanYears * 7;
 
 if (shouldShowResultInDogYears) {
-  let dogAgeInDogYears = dogAgeInHumanYears * 7; // Dog years calculation
   console.log(
     `Your dog will be ${dogAgeInDogYears} dog years old in ${dogYearFuture}`
   );
