@@ -124,7 +124,7 @@ let lastWords = [
     "Awakening",
     "Laassi",
     "Gringa",
-    "Shandy",
+    "Dandy",
 ];
 const startupName = firstWords[4] + " " + lastWords[0];
 console.log(`The name I give you is ${startupName} which has a total of ${startupName.length} characters in it`);
