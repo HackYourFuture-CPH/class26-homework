@@ -53,27 +53,27 @@ function calculateHouseCost(person) {
   );
 }
 
-const peterHousecost = calculateHouseCost(friendsHouse[0]);
-const juliaHousecost = calculateHouseCost(friendsHouse[1]);
+const peterHouseCost = calculateHouseCost(friendsHouse[0]);
+const juliaHouseCost = calculateHouseCost(friendsHouse[1]);
 
-console.log("Peter's house cost:", peterHousecost);
-console.log("Julia's house cost:", juliaHousecost);
+console.log("Peter's house cost:", peterHouseCost);
+console.log("Julia's house cost:", juliaHouseCost);
 
-if (peterHousecost > friendsHouse[0].housePrice) {
+if (peterHouseCost > friendsHouse[0].housePrice) {
   console.log(`${friendsHouse[0].name} is paying too much`);
 } else {
   console.log(
-    `${friendsHouse[0].name} is paying ${peterHousecost} which is reasonable`
+    `${friendsHouse[0].name} is paying ${peterHouseCost} which is reasonable`
   );
 }
 
-if (juliaHousecost > friendsHouse[1].housePrice) {
+if (juliaHouseCost > friendsHouse[1].housePrice) {
   console.log(
-    `${friendsHouse[1].name} is paying ${juliaHousecost} which is too much`
+    `${friendsHouse[1].name} is paying ${juliaHouseCost} which is too much`
   );
 } else {
   console.log(
-    `${friendsHouse[1].name} is paying ${juliaHousecost} which is reasonable`
+    `${friendsHouse[1].name} is paying ${juliaHouseCost} which is reasonable`
   );
 }
 
