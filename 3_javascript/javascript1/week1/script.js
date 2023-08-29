@@ -109,5 +109,5 @@ const randomNumbertwo = Math.floor(Math.random() * secondWords.length);
 const startupName = firstWords[randomNumberone] + secondWords[randomNumbertwo];
 
 console.log(
-  `"The startup: "${startupName}" contains ${startupName.length} characters"`
+  `The startup: "${startupName}" contains ${startupName.length} characters`
 );
