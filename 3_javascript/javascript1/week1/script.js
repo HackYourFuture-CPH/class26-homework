@@ -27,7 +27,7 @@ if (shouldShowResultInDogYears) {
 
 //Housey pricey (A house price estimator)
 
-friendsHouse = [
+const friendsHouse = [
   {
     name: "Peter",
     housePrice: 2500000,
