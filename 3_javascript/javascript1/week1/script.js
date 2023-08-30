@@ -1,22 +1,22 @@
- //Age-ify (A future age calculator)
+//Age-ify (A future age calculator)
 let yearOfBirth = 1999;
 let yearFuture = 2027;
 let age = yearFuture - yearOfBirth;
-console.log('you will be'+ " "+age+ ' yeras old in'+" "+yearFuture) ;
+console.log('you will be' + " " + age + ' yeras old in' + " " + yearFuture);
 
 // A Dog Age Calculator 
-let dogYearOfBirth =  2017
-let dogYearFuture = 2027 ;
-let dogYear = "dog" ;
- 
+let dogYearOfBirth = 2017
+let dogYearFuture = 2027;
+let dogYear = "dog";
+
 let shouldShowResultInDogYears = true;
-let dogAge = dogYearFuture - dogYearOfBirth ;
+let dogAge = dogYearFuture - dogYearOfBirth;
 let humanAge = dogAge * 7;
 
 if (shouldShowResultInDogYears) {
-  console.log ( "your dog will be " + dogAge + " "+ dogYear + " " + "years old in" + " "+ dogYearFuture)
+    console.log("your dog will be " + dogAge + " " + dogYear + " " + "years old in" + " " + dogYearFuture)
 } else {
-    console.log ( "your dog will be " + humanAge + " "+ dogYear + " " + "human years old in" + " " + dogYearFuture)
+    console.log("your dog will be " + humanAge + " " + dogYear + " " + "human years old in" + " " + dogYearFuture)
 }
 
 //Housey pricey (A house price estimator)
@@ -27,7 +27,6 @@ let peterHouse = {
     high: 10,
     gardenSize: 100,
 };
-
 
 let juliaHouse = {
     wide: 5,
@@ -66,7 +65,7 @@ if (juliaEstimatedPrice > juliaHousePrice) {
     console.log("Julia is paying too little.");
 } else {
     console.log("Julia's house price is about right.");
-} 
+}
 
 // Ez Namey (Startup name generator) Optional 
 
