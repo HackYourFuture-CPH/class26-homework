@@ -65,7 +65,22 @@ if (juliaEstimatedPrice > juliaHousePrice) {
     console.log("Julia is paying too little.");
 } else {
     console.log("Julia's house price is about right.");
-}
+} 
+
+// Ez Namey (Startup name generator) Optional 
+
+let firstWords = ['Awesome', 'Easy', 'Nice', 'Simple', 'Cute', 'Sweet', 'Beautiful', 'Handsome', 'Attractive', 'Naughty'];
+let secondWords = ['Creative', 'Solution', 'Hob', 'Co', 'Labs', 'Connect', 'Wave', 'Tech', 'Senergy', 'Naxa'];
+
+const randomNumber = Math.floor(Math.random() * 10);
+const randomFirstWord = firstWords[randomNumber];
+const randomSecondWord = secondWords[randomNumber];
+
+let startupName = randomFirstWord + ' ' + randomSecondWord;
+let startupNameLength = startupName.length;
+
+console.log(`The startup: "${startupName}" contains ${startupNameLength} characters.`);
+
 
 
 
