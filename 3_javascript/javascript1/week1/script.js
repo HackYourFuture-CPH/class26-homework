@@ -1,20 +1,19 @@
 
-let yearOfBirth = 1982;
-let yearFuture = 2022;
-let age = yearFuture - yearOfBirth;
+const yearOfBirth = 1982;
+const yearFuture = 2022;
+const age = yearFuture - yearOfBirth;
 console.log(`you will be ${age} years old in ${yearFuture}`);
 
 //Dog year of birth
-let dogYearOfBirth = 2017;
-let dogYearFuture = 2027;
+const dogYearOfBirth = 2017;
+const dogYearFuture = 2027;
 let humanYears = dogYearFuture - dogYearOfBirth; 
-let dogYear = humanYears*7; 
+let dogYears = humanYears*7; 
 let shouldShowResultInDogYears = true;
 
-if (shouldShowResultInDogYears) {
-let dogAgeInDogYear = dogYear;
+if (shouldShowResultInDogYears === true) {
 
-console.log(`Your dog will be ${dogYear} dog years in ${dogYearFuture}`);
+console.log(`Your dog will be ${dogYears} dog years in ${dogYearFuture}`);
 }
 else {
     console.log(`Your dog will be ${humanYears} human years old in ${dogYearFuture}`);
@@ -25,7 +24,7 @@ else {
 //Your friend Julia is considering a house that is 5m wide, 11m deep and 8m high. 
 //The garden size is 70m2. This house costs 1.000.000.
 //Formula is housePrice = volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
-let houseDetails = [
+const houseDetails = [
     {
     name:"Peter",
     width:8,
@@ -50,11 +49,11 @@ function calculateHousePrice(house) {
 function dealOrNoDeal(house) {
     const housePrice = calculateHousePrice(house);
     if (housePrice>house.houseCost) {
-        console.log(`${house.name} is being ripped off by the seller`);
+        console.log(`${house.name} is getting a life changing deal`);
     }
     else
     {
-        console.log(`${house.name} is getting a life changing deal`);
+        console.log(`${house.name} is being ripped off by the seller`);
     }
 }
 houseDetails.forEach(dealOrNoDeal);
@@ -126,6 +125,10 @@ let lastWords = [
     "Gringa",
     "Dandy",
 ];
-const startupName = firstWords[4] + " " + lastWords[0];
-console.log(`The name I give you is ${startupName} which has a total of ${startupName.length} characters in it`);
+const randomNumberone = Math.floor(Math.random() * 6);
+const randomNumbertwo = Math.floor(Math.random() * 7);
+let startupName = firstWords[randomNumberone] + lastWords[randomNumbertwo];
+
+console.log
+(`The startup: "${startupName}" contains ${startupName.length} characters`);
 
