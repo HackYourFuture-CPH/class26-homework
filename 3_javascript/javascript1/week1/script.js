@@ -34,13 +34,29 @@ console.log(
 //A house price estimator (Peter's house)
 let friendOne = "Peter";
 let peterVolumeInMeters = 8 * 10 * 10;
+const peterPaid = 2500000;
 
+//actual worth of Peter's house
 peterHousePrice = peterVolumeInMeters * 2.5 * 1000 + 100 * 300;
-console.log(peterHousePrice);
+
+//calculating Peter's house price difference
+let priceDifferencePeter = peterPaid - peterHousePrice;
+
+//calculating if Peter paid too much!
+console.log(`${friendOne} lost ${priceDifferencePeter} in the house he bought`);
 
 //A house price estimator (Julia's house)
 let friendTwo = "Julia";
 let juliaHouseVolumeInMeters = 5 * 11 * 8;
+const juliaPaid = 1000000;
 
-juliaHousePrice = juliaHouseVolumeInMeters * 2.5 * 1000 + 70 * 300;
-console.log(juliaHousePrice);
+//calculating actuall worth of Julia's house
+let juliaHousePrice = juliaHouseVolumeInMeters * 2.5 * 1000 + 70 * 300;
+
+//calculating Julia's house price difference
+priceDifferenceJulia = juliaHousePrice - juliaPaid;
+
+//calculating if Julia paid too much!
+console.log(
+  `${friendTwo} saved ${priceDifferenceJulia} in the house she bought`
+);
