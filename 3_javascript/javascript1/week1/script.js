@@ -30,3 +30,10 @@ if (shouldShowResultInDogYears) {
 console.log(
   `Your dog will be ${dogYear} ${dogString} years old in ${dogYearFuture}`
 );
+
+//A house price estimator
+let friendOne = "Peter";
+let peterVolumeInMeters = 8 * 10 * 10;
+
+peterHousePrice = peterVolumeInMeters * 2.5 * 1000 + 100 * 300;
+console.log(peterHousePrice);
