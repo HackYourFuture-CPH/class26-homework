@@ -1,31 +1,31 @@
 
 //Age-ify (A future age calculator)
 
-// let yearOfBirth = 1990
-// let yearFuture = 2050
-// let age = yearFuture - yearOfBirth;
-// console.log(`You will be ${age} years old in ${yearFuture}.`);
+const yearOfBirth = 1990
+const yearFuture = 2050
+const age = yearFuture - yearOfBirth;
+console.log(`You will be ${age} years old in ${yearFuture}.`);
 
 
 //Goodboy-Oldboy (A dog age calculator)
 
-// let dogYearOfBirth = 2017;
-// let dogYearFuture = 2027;
-// let shouldShowResultInDogYears = true;
+const dogYearOfBirth = 2017;
+const dogYearFuture = 2027;
+const shouldShowResultInDogYears = true;
 
-// let dogAgeInHumanYears = dogYearFuture - dogYearOfBirth;
-// let dogAgeInDogYears = dogAgeInHumanYears * 7;
+const dogAgeInHumanYears = dogYearFuture - dogYearOfBirth;
+const dogAgeInDogYears = dogAgeInHumanYears * 7;
 
-// if (shouldShowResultInDogYears) {
-//   console.log(`Your dog will be ${dogAgeInDogYears} dog years old in ${dogYearFuture}`);} 
-//   else {
-//   console.log(`Your dog will be ${dogAgeInHumanYears} human years old in ${dogYearFuture}`);}
+if (shouldShowResultInDogYears) {
+  console.log(`Your dog will be ${dogAgeInDogYears} dog years old in ${dogYearFuture}`);} 
+  else {
+  console.log(`Your dog will be ${dogAgeInHumanYears} human years old in ${dogYearFuture}`);}
 
 
 
   //Housey pricey (A house price estimator)
 
-let friendshouse = [
+const friendshouse = [
     {
         name: "Peter",
         width: 8,
@@ -50,8 +50,8 @@ function calculateHouseCost(person) {
     )
 };
 
-let peterHouseCost = calculateHouseCost(friendshouse[0]);
-let juliaHouseCost = calculateHouseCost(friendshouse[1]);
+const peterHouseCost = calculateHouseCost(friendshouse[0]);
+const juliaHouseCost = calculateHouseCost(friendshouse[1]);
 
 console.log("Peter's house costs:", peterHouseCost);
 console.log("Julia's house costs:", juliaHouseCost);
