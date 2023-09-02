@@ -33,30 +33,51 @@ console.log(
 
 //A house price estimator (Peter's house)
 let friendOne = "Peter";
-let peterVolumeInMeters = 8 * 10 * 10;
-const peterPaid = 2500000;
+const peterHouse = {
+  width: 8,
+  height: 10,
+  depth: 10,
+  gardenSize: 100,
+};
+const peterhousecost = 2500000;
+
+//calculating the volume
+let peterVolumeInMeters =
+  peterHouse.width * peterHouse.height * peterHouse.depth;
 
 //actual worth of Peter's house
-peterHousePrice = peterVolumeInMeters * 2.5 * 1000 + 100 * 300;
+peterHousePrice =
+  peterVolumeInMeters * 2.5 * 1000 + peterHouse.gardenSize * 300;
 
 //calculating Peter's house price difference
-let priceDifferencePeter = peterPaid - peterHousePrice;
+let priceDifferencePeter = peterhousecost - peterHousePrice;
 
 //calculating if Peter paid too much!
-console.log(`${friendOne} lost ${priceDifferencePeter} in the house he bought`);
+console.log(
+  `${friendOne} will loose ${priceDifferencePeter} iif he buys the house`
+);
 
 //A house price estimator (Julia's house)
 let friendTwo = "Julia";
-let juliaHouseVolumeInMeters = 5 * 11 * 8;
-const juliaPaid = 1000000;
+const juliaHouse = {
+  width: 5,
+  height: 11,
+  depth: 8,
+  gardenSize: 70,
+};
+const juliaHouseCost = 1000000;
+
+//calculating the volume
+let juliaHouseVolumeInMeters =
+  juliaHouse.width * juliaHouse.height * juliaHouse.depth;
 
 //calculating actuall worth of Julia's house
 let juliaHousePrice = juliaHouseVolumeInMeters * 2.5 * 1000 + 70 * 300;
 
 //calculating Julia's house price difference
-priceDifferenceJulia = juliaHousePrice - juliaPaid;
+priceDifferenceJulia = juliaHousePrice - juliaHouseCost;
 
 //calculating if Julia paid too much!
 console.log(
-  `${friendTwo} saved ${priceDifferenceJulia} in the house she bought`
+  `${friendTwo} will save ${priceDifferenceJulia} if she buys the house`
 );
