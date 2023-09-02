@@ -3,7 +3,7 @@ const yearOfBirth = 1987;
 let yearFuture = 2045;
 
 // calculating the age
-let age = yearFuture - yearOfBirth;
+const age = yearFuture - yearOfBirth;
 console.log(age);
 
 // changing the future year to 2027
@@ -16,8 +16,8 @@ console.log(`You will be ${age} in ${yearFuture}`);
 
 //A dog age calculator
 const dogYearOfBirth = 2017;
-let dogYearFuture = 2045;
-let dogYear = dogYearFuture - dogYearOfBirth;
+const dogYearFuture = 2045;
+const dogYear = dogYearFuture - dogYearOfBirth;
 let dogString = "human";
 
 let shouldShowResultInDogYears = false;
