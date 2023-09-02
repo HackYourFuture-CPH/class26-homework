@@ -1,5 +1,5 @@
 // Age-ify
-let yearOfBirth = 1987;
+const yearOfBirth = 1987;
 let yearFuture = 2045;
 
 // calculating the age
@@ -15,7 +15,7 @@ console.log(age);
 console.log(`You will be ${age} in ${yearFuture}`);
 
 //A dog age calculator
-let dogYearOfBirth = 2017;
+const dogYearOfBirth = 2017;
 let dogYearFuture = 2045;
 let dogYear = dogYearFuture - dogYearOfBirth;
 let dogString = "human";
