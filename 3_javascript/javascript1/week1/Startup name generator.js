@@ -1,4 +1,4 @@
-let firstWords=["Innovate",
+const firstWords=["Innovate",
 "Nexa",
 "Fusion",
 "Tech",
@@ -8,7 +8,7 @@ let firstWords=["Innovate",
 "Elevate",
 "Shift",
 "Nimbex"];
-let secondWords=["Hub",
+const secondWords=["Hub",
 "Nova",
 "Wave",
 "Zenith",
@@ -20,7 +20,13 @@ let secondWords=["Hub",
 "Ventures"
 ];
 
-const startupName = firstWords.map((word, index) => word + " " + secondWords[index]);
-console.log(startupName);
-const totalCharacters = startupName.map(name => name.length);
-console.log("The startup: " + startupName[0] + " " + "contains" + " "+ totalCharacters[0] + " " + "characters");
+const randomNumber = Math.floor(Math.random() * 10); // Generates a random number between 0 and 9
+
+const randomIndex1 = randomNumber;
+const randomIndex2 = randomNumber;
+
+const startupName = `${firstWords[randomIndex1]} ${secondWords[randomIndex2]}`;
+const numberOfCharacters = startupName.length;
+
+console.log(`The startup: "${startupName}" contains ${numberOfCharacters} characters.`);
+
