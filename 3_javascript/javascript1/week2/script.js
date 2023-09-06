@@ -23,17 +23,19 @@ function getEventWeekday(days) {
   date.setDate(date.getDate() + days);
   return date;
 }
-
 console.log(getEventWeekday(daysUntilEvent));
 
-//Weather wear 
+//Weather wear
 let chillCloths = "You should wear T-shirt and shorts";
 let warmCloths = "You must wear warm cloths";
 
-function clothesToWear(tempreture) {
-  if(tempreture > 20) {
-    return ${chillCloths}
+function whatShouldIWear(tempreture) {
+  if (tempreture > 20) {
+    return `${chillCloths}`;
+  } else if (tempreture < 20) {
+    return `${warmCloths}`;
   }
-
 }
-console.log(clothesToWear)
+console.log(whatShouldIWear(22));
+
+//Student manager
