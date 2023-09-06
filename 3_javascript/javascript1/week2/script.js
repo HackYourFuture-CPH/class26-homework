@@ -39,3 +39,20 @@ function whatShouldIWear(tempreture) {
 console.log(whatShouldIWear(22));
 
 //Student manager
+
+const class07Students = [];
+function addStudentToClass(studentName) {
+  if (class07Students.lenght >= 6 && studentName !== "Queen") {
+    return `Cannot add more students to class 07 - Queen always can`;
+  } else if (class07Students.includes(studentName)) {
+    return `Student Benjamin is already in the class`;
+  } else if (studentName === "") {
+    console.log("Cannot add an empty string to a class");
+  } else {
+    class07Students.push(studentName);
+  }
+}
+
+function getNumberOfStudents() {
+  return class07Students;
+}
