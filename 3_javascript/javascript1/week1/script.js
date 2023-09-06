@@ -61,3 +61,12 @@ if (juiliaHasPayed < juiliaHousePrice ) {
 } else {
   console.log(`juilia has payed ${juiliaHasPayed} the expected price for the house  ${juiliaHousePrice}.` );
 }
+//Startup name generator
+
+const firstWords = ["Nice","Awosome","Corporate","Easy","sveart","Corporate","Example"];
+const secondWords = ["height","cold","Tech","car","soluations","name","startup"];
+const firstRandomNumber = Math.floor(Math.random() * 7);
+const secondRandomNumber = Math.floor(Math.random() * 6);
+
+let startupName = firstWords[firstRandomNumber] + secondWords[secondRandomNumber];
+console.log(`The startup: "${startupName}" contains ${startupName.length} characters"`);
