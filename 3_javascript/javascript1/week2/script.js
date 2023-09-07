@@ -55,3 +55,15 @@ function addStudentToClass(studentName) {
 function getNumberOfStudents() {
   return class07Students.length;
 }
+addStudentToClass("Benjamin");
+addStudentToClass("Sevda");
+addStudentToClass("Winston");
+addStudentToClass("Theo");
+addStudentToClass("Amalie");
+addStudentToClass("");
+addStudentToClass("Bent");
+addStudentToClass("Peter");
+addStudentToClass("Queen");
+addStudentToClass("Benjamin");
+
+console.log(`Students number ${getNumberOfStudents()}`);
