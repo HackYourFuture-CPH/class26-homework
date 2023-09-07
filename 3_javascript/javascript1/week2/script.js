@@ -26,24 +26,22 @@ function getEventWeekday(days) {
 console.log(getEventWeekday(daysUntilEvent));
 
 //Weather wear
-let chillCloths = "You should wear T-shirt and shorts";
-let warmCloths = "You must wear warm cloths";
 
 function whatShouldIWear(tempreture) {
-  if (tempreture > 20) {
-    return `${chillCloths}`;
+  if (tempreture >= 20) {
+    return `You should wear T-shirt and shorts}`;
   } else if (tempreture < 20) {
-    return `${warmCloths}`;
+    return `You must wear warm cloths`;
   }
 }
-console.log(whatShouldIWear(22));
+console.log(whatShouldIWear(20));
 
 //Student manager
 
 const class07Students = [];
 function addStudentToClass(studentName) {
-  if (class07Students.lenght >= 6 && studentName !== "Queen") {
-    return `Cannot add more students to class 07 - Queen always can`;
+  if (class07Students.length >= 6 && studentName !== "Queen") {
+    return `Cannot add more students to class 07 - Queen always can join the class`;
   } else if (class07Students.includes(studentName)) {
     return `Student Benjamin is already in the class`;
   } else if (studentName === "") {
@@ -53,6 +51,7 @@ function addStudentToClass(studentName) {
   }
 }
 
+//getNumberOfStudents function
 function getNumberOfStudents() {
-  return class07Students;
+  return class07Students.length;
 }
