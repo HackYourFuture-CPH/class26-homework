@@ -61,3 +61,35 @@ function recommendClothes(temperature) {
 
 const clothesToWear = recommendClothes(19);
 console.log(clothesToWear);
+
+
+
+
+
+// Student manager
+const class07Students = [];
+
+function addStudentToClass(studentName) {
+    if (studentName === "") {
+        console.log("Cannot add an empty string to the class");
+    } else if (class07Students.includes(studentName)) {
+        console.log(`Student ${studentName} is already in the class`);
+    } else if (class07Students.length >= 6 && studentName !== "Queen") {
+        console.log("Cannot add more students to class 07");
+    } else {
+        class07Students.push(studentName);
+    }
+}
+
+function getNumberOfStudents() {
+    return class07Students.length;
+}
+
+// Examples of using
+addStudentToClass("Benjamin");
+addStudentToClass("Alice");
+addStudentToClass("Benjamin"); // Duplicate of students name
+addStudentToClass("Queen"); // Adding Queen
+addStudentToClass(""); // Empty string
+
+console.log(getNumberOfStudents()); //Display the number of students
