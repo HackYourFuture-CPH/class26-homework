@@ -1,5 +1,4 @@
 // Flight booking fullname function
-
 function getFullname(firstname, surname, useFormalName, isFemale) {
     if (firstname === "" || surname === "") {
         return "Please provide both firstname and surname"
@@ -27,7 +26,6 @@ console.log(fullname4);
 
 
 // Event application
-
 function getEventWeekday(daysUntilEvent) {
     const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -40,4 +38,24 @@ function getEventWeekday(daysUntilEvent) {
 
 console.log("The event will take place on " + getEventWeekday(3));
 console.log("The event will take place on " + getEventWeekday(7));
+
+
+
+// Weather wear
+function recommendClothes(temperature) {
+    if (temperature >= 30) {
+        return "You should wear shorts and a tank top.";
+    } else if (temperature >= 20) {
+        return "You can wear jeans and a t-shirt.";
+    } else if (temperature >= 10) {
+        return "You should wear a sweater or light jacket.";
+    } else {
+        return "You should wear a warm coat and gloves.";
+    }
+}
+
+const clothesToWear = recommendClothes(19);
+console.log(clothesToWear);
+
+
 
