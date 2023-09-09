@@ -25,7 +25,23 @@ const fullname4 = getFullname("female", "Banjamin", "Hughes", true);
 const fullname1 = getFullname("male", "Banjamin", "Hughes", false);
 const fullname2 = getFullname("male", "Banjamin", "Hughes", true);
 
-console.log(fullname1);
-console.log(fullname2);
-console.log(fullname3);
-console.log(fullname4);
+/** Event application **/
+
+function getEventWeekday(daysFromToday) {
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const today = new Date();
+  const futureDate = new Date(today);
+  futureDate.setDate(today.getDate() + daysFromToday);
+  return days[futureDate.getDate()];
+}
+
+console.log(getEventWeekday(9));
+console.log(getEventWeekday(2));
