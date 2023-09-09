@@ -1,9 +1,9 @@
 //Age-ify (A future age calculator)
 
-let yearOfBirth = 1999;
-let yearFuture = 2027;
+const yearOfBirth = 1999;
+const yearFuture = 2027;
 
-let age = yearFuture - yearOfBirth;
+const age = yearFuture - yearOfBirth;
 console.log(`you will be in ${age} years old in ${yearFuture}`);
 
 
@@ -34,7 +34,7 @@ if (shouldShowResultInDogYears) {
 const friendsHouse = [
   {
     name: "Peter",
-    housePrice: 2500000,
+    housePrice: 2500000, //2030000
     width: 8,
     depth: 10,
     height: 10,
@@ -42,7 +42,7 @@ const friendsHouse = [
   },
   {
     name: "Julia",
-    housePrice: 1000000,
+    housePrice: 1000000, //1121000
     width: 5,
     depth: 11,
     height: 8,
@@ -63,7 +63,7 @@ const juliaHouseCost = calculateHouseCost(friendsHouse[1]);
 console.log("Peter's house cost:", peterHouseCost);
 console.log("Julia's house cost:", juliaHouseCost);
 
-if (peterHouseCost > friendsHouse[0].housePrice) {
+if (friendsHouse[0].housePrice  > peterHouseCost) {
   console.log(`${friendsHouse[0].name} is paying too much`);
 } else {
   console.log(
@@ -71,7 +71,7 @@ if (peterHouseCost > friendsHouse[0].housePrice) {
   );
 }
 
-if (juliaHouseCost > friendsHouse[1].housePrice) {
+if ( friendsHouse[1].housePrice > juliaHouseCost) {
   console.log(
     `${friendsHouse[1].name} is paying ${juliaHouseCost} which is too much`
   );
