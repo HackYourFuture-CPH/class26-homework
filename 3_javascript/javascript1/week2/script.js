@@ -80,3 +80,50 @@ addStudentToClass("Queen");
 addStudentToClass("Benjamin");
 
 console.log(`Students number ${getNumberOfStudents()}`);
+
+//Candy helper
+const boughtCandyPrices = [];
+const candyTypes = ["Sweet", "Chocolate", "Toffee", "Chewing-gum"];
+function addCandy(candyType, weight) {
+  let totalPrice = 0;
+
+  if (candyType == undefined || weight == undefined) {
+    console.log("Both candyType and weight needs to be defined");
+    return;
+  }
+  if (candyType === "Sweet") {
+    totalPrice = weight * 0.5;
+  }
+  if (candyType === "Chocolate") {
+    totalPrice = weight * 0.7;
+  }
+  if (totalPrice > 0) {
+    boughtCandyPrices.push(totalPrice);
+  }
+}
+
+let amountToSpend = Math.random() * 100;
+
+console.log("amountToSpend: " + amountToSpend);
+
+function canBuyMoreCandy() {
+  let totalBoughtCandyPrice = 0;
+  for (let i = 0; i < boughtCandyPrices.length; i++) {
+    totalBoughtCandyPrice += boughtCandyPrices[i];
+  }
+  if (amountToSpend > totalBoughtCandyPrice) {
+    console.log("You can buy more, so please do!");
+    return true;
+  } else {
+    console.log("Enough candy for you!");
+    return false;
+  }
+}
+while (canBuyMoreCandy()) {
+  let randomCandyWeight = Math.floor(Math.random() * 20) + 1;
+  let randomCandyIndex = Math.floor(Math.random() * 4);
+  console.log(
+    "Adding " + randomCandyWeight + " grams of " + candyTypes[randomCandyIndex]
+  );
+  addCandy(candyTypes[randomCandyIndex], randomCandyWeight);
+}
