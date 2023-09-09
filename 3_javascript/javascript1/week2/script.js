@@ -97,6 +97,12 @@ function addCandy(candyType, weight) {
   if (candyType === "Chocolate") {
     totalPrice = weight * 0.7;
   }
+  if (candyType === "Toffee") {
+    totalPrice = weight * 1.1;
+  }
+  if (candyType === "Chewing-gum") {
+    totalPrice = weight * 0.03;
+  }
   if (totalPrice > 0) {
     boughtCandyPrices.push(totalPrice);
   }
