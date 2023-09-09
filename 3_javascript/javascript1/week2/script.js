@@ -57,7 +57,7 @@ function suggestClothing(temperature) {
 const clothesToWear = suggestClothing(18);
 console.log(clothesToWear);
 
-// addStudentToClass function
+// AddStudentToClass function
 const class07Students = [];
 
 function addStudentToClass(studentName) {
