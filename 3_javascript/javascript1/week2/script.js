@@ -87,7 +87,7 @@ const candyTypes = ["Sweet", "Chocolate", "Toffee", "Chewing-gum"];
 function addCandy(candyType, weight) {
   let totalPrice = 0;
 
-  if (candyType == undefined || weight == undefined) {
+  if (candyType === undefined || weight === undefined) {
     console.log("Both candyType and weight needs to be defined");
     return;
   }
