@@ -29,7 +29,7 @@ function getEventWeekday(numberOfTheDay){
     let day = today.getDay();//1,2,3...
     let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday" , "Thursday", "Friday", "Saturday"];
    
-    return weekdays[(day + numberOfTheDay)];
+    return weekdays[(day + numberOfTheDay) % 7];
 }
 
 console.log(getEventWeekday(0));
