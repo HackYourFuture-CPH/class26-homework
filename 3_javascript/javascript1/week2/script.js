@@ -43,6 +43,8 @@ function whatShouldIWear(tempreture) {
     return "You should wear T-shirt and shorts";
   } else if (tempreture < 20) {
     return "You must wear warm cloths";
+  } else {
+    return "Please provide a tempreture";
   }
 }
 console.log(whatShouldIWear(22));
@@ -129,7 +131,7 @@ while (canBuyMoreCandy()) {
   let randomCandyWeight = Math.floor(Math.random() * 20) + 1;
   let randomCandyIndex = Math.floor(Math.random() * 4);
   console.log(
-    "Adding " + randomCandyWeight + " grams of " + candyTypes[randomCandyIndex]
+    `Adding ${randomCandyWeight} grams of ${candyTypes[randomCandyIndex]}`
   );
   addCandy(candyTypes[randomCandyIndex], randomCandyWeight);
 }
