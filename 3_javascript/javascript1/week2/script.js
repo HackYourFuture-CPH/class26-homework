@@ -48,3 +48,40 @@ function weather(tempertaure){
 }
 let  clothesToWear = weather(8);
 console.log(clothesToWear);
+// Student manager
+const class07Students = [];
+function addStudentToClass(studentName) {
+    if (class07Students.length >= 6){
+       if(studentName === "Queen"){
+        class07Students.pop();
+        class07Students.push(studentName);
+       } else {
+            return "Cannot add more students to class 07";
+        }
+    } else if (class07Students.includes(studentName)){
+        return `Student ${studentName} is already in the class`;
+    } else if (studentName.trim() === "") {
+        return (`You cannot add an empty string to a class`);
+    } else {
+        class07Students.push(studentName)
+        return (`student added`);
+    }
+}
+
+addStudentToClass("Nada");
+addStudentToClass("jannah");
+addStudentToClass("haythem");
+addStudentToClass("chahed");
+addStudentToClass("Nadine");
+addStudentToClass("chada");
+addStudentToClass("Queen"); 
+addStudentToClass(""); 
+getNumberOfStudents();
+
+console.log(class07Students);
+
+
+function getNumberOfStudents() {
+  return `Number of student in the class is ${class07Students.length}`;
+}
+getNumberOfStudents();
