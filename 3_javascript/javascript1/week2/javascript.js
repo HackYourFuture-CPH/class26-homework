@@ -1,15 +1,17 @@
 // Formal fullname
 function getFullname(firstname, surname, useFormalName, isWoman) {
-    if (firstname === "" || surname === "") {
+    if (!firstname|| !surname) {
         return `Please enter your full name`;
     }
 
-    if (useFormalName === true && isWoman === true) {
+    if (useFormalName && isWoman) {
         return `Lady ${firstname} ${surname}`;
     }
-    else if (useFormalName === true && isWoman === false) {
+    if (useFormalName && isWoman) {
         return `Lord ${firstname} ${surname}`;
     }
+else if (useFormalName && !isWoman) {
+        return `Lord ${firstname} ${surname}`;
     else {
         return `${firstname} ${surname}`;
     }
