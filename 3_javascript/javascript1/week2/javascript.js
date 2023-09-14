@@ -7,10 +7,10 @@ function getFullname(firstname, surname, useFormalName, isWoman) {
     if (useFormalName && isWoman) {
         return `Lady ${firstname} ${surname}`;
     }
-    if (useFormalName && isWoman) {
+    if (useFormalName && !isWoman) {
         return `Lord ${firstname} ${surname}`;
     }
-else if (useFormalName && !isWoman) {
+    else if (useFormalName && !isWoman) {
         return `Lord ${firstname} ${surname}`;
     else {
         return `${firstname} ${surname}`;
