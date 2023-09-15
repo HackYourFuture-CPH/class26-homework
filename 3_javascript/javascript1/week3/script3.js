@@ -43,3 +43,50 @@ const travelInformation = {
 
 const travelTime = totalTravelTime(travelInformation);
 console.log(travelTime); // Output: "8 hours and 38 minutes"
+
+// Series duration of my life
+const seriesDurations = [
+  {
+    title: "Star Wars",
+    days: 0,
+    hours: 20,
+    minutes: 55,
+  },
+  {
+    title: "Jack Ryan",
+    days: 0,
+    hours: 12,
+    minutes: 0,
+  },
+  {
+    title: "The Office",
+    days: 3,
+    hours: 2,
+    minutes: 55,
+  },
+];
+
+function logOutSeriesText() {
+  let totalMinutesWatched = 0;
+
+  for (const series of seriesDurations) {
+    const { days, hours, minutes } = series;
+    const seriesDurationInMinutes = days * 24 * 60 + hours * 60 + minutes;
+    totalMinutesWatched += seriesDurationInMinutes;
+
+    const yearsWatched = totalMinutesWatched / (60 * 24 * 365); 
+    const percentageOfLife = (yearsWatched / 80) * 100; 
+
+    console.log(
+      `${series.title} took ${percentageOfLife.toFixed(3)}% of my life.`
+    );
+  }
+
+  const totalMinutes = totalMinutesWatched % (60 * 24 * 365);
+  const totalHours = Math.floor(totalMinutes / 60);
+  const remainingMinutes = totalMinutes % 60;
+
+  console.log(`In total, that is ${totalHours} hours and ${remainingMinutes} minutes of my life.`);
+}
+
+logOutSeriesText();
