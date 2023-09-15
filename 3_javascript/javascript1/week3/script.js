@@ -26,8 +26,8 @@ console.log(names);
 //When will we be there??
 
 function calculateTravelTime(travelInformation) {
-  const speed = travelInformation.speed; // Speed in km/h
-  const distance = travelInformation.destinationDistance; // Distance in km
+  const speed = travelInformation.speed;
+  const distance = travelInformation.destinationDistance;
 
   // Calculate the time in hours and minutes
   const hours = Math.floor(distance / speed);
@@ -45,4 +45,61 @@ const travelInformation = {
 };
 
 const travelTime = calculateTravelTime(travelInformation);
-console.log(travelTime); // Outputs: "8 hours and 38 minutes"
+console.log(`I will arrive ${travelTime} later`);
+
+//Series duration of my life
+
+const seriesDurations = [
+  {
+    title: "Game of Thrones",
+    days: 3,
+    hours: 1,
+    minutes: 0,
+  },
+  {
+    title: "Sopranos",
+    days: 3,
+    hours: 14,
+    minutes: 0,
+  },
+  {
+    title: "The Wire",
+    days: 2,
+    hours: 12,
+    minutes: 0,
+  },
+];
+
+function percentageOfLifeSpentWatchedSeries(seriesDurations) {
+  const averageLifeInMinutes = 80 * 365 * 24 * 60;
+  // Converting 80 years to minutes
+
+  let totalMinutesSpent = 0;
+
+  for (const series of seriesDurations) {
+    const { days, hours, minutes } = series;
+    const seriesDurationInMinutes = days * 24 * 60 + hours * 60 + minutes;
+    totalMinutesSpent += seriesDurationInMinutes;
+  }
+
+  const percentageOfLifeSpent =
+    (totalMinutesSpent / averageLifeInMinutes) * 100;
+
+  return percentageOfLifeSpent;
+}
+
+function logOutSeriesText() {
+  for (const series of seriesDurations) {
+    const { title, days, hours, minutes } = series;
+    const seriesDurationInMinutes = days * 24 * 60 + hours * 60 + minutes;
+    const percentageOfLifeSpent =
+      (seriesDurationInMinutes / (80 * 365 * 24 * 60)) * 100;
+
+    console.log(`${title} took ${percentageOfLifeSpent}% of my life`);
+  }
+
+  const totalPercentage = percentageOfLifeSpentWatchedSeries(seriesDurations);
+  console.log(`It is total of ${totalPercentage}% of my life`);
+}
+
+logOutSeriesText();
