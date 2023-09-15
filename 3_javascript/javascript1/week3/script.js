@@ -103,3 +103,41 @@ function logOutSeriesText() {
 }
 
 logOutSeriesText();
+
+//Note taking app
+
+const notes = [];
+
+function saveNote(content, id) {
+  if (typeof id === "number") {
+    const note = { content: content, id: id };
+    notes.push(note);
+  } else {
+    console.log("Error: Please provide a valid number as the (id) parameter.");
+  }
+}
+
+function getNote(id) {
+  for (let i = 0; i < notes.length; i++) {
+    if (notes[i].id === id) {
+      return notes[i];
+    }
+  }
+  console.log(`Error: No note found with id ${id}.`);
+}
+
+function logOutNotesFormatted() {
+  for (let i = 0; i < notes.length; i++) {
+    console.log(
+      `The note with id: ${notes[i].id}, has the following note text: (${notes[i].content})`
+    );
+  }
+}
+
+saveNote("Pick up groceries", 1);
+saveNote("Do laundry", 2);
+
+const firstNote = getNote(1);
+console.log(firstNote);
+
+logOutNotesFormatted();
