@@ -68,25 +68,26 @@ const seriesDurations = [
 
 function logOutSeriesText() {
   let totalMinutesWatched = 0;
+  const percentages = [];
 
   for (const series of seriesDurations) {
     const { days, hours, minutes } = series;
     const seriesDurationInMinutes = days * 24 * 60 + hours * 60 + minutes;
     totalMinutesWatched += seriesDurationInMinutes;
-
+    
     const yearsWatched = totalMinutesWatched / (60 * 24 * 365); 
-    const percentageOfLife = (yearsWatched / 80) * 100; 
+    const percentageOfLife = (yearsWatched / 80) * 100;
+    
+    percentages.push(percentageOfLife);
 
     console.log(
       `${series.title} took ${percentageOfLife.toFixed(3)}% of my life.`
     );
   }
 
-  const totalMinutes = totalMinutesWatched % (60 * 24 * 365);
-  const totalHours = Math.floor(totalMinutes / 60);
-  const remainingMinutes = totalMinutes % 60;
+  const totalPercentage = percentages.reduce((sum, percentage) => sum + percentage, 0);
 
-  console.log(`In total, that is ${totalHours} hours and ${remainingMinutes} minutes of my life.`);
+  console.log(`In total, that is ${(totalPercentage).toFixed(2)} percent of my life.`);
 }
 
 logOutSeriesText();
