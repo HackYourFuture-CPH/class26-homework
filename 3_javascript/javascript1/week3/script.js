@@ -41,3 +41,39 @@ if (names[i] == "Ahmad"){
   const travelTime = calculateTravelTime(travelInformation);
   console.log(travelTime);
   // code done
+//Series duration of my life
+const seriesDurations = [
+    {
+      title: "Game of thrones",
+      days: 3,
+      hours: 1,
+      minutes: 0,
+    },
+    {
+      title: "friends",
+      days: 3,
+      hours: 14,
+      minutes: 0,
+    },
+    {
+      title: "the wire",
+      days: 2,
+      hours: 12,
+      minutes: 0,
+    },
+  ];
+  const total80YearsInMin = 80 * 365 * 24 * 60;
+
+  function logOutSeriesText (){
+    let totalPersentageOfWatching = 0
+    for (let serie of seriesDurations ){
+        let {days,hours,minutes} = serie ;
+        let totalWatchDurationInMinutes = (days * 24 * 60) + (hours * 60) + minutes ;
+        let persentage = totalWatchDurationInMinutes * 100 / total80YearsInMin ;
+        totalPersentageOfWatching += persentage ;
+        console.log (`${serie.title} took ${persentage.toFixed(3)}% of my life`)
+    }   
+    console.log (`In total that is ${totalPersentageOfWatching.toFixed(2)}% of my life`)
+}
+logOutSeriesText();
+  
