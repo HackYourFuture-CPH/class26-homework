@@ -122,3 +122,14 @@ return note ? note.content: `Please check that you have correct id as there is n
 console.log(note1); // Pick up groceries
 console.log(note2); //Do laundry
 console.log(note3); //Please check that you have correct id as there is no note with id 3
+
+// Log out notes
+function logOutNotesFormatted() {
+for (const note of notes) {
+  console.log(`The note with id: ${note.id}, has the following text: ${note.content}`);
+}
+}
+
+logOutNotesFormatted(); // should log out the text below
+// The note with id: 1, has the following note text: Pick up groceries
+// The note with id: 2, has the following note text: Do laundry
