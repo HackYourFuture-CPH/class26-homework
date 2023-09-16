@@ -53,5 +53,29 @@ function saveNote(content, id) {
 
 saveNote("Pick up groceries", 1);
 saveNote("Do laundry", 2);
+saveNote("Pick up kids", 3);
 
-console.log(notes);
+function logOutNotesFormatted() {
+  for (const note of notes) {
+    console.log(
+      `The note with id: ${note.id}, has the following note text: "${note.content}"`
+    );
+  }
+}
+
+logOutNotesFormatted();
+
+function deleteNote(id) {
+  const i = notes.findIndex((note) => note.id === id);
+
+  if (i !== 1) {
+    notes.splice(i, 1);
+    console.log(`Deleted note with id: ${id}`);
+  } else {
+    console.log(`Note with id ${id} not found.`);
+  }
+}
+
+deleteNote(1);
+
+logOutNotesFormatted();
