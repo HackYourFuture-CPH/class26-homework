@@ -91,3 +91,34 @@ function logOutSeriesText() {
 }
 
 logOutSeriesText();
+
+// Note taking app
+const notes = [];
+
+function saveNote(content, id) {
+  const note = { content, id };
+  notes.push(note);}
+
+saveNote("Pick up groceries", 1);
+saveNote("Do laundry", 2);
+
+console.log(notes); // [{content: 'Pick up groceries', id: 1}, {content: 'Do laundry', id: 2}]
+
+// Get a note
+
+function getNote (id) {
+if (!id) {
+  console.log (`Please enter a valid id`);
+} else {
+const note = notes.find(note => note.id===id);
+return note ? note.content: `Please check that you have correct id as there is no note with id ${id}`;
+}
+}
+
+  const note1 = getNote(1);
+  const note2 = getNote(2);
+  const note3 = getNote(3);
+
+console.log(note1); // Pick up groceries
+console.log(note2); //Do laundry
+console.log(note3); //Please check that you have correct id as there is no note with id 3
