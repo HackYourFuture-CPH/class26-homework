@@ -41,3 +41,17 @@ function travelTimecalculation(travelInformation) {
 const travelTime = travelTimecalculation(travelInformation);
 
 console.log(travelTime);
+
+/**  Smart-ease - Back to the basics!**/
+
+const notes = [];
+
+function saveNote(content, id) {
+  const note = { content, id };
+  notes.push(note);
+}
+
+saveNote("Pick up groceries", 1);
+saveNote("Do laundry", 2);
+
+console.log(notes);
