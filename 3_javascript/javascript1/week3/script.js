@@ -88,31 +88,31 @@ const names = [
   const notes = [];
 
 function saveNote(content, id) {
-  // Check if id is a number
+  
   if (typeof id !== 'number') {
     console.log("Error: Invalid ID. Please provide a number.");
     return;
   }
   
-  // Push the note object to the notes array
+  
   notes.push({ content, id });
 }
 
 function getNote(id) {
-  // Check if id is not a number or no id is provided
+  
   if (typeof id !== 'number' || isNaN(id)) {
     console.log("Error: Invalid ID. Please provide a number.");
     return;
   }
 
-  // Search for the note with the given id
+  
   for (const note of notes) {
     if (note.id === id) {
       return note;
     }
   }
 
-  // If no note with the provided id is found
+  
   console.log("Error: Note not found.");
 }
 
@@ -122,7 +122,7 @@ function logOutNotesFormatted() {
   }
 }
 
-// Test the functions
+/
 saveNote("Pick up groceries", 1);
 saveNote("Do laundry", 2);
 
@@ -140,7 +140,7 @@ logOutNotesFormatted();
 
   //(4) - CactusIO-interactive (Smart phone usage app) optional// 
 
-  // Initialize an empty array to store activities.
+  
 const activities = [];
 let usageLimit = 0;
 
