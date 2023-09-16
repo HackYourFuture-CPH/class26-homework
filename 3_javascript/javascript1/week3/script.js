@@ -105,3 +105,57 @@ logOutSeriesText();
 
 
 
+
+// NOnoN0nOYes (Note taking app)
+
+// ---> Save a note
+const notes = [];
+
+function saveNote(content, id) {
+    notes.push({ content: content, id: id });
+}
+
+saveNote("Pick up groceries", 1);
+saveNote("Do laundry", 2);
+
+console.log(notes); // [{content: 'Pick up groceries', id: 1}, {content: 'Do laundry', id: 2}]
+
+// --> Get a note
+function getNote(id) {
+    for (let i = 0; i < notes.length; i++) {
+        if (notes[i].id === id) {
+            return notes[i];
+        }
+    }
+}
+
+const firstNote = getNote(1);
+console.log(firstNote); // {content: 'Pick up groceries', id: 1}
+
+
+// --> Log out notes
+function logOutNotesFormatted() {
+    for (let i = 0; i < notes.length; i++) {
+        console.log(`The note with id: ${notes[i].id}, has the following note text: ${notes[i].content}`);
+    }
+}
+
+logOutNotesFormatted();
+
+
+// --> Unique feature --> Deleting notes by ID
+function deleteNote(id) {
+    for (let i = 0; i < notes.length; i++) {
+        if (notes[i].id === id) {
+            notes.splice(i, 1);
+            break;
+        }
+    }
+}
+
+deleteNote(1);
+console.log(notes); // [{content: 'Do laundry', id: 2}]
+
+
+
+
