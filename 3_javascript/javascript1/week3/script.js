@@ -159,3 +159,68 @@ console.log(notes); // [{content: 'Do laundry', id: 2}]
 
 
 
+
+// CactusIO-interactive (Smart phone usage app) optional
+
+// --> Adding an activity
+const activities = []
+
+function addActivity(date, activity, duration) {
+    let newActivity = {
+        date: date,
+        activity: activity,
+        duration: duration
+    };
+    activities.push(newActivity);
+}
+
+addActivity("23/7-18", "Youtube", 30);
+addActivity("23/7-18", "Instagram", 20);
+addActivity("23/7-18", "Tik-Tok", 28);
+console.log(activities);
+
+// --> Usage limit
+let usageLimit = 0;
+
+function setLimit(limit) {
+    usageLimit = limit;
+}
+
+setLimit(60);
+
+// --> Show my status
+function showStatus() {
+    if (activities.length === 0) {
+        return "Add some activities before calling showStatus";
+    } else {
+        let totalDuration = 0;
+        for (let i = 0; i < activities.length; i++) {
+            totalDuration += activities[i].duration;
+        }
+        if (totalDuration > usageLimit) {
+            return "You have reached your limit, no more smartphoning for you!";
+        } else {
+            return "You have added " + activities.length + " activities. They amount to " + totalDuration + " min. of usage";
+        }
+    }
+}
+
+console.log(showStatus());
+
+// --> Extra feature --> Which activity takes the most time?
+function mostTimeSpent() {
+    if (activities.length === 0) {
+        return "No activities recorded";
+    } else {
+        let maxDuration = activities[0].duration;
+        let maxActivity = activities[0].activity;
+        for (let i = 1; i < activities.length; i++) {
+            if (activities[i].duration > maxDuration) {
+                maxDuration = activities[i].duration;
+                maxActivity = activities[i].activity;
+            }
+        }
+        return "The activity you spent the most time on was " + maxActivity + " with " + maxDuration + " min.";
+    }
+}
+console.log(mostTimeSpent());
