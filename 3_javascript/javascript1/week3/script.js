@@ -62,18 +62,88 @@ const seriesDurations = [
       minutes: 0,
     },
   ];
+
   const total80YearsInMin = 80 * 365 * 24 * 60;
 
   function logOutSeriesText (){
-    let totalPersentageOfWatching = 0
+    let totalPersentageOfWatching = 0;
     for (let serie of seriesDurations ){
         let {days,hours,minutes} = serie ;
         let totalWatchDurationInMinutes = (days * 24 * 60) + (hours * 60) + minutes ;
         let persentage = totalWatchDurationInMinutes * 100 / total80YearsInMin ;
         totalPersentageOfWatching += persentage ;
-        console.log (`${serie.title} took ${persentage.toFixed(3)}% of my life`)
+
+        console.log (`${serie.title} took ${persentage.toFixed(3)}% of my life`);
     }   
-    console.log (`In total that is ${totalPersentageOfWatching.toFixed(2)}% of my life`)
+    console.log (`In total that is ${totalPersentageOfWatching.toFixed(2)}% of my life`);
 }
+
 logOutSeriesText();
+
+//NOnoN0nOYes
+const notes = [];
+
+function saveNote(content, id) {
+  // write some code here
+  const note = { content, id };
+  notes.push(note);
+}
+
+saveNote("Pick up groceries", 1);
+saveNote("Do laundry", 2);
+
+console.log(notes); // [{content: 'Pick up groceries', id: 1}, {content: 'Do laundry', id: 2}]
+
+//Get a note
+function getNote(id) {
+    
+    if (id === undefined || isNaN(id)) {
+        console.log("Error: Please enter a valid id");
+        return;
+    }
+
+    for (const note of notes) {
+        if (note.id === id) {
+            return note
+        }
+    } 
+    console.log(`Error: No note found with the id ${id}`);
+    return
+}
   
+const undefinedNote = getNote();
+const firstNote = getNote(1);
+const fnotFoundNote = getNote(3);
+
+console.log(undefinedNote);
+console.log(firstNote); // {content: 'Pick up groceries', id: 1}
+console.log(fnotFoundNote);
+
+//Log out notes
+function logOutNotesFormatted() {
+    for (const note of notes) {
+      console.log(
+        `The note with id: ${note.id}, has the following note text: "${note.content}"`
+      );
+    }
+}
+  
+logOutNotesFormatted(); // should log out the text below
+  
+  // The note with id: 1, has the following note text: Pick up groceries
+  // The note with id: 2, has the following note text: Do laundry
+
+  //delete note 
+  function deleteNote(id) {
+    if (id === undefined || isNaN(id)) {
+        console.log("Error: Please enter a valid id");
+        return;
+    }
+
+    for (i=0; i < notes.length; i++){
+        if (note[i].id == id){
+            names.splice(i,1);
+        }
+    }
+  }
+
