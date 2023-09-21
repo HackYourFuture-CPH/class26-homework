@@ -6,9 +6,9 @@ function getFullname(firstname, surname, formalName) {
   }
 
   if (formalName) {
-    return formalName + " " + firstname + " " + surname;
+    return `${formalName} ${firstname} ${surname}`;
   } else {
-    return firstname + " " + surname;
+    return `${firstname} ${surname}`;
   }
 }
 
@@ -22,13 +22,13 @@ console.log(fullname2);
 
 function getEventWeekday(daysFromToday) {
   const daysOfWeek = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   const currentDate = new Date();
   const currentDay = currentDate.getDay();
