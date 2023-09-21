@@ -1,7 +1,7 @@
 //First Task
 
 function getFullname(firstname, surname) {
-    return firstname + " " + surname;
+    return `${firstname} ${surname}`;
 }
 
 let fullName1 = getFullname("Komal", "Ranjan");
@@ -14,9 +14,9 @@ console.log(fullName2);
 
 function getFullname(firstname, surname, useFormalName) {
     if (useFormalName) {
-        return "Lady " + firstname + " " + surname;
+        return `${"Lady "} ${firstname} ${surname}`;
     } else {
-        return firstname + " " + surname;
+        return `${firstname} ${surname}`;
     }
 }
 let fullname1 = getFullname("Komal", "Ranjan", true);
@@ -29,9 +29,9 @@ console.log(fullname2);
 
 function getFullname(firstname, surname, useFormalName, title) {
     if (useFormalName && title) {
-        return title + " " + firstname + " " + surname;
+        return `${title} ${firstname} ${surname}` 
     } else {
-        return firstname + " " + surname;
+        return `${firstname} ${surname}`
     }
 }
 let maleFullname1 = getFullname("Pradeep", "Leuaa", true, "Lord");
@@ -58,10 +58,6 @@ function getEventWeekday(daysFromToday) {
     let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     let eventDayIndex = (today.getDay() + daysFromToday) % 7;
-
-    if (eventDayIndex < 0) {
-        eventDayIndex += 7;
-    }
 
     let eventWeekday = weekdays[eventDayIndex];
 
@@ -94,8 +90,9 @@ console.log(clothesToWear);
 const class07Students = [];
 
 function addStudentToClass(studentName) {
-    if (class07Students.length >= 6) {
-        console.log("Cannot add more students to class 07");
+    //check if the list length is greater then 6 and it is not the queen.
+if (class07Students.length >= 6 & studentName.toLowerCase() != "queen") {
+    console.log("Cannot add more students to class 07");
     } else if (class07Students.includes(studentName)) {
         console.log(`Student ${studentName} is already in the class`);
     } else if (studentName === "Queen") {
