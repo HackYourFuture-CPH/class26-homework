@@ -2,11 +2,11 @@
 // exercice full_name
 function getFullname(firstname, surname, useFormalName, isWomen ){
 
-    if( firstname === "" & surname === ""){
+    if( !firstname || !surname){
         return "firstname and surname are missing"
     }
-    if (useFormalName === true){
-        if (isWomen === true){
+    if (useFormalName){
+        if (isWomen){
             return `lady ${firstname} ${surname}`;
         } else{
             return `Lord ${firstname} ${surname}`;
@@ -53,7 +53,6 @@ const class07Students = [];
 function addStudentToClass(studentName) {
     if (class07Students.length >= 6){
        if(studentName === "Queen"){
-        class07Students.pop();
         class07Students.push(studentName);
        } else {
             return "Cannot add more students to class 07";
