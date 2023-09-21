@@ -128,3 +128,82 @@ dailySpecial();
 
 
 
+// --> Voice assistant <--
+let userName = ''; // Variable to store username
+let todos = [];    // Variable for storing to-do list
+let timer;         // Variable to store timer
+const jokes = [
+    "Why did the chicken cross the road? To get to the other side!",
+    "What's orange and sounds like a parrot? A carrot!",
+];
+
+
+
+function getReply(command) {
+    if (command.startsWith("Hello my name is ")) {
+        const newName = command.replace("Hello my name is ", ""); // if someone writes this twice
+        if (userName) {
+            return `We already know each other. Hi again ${userName}.`;
+        } else {
+            userName = newName;
+            return `Nice to meet you ${userName}`;
+        }
+    } else if (command === "What is my name?") {
+        return userName ? `Your name is ${userName}` : "Your name is not set.";
+    } else if (command.startsWith("Add ") && command.endsWith(" to my todo")) {
+        const task = command.replace("Add ", "").replace(" to my todo", "");
+        todos.push(task);
+        return `${task} added to your todo.`;
+    } else if (command.startsWith("Remove ") && command.endsWith(" from my todo")) {
+        const task = command.replace("Remove ", "").replace(" from my todo", "");
+        const index = todos.indexOf(task);
+        if (index !== -1) {
+            todos.splice(index, 1);
+            return `Removed ${task} from your todo.`;
+        } else {
+            return `${task} is not in your todo list.`;
+        }
+    } else if (command === "What is on my todo?") {
+        if (todos.length === 0) {
+            return "You have no todos.";
+        } else {
+            const todoList = todos.join(", ");
+            return `You have ${todos.length} todos - ${todoList}`;
+        }
+    } else if (command === "What day is it today?") {
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return today.toLocaleDateString(undefined, options);
+    } else if (command.startsWith("What is ")) {
+        try {
+            const expression = command.replace("What is ", "");
+            const result = eval(expression);
+            return result.toString();
+        } catch (error) {
+            return "Invalid expression.";
+        }
+    } else if (command.startsWith("Set a timer for ")) {
+        const minutesStr = command.replace("Set a timer for ", "").replace(" minutes", "");
+        const minutes = parseInt(minutesStr);
+        if (isNaN(minutes) || minutes <= 0) {
+            return "Invalid timer duration.";
+        }
+        timer = setTimeout(() => {
+            console.log("Timer done.");
+        }, minutes * 60 * 1000); // Convert minutes to milliseconds
+        return `Timer set for ${minutes} minutes.`;
+    } else if (command === "Tell me a joke") { //Here is my command
+        const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+        return randomJoke;
+    }
+    else {
+        return "I'm sorry, I don't understand that command.";
+    }
+
+}
+
+console.log(getReply("Hello my name is Benjamin")); // "Nice to meet you benjamin"
+console.log(getReply("Hello my name is Benjamin")); // "We already know each other. Hi again Benjamin."
+console.log(getReply("What is my name?")); // "Your name is Benjamin"
+console.log(getReply("Add fishing to my todo")); // "fishing added to your todo"
+console.log(getReply("Tell me a joke"));
