@@ -81,16 +81,20 @@ seriesDurations.push({
     minutes: 0,
 });
 
+function calculatePercentageForSeries(series) {
+    const daysInMinutes = series.days * 24 * 60;
+    const hoursInMinutes = series.hours * 60;
+    const totalMinutes = daysInMinutes + hoursInMinutes + series.minutes;
+    const totalYears = totalMinutes / (60 * 24 * 365);
+    return (totalYears / 80) * 100;
+}
+
 function logOutSeriesText() {
     let totalPercentage = 0;
 
     for (let i = 0; i < seriesDurations.length; i++) {
         const series = seriesDurations[i];
-        const daysInMinutes = series.days * 24 * 60;
-        const hoursInMinutes = series.hours * 60;
-        const totalMinutes = daysInMinutes + hoursInMinutes + series.minutes;
-        const totalYears = totalMinutes / (60 * 24 * 365);
-        const percentageOfLife = (totalYears / 80) * 100;
+        const percentageOfLife = calculatePercentageForSeries(series);
 
         console.log(`${series.title} took ${percentageOfLife.toFixed(3)}% of my life`);
 
