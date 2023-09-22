@@ -37,8 +37,8 @@ const travelInformation = {
 function calculateTravelTime(travelInformation) {
     const totalTravelTime = travelInformation.destinationDistance / travelInformation.speed;
     const hours = Math.floor(totalTravelTime);
-    const minute = Math.round((totalTravelTime - hours) * 60)
-    return `${hours} ours and ${minute} minutes`
+    const minutes = Math.round((totalTravelTime - hours) * 60)
+    return `${hours} ours and ${minutes} minutes`
 }
 
 
