@@ -119,23 +119,14 @@ function saveNote(content, id) {
     notes.push({ content: content, id: id });
 }
 
-saveNote("Pick up groceries", 1);
-saveNote("Do laundry", 2);
-
-console.log(notes); // [{content: 'Pick up groceries', id: 1}, {content: 'Do laundry', id: 2}]
-
 // --> Get a note
 function getNote(id) {
-    for (let i = 0; i < notes.length; i++) {
-        if (notes[i].id === id) {
-            return notes[i];
-        }
+    const note = notes.find((note) => note.id === id);
+    if (!note) {
+        console.error(`Note with ID ${id} not found.`);
     }
+    return note;
 }
-
-const firstNote = getNote(1);
-console.log(firstNote); // {content: 'Pick up groceries', id: 1}
-
 
 // --> Log out notes
 function logOutNotesFormatted() {
@@ -144,21 +135,26 @@ function logOutNotesFormatted() {
     }
 }
 
-logOutNotesFormatted();
-
-
 // --> Unique feature --> Deleting notes by ID
 function deleteNote(id) {
-    for (let i = 0; i < notes.length; i++) {
-        if (notes[i].id === id) {
-            notes.splice(i, 1);
-            break;
-        }
+    const index = notes.findIndex((note) => note.id === id);
+    if (index === -1) {
+        console.error(`Note with ID ${id} not found.`);
+        return;
     }
+    notes.splice(index, 1);
 }
 
+// Examples of using:
+saveNote("Pick up groceries", 1);
+saveNote("Do laundry", 2);
+logOutNotesFormatted();
+
+const firstNote = getNote(1);
+console.log(firstNote);
+
 deleteNote(1);
-console.log(notes); // [{content: 'Do laundry', id: 2}]
+console.log(notes);
 
 
 
