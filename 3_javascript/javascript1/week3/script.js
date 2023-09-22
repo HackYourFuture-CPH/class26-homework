@@ -162,10 +162,16 @@ console.log(notes);
 
 // CactusIO-interactive (Smart phone usage app) optional
 
-// --> Adding an activity
-const activities = []
+const activities = [];
+let usageLimit = 0;
 
+// --> Adding an activity
 function addActivity(date, activity, duration) {
+    if (typeof date !== 'string' || typeof activity !== 'string' || typeof duration !== 'number' || duration <= 0) {
+        console.error("Invalid input. Please provide valid date (string), activity (string), and duration (positive number).");
+        return;
+    }
+
     let newActivity = {
         date: date,
         activity: activity,
@@ -180,8 +186,6 @@ addActivity("23/7-18", "Tik-Tok", 28);
 console.log(activities);
 
 // --> Usage limit
-let usageLimit = 0;
-
 function setLimit(limit) {
     usageLimit = limit;
 }
@@ -192,17 +196,11 @@ setLimit(60);
 function showStatus() {
     if (activities.length === 0) {
         return "Add some activities before calling showStatus";
-    } else {
-        let totalDuration = 0;
-        for (let i = 0; i < activities.length; i++) {
-            totalDuration += activities[i].duration;
-        }
-        if (totalDuration > usageLimit) {
-            return "You have reached your limit, no more smartphoning for you!";
-        } else {
-            return "You have added " + activities.length + " activities. They amount to " + totalDuration + " min. of usage";
-        }
     }
+
+    const totalDuration = activities.reduce((total, activity) => total + activity.duration, 0);
+    const statusMessage = totalDuration > usageLimit ? "You have reached your limit, no more smartphoning for you!" : `You have added ${activities.length} activities. They amount to ${totalDuration} min. of usage`;
+    return statusMessage;
 }
 
 console.log(showStatus());
@@ -211,16 +209,12 @@ console.log(showStatus());
 function mostTimeSpent() {
     if (activities.length === 0) {
         return "No activities recorded";
-    } else {
-        let maxDuration = activities[0].duration;
-        let maxActivity = activities[0].activity;
-        for (let i = 1; i < activities.length; i++) {
-            if (activities[i].duration > maxDuration) {
-                maxDuration = activities[i].duration;
-                maxActivity = activities[i].activity;
-            }
-        }
-        return "The activity you spent the most time on was " + maxActivity + " with " + maxDuration + " min.";
     }
+
+    activities.sort((a, b) => b.duration - a.duration);
+    const maxActivity = activities[0].activity;
+    const maxDuration = activities[0].duration;
+    return `The activity you spent the most time on was ${maxActivity} with ${maxDuration} min.`;
 }
+
 console.log(mostTimeSpent());
