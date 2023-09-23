@@ -48,6 +48,7 @@ const travelTime = calculateTravelTime(travelInformation);
 console.log(`I will arrive ${travelTime} later`);
 
 //Series duration of my life
+/*
 
 const seriesDurations = [
   {
@@ -100,6 +101,56 @@ function logOutSeriesText() {
 
   const totalPercentage = percentageOfLifeSpentWatchedSeries(seriesDurations);
   console.log(`It is total of ${totalPercentage}% of my life`);
+}
+
+logOutSeriesText();
+*/
+//Pouriya's way
+
+const seriesDurations = [
+  {
+    title: "Game of Thrones",
+    days: 3,
+    hours: 1,
+    minutes: 0,
+  },
+  {
+    title: "Sopranos",
+    days: 3,
+    hours: 14,
+    minutes: 0,
+  },
+  {
+    title: "The Wire",
+    days: 2,
+    hours: 12,
+    minutes: 0,
+  },
+];
+
+function logOutSeriesText() {
+  let totalMinutes = 0;
+  let totalPercentage = 0;
+
+  for (let i = 0; i < seriesDurations.length; i++) {
+    const element = seriesDurations[i];
+    //const days = element.days;
+    //const hours = element.hours;
+    // const minutues = element.minutes;
+    const { days, hours, minutes, title } = element;
+
+    const seriesDurationInMinutes = days * 24 * 60 + hours * 60 + minutes;
+    // totalMinutes = totalMinutes + seriesDurationInMinutes;
+    totalMinutes += seriesDurationInMinutes;
+    const yearsWatched = totalMinutes / (60 * 24 * 365);
+    const percentage = (yearsWatched / 80) * 100;
+
+    totalPercentage += percentage;
+
+    console.log(`${title} took ${percentage} of my life`);
+  }
+
+  console.log("Total Percentage: ", totalPercentage);
 }
 
 logOutSeriesText();
