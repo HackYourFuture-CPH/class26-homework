@@ -42,7 +42,7 @@ const names = [
   const travelTime = calculateTravelTime(travelInformation);
   console.log(travelTime); // Output: 8 hours and 38 minutes
   
-  
+
   //Series duration of my life
   const seriesDurations = [
     {
@@ -93,3 +93,44 @@ const names = [
   
   logOutSeriesText();
   
+
+  //NOnoN0nOYes (Note taking app)
+
+  const notes = [];
+
+function saveNote(content, id) {
+  if (typeof id === 'number') {
+    notes.push({ content, id });
+  } else {
+    console.error("Error: 'id' must be a number.");
+  }
+}
+
+function getNote(id) {
+  if (typeof id === 'number') {
+    for (const note of notes) {
+      if (note.id === id) {
+        return note;
+      }
+    }
+    console.error(`Error: Note with id ${id} not found.`);
+  } else {
+    console.error("Error: 'id' must be a number.");
+  }
+}
+
+function logOutNotesFormatted() {
+  for (const note of notes) {
+    console.log(`The note with id: ${note.id}, has the following note text: ${note.content}`);
+  }
+}
+
+
+saveNote("Pick up groceries", 1);
+saveNote("Do laundry", 2);
+
+
+const firstNote = getNote(1);
+console.log(firstNote);
+
+logOutNotesFormatted();
