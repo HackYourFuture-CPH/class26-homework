@@ -42,7 +42,17 @@ function getReply(command) {
     } else {
       return `${task} is not in your todo list`;
     }
+  } else if (lowerCommnad === "what is on my todo") {
+    if (todoList.length === 0) {
+      return "Your todo list is empty";
+    } else {
+      const todoString = todoList.join(" and ");
+      return `You have ${todoList.length} todos - ${todoString}`;
+    }
   }
 }
 
-console.log(getReply("remove this from my todo"));
+console.log(getReply("add this that to my todo"));
+console.log(getReply("add run to my todo"));
+console.log(getReply("add fight to my todo"));
+console.log(getReply("what is on my todo"));
