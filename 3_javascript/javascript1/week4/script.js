@@ -49,10 +49,16 @@ function getReply(command) {
       const todoString = todoList.join(" and ");
       return `You have ${todoList.length} todos - ${todoString}`;
     }
+  } else if (lowerCommnad === "what day is it today") {
+    const today = new Date();
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return today.toLocaleDateString("en-US", options);
   }
+  else if(){};
 }
 
 console.log(getReply("add this that to my todo"));
 console.log(getReply("add run to my todo"));
 console.log(getReply("add fight to my todo"));
 console.log(getReply("what is on my todo"));
+console.log(getReply("what day is it today"));
