@@ -134,3 +134,45 @@ const firstNote = getNote(1);
 console.log(firstNote);
 
 logOutNotesFormatted();
+
+//CactusIO-interactive (Smart phone usage app) optional
+
+const activities = [];
+
+function addActivity(date, activity, duration) {
+  
+  const newActivity = {
+    date: date,
+    activity: activity,
+    duration: duration,
+  };
+
+  activities.push(newActivity);
+}
+
+function showStatus(activities) {
+  if (activities.length === 0) {
+    console.log("Add some activities before calling showStatus");
+  } else {
+    const totalActivities = activities.length;
+    let totalDuration = 0;
+
+    for (const activity of activities) {
+      totalDuration += activity.duration;
+    }
+
+    console.log(
+      `You have added ${totalActivities} activities. They amount to ${totalDuration} min. of usage`
+    );
+  }
+}
+
+addActivity("23/7-18", "Youtube", 30);
+addActivity("23/7-18", "Facebook", 20);
+addActivity("24/7-18", "Reading News", 28);
+
+
+showStatus(activities); 
+
+const emptyActivities = [];
+showStatus(emptyActivities); 
