@@ -27,7 +27,22 @@ function getReply(command) {
     );
     todoList.push(task);
     return `${task} added to your todo`;
+  } else if (
+    lowerCommnad.startsWith("remove ") &&
+    lowerCommnad.endsWith(" from my todo")
+  ) {
+    const task = command.substring(
+      "remove ".length,
+      command.length - " from my todo".length
+    );
+    const index = todoList.indexOf(task);
+    if (index !== -1) {
+      todoList.splice(index, 1);
+      return `Removed ${task} from your todo`;
+    } else {
+      return `${task} is not in your todo list`;
+    }
   }
 }
 
-console.log(getReply("add this to my todo"));
+console.log(getReply("remove this from my todo"));
