@@ -1,5 +1,6 @@
 let userName = "";
 todoList = [];
+let timerId = null;
 
 function getReply(command) {
   const lowerCommnad = command.toLowerCase();
@@ -53,12 +54,40 @@ function getReply(command) {
     const today = new Date();
     const options = { year: "numeric", month: "long", day: "numeric" };
     return today.toLocaleDateString("en-US", options);
+  } else if (lowerCommnad.includes("what is ")) {
+    try {
+      const result = eval(lowerCommnad.substring("what is ".length));
+      return result.toString();
+    } catch (error) {
+      return "I can't do it";
+    }
+  } else if (lowerCommnad.startsWith("set a timer for")) {
+    const timeString = lowerCommnad.substring("set a timer for".length);
+    const minutes = parseInt(timeString);
+    if (!isNaN(minutes)) {
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+      timerId = setTimeout(() => {
+        timerId = null;
+        console.log("Timer done");
+      }, minutes * 60 * 1000);
+      return `Timer set for ${minutes} minutes`;
+    } else {
+      return "Invalid timer format";
+    }
+  } else {
+    return "command invalid";
   }
-  else if(){};
 }
-
+console.log(getReply("add"));
 console.log(getReply("add this that to my todo"));
 console.log(getReply("add run to my todo"));
 console.log(getReply("add fight to my todo"));
 console.log(getReply("what is on my todo"));
 console.log(getReply("what day is it today"));
+console.log(getReply("what is 15+15"));
+console.log(getReply("set a timer for 10 minutes"));
+console.log(getReply("Hello my name is Benjamin")); // "Nice to meet you benjamin"
+console.log(getReply("What is my name?")); // "Your name is Benjamin"
+console.log(getReply("Add fishing to my todo")); // "fishing added to your todo"
