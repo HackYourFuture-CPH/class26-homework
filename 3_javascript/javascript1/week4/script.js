@@ -1,4 +1,4 @@
-let userName = "";
+let userName = [];
 todoList = [];
 let timerId = null;
 
@@ -80,14 +80,7 @@ function getReply(command) {
     return "command invalid";
   }
 }
-console.log(getReply("add"));
-console.log(getReply("add this that to my todo"));
-console.log(getReply("add run to my todo"));
-console.log(getReply("add fight to my todo"));
-console.log(getReply("what is on my todo"));
-console.log(getReply("what day is it today"));
-console.log(getReply("what is 15+15"));
-console.log(getReply("set a timer for 10 minutes"));
+
 console.log(getReply("Hello my name is Benjamin")); // "Nice to meet you benjamin"
 console.log(getReply("What is my name?")); // "Your name is Benjamin"
 console.log(getReply("Add fishing to my todo")); // "fishing added to your todo"
