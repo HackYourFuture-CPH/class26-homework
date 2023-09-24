@@ -92,12 +92,12 @@ const userData = {
   }
   
   // Example usage:
-  console.log(getReply("Hello my name is Benjamin")); // "Nice to meet you Benjamin"
-  console.log(getReply("What is my name?")); // "Your name is Benjamin"
-  console.log(getReply("Add fishing to my todo")); // "fishing added to your todo"
-  console.log(getReply("Remove fishing from my todo")); // "Removed fishing from your todo"
-  console.log(getReply("What is on my todo?")); // "You have 1 todo - fishing"
-  console.log(getReply("What day is it today?")); // Current date in a human-readable format
-  console.log(getReply("What is 3 + 3?")); // "6"
-  console.log(getReply("Set a timer for 4 minutes")); // "Timer set for 4 minutes"
+  console.log(getReply("Hello my name is Benjamin")); 
+  console.log(getReply("What is my name?")); 
+  console.log(getReply("Add fishing to my todo"));
+  console.log(getReply("Remove fishing from my todo")); 
+  console.log(getReply("What is on my todo?")); 
+  console.log(getReply("What day is it today?")); 
+  console.log(getReply("What is 3 + 3?")); 
+  console.log(getReply("Set a timer for 4 minutes")); 
   
