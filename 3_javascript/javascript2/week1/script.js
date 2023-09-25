@@ -26,3 +26,6 @@ console.log(lettersCount(danishString)); // output: {å: 1, total: 1}
 
 let danishString2 = "Blå grød med røde bær";
 console.log(lettersCount(danishString2)); // Output: {å: 1, ø: 2, æ: 1, total: 4}
+
+// Create a page where a user writes his name in an input element. The user then clicks
+// a button. The user will now receive a spirit animal name, fx Benjamin - The fullmoon wolf.
