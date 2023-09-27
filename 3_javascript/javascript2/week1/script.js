@@ -21,18 +21,14 @@ function lettersCount (danishString) {
     return result;
 }
 
-let danishString = "Jeg har en blå bil";
+const danishString = "Jeg har en blå bil";
 console.log(lettersCount(danishString)); // output: {å: 1, total: 1}
 
-let danishString2 = "Blå grød med røde bær";
+const danishString2 = "Blå grød med røde bær";
 console.log(lettersCount(danishString2)); // Output: {å: 1, ø: 2, æ: 1, total: 4}
 
 // Create a page where a user writes his name in an input element. The user then clicks
 
-const button = document.getElementById("spirit");
-const newSpiritButton = document.getElementById("newSpirit");
-
-let userName = null;
 const spiritNames = [
     "The fullmoon wolf", 
     "The roaring lobster", 
@@ -45,19 +41,26 @@ const spiritNames = [
     "The conniving monkey",
 ];
 
+function getRandomSpiritName() {
+    const randomSpirits = Math.floor(Math.random() * spiritNames.length);
+    return spiritNames[randomSpirits];
+}
+
+const button = document.getElementById("spirit");
+const newSpiritButton = document.getElementById("newSpirit");
+
+let userName = null;
+
 button.addEventListener("click", generateName);
 newSpiritButton.addEventListener("click", generateSpiritAnimal);
 
 function generateName(event) {
-// What if the user clicks the generate new spirit animal and there is no text in the input?
-
-
     if (!userName) {
         userName = prompt("Please enter your name");
         if (!userName) return;
     }
-    const randomSpirits = Math.floor(Math.random() * spiritNames.length);
-    const randomName = spiritNames[randomSpirits];
+
+    const randomName = getRandomSpiritName();
     
     // Display the username and spirit animal
     const spiritNameElement = document.getElementById("spiritName");
@@ -65,8 +68,7 @@ function generateName(event) {
 }
 
 function generateSpiritAnimal(event) {
-    const randomSpirits = Math.floor(Math.random() * spiritNames.length);
-    const randomName = spiritNames[randomSpirits];
+    const randomName = getRandomSpiritName();
     
     // Display only the spirit animal
     const spiritNameElement = document.getElementById("spiritName");
