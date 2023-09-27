@@ -25,15 +25,15 @@ console.log(names);
 
 //When will we be there??
 
-function calculateTravelTime(travelInformation) {
-  const speed = travelInformation.speed;
-  const distance = travelInformation.destinationDistance;
+function calculateTravelTime({ speed, totalDistance }) {
+  // Calculating the time in hours and minutes
+  const hours = Math.floor(totalDistance / speed);
+  // Calculating the remaining distance after accounting for whole hours
+  const remainingDistance = totalDistance % speed;
+  // Calculating the minutes based on the remaining distance and speed
+  const minutes = Math.floor((remainingDistance / speed) * 60);
 
-  // Calculate the time in hours and minutes
-  const hours = Math.floor(distance / speed);
-  const minutes = Math.floor((distance % speed) / (speed / 60));
-
-  // Format the time
+  // Formating the time
   const formattedTime = `${hours} hours and ${minutes} minutes`;
 
   return formattedTime;
@@ -48,64 +48,6 @@ const travelTime = calculateTravelTime(travelInformation);
 console.log(`I will arrive ${travelTime} later`);
 
 //Series duration of my life
-/*
-
-const seriesDurations = [
-  {
-    title: "Game of Thrones",
-    days: 3,
-    hours: 1,
-    minutes: 0,
-  },
-  {
-    title: "Sopranos",
-    days: 3,
-    hours: 14,
-    minutes: 0,
-  },
-  {
-    title: "The Wire",
-    days: 2,
-    hours: 12,
-    minutes: 0,
-  },
-];
-
-function percentageOfLifeSpentWatchedSeries(seriesDurations) {
-  const averageLifeInMinutes = 80 * 365 * 24 * 60;
-  // Converting 80 years to minutes
-
-  let totalMinutesSpent = 0;
-
-  for (const series of seriesDurations) {
-    const { days, hours, minutes } = series;
-    const seriesDurationInMinutes = days * 24 * 60 + hours * 60 + minutes;
-    totalMinutesSpent += seriesDurationInMinutes;
-  }
-
-  const percentageOfLifeSpent =
-    (totalMinutesSpent / averageLifeInMinutes) * 100;
-
-  return percentageOfLifeSpent;
-}
-
-function logOutSeriesText() {
-  for (const series of seriesDurations) {
-    const { title, days, hours, minutes } = series;
-    const seriesDurationInMinutes = days * 24 * 60 + hours * 60 + minutes;
-    const percentageOfLifeSpent =
-      (seriesDurationInMinutes / (80 * 365 * 24 * 60)) * 100;
-
-    console.log(`${title} took ${percentageOfLifeSpent}% of my life`);
-  }
-
-  const totalPercentage = percentageOfLifeSpentWatchedSeries(seriesDurations);
-  console.log(`It is total of ${totalPercentage}% of my life`);
-}
-
-logOutSeriesText();
-*/
-//Pouriya's way
 
 const seriesDurations = [
   {
@@ -174,7 +116,8 @@ function getNote(id) {
       return notes[i];
     }
   }
-  console.log(`Error: No note found with id ${id}.`);
+  // Return null when note isn't found
+  return null;
 }
 
 function logOutNotesFormatted() {
