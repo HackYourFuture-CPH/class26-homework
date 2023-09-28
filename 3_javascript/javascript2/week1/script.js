@@ -39,3 +39,94 @@ console.log(countDanishLetters(danishString2));
 
 
 
+
+
+
+
+
+
+
+// --> Getting references to DOM elements
+const nameInput = document.getElementById('nameInput');
+const generateButton = document.getElementById('generateButton');
+const spiritAnimalResult = document.getElementById('spiritAnimalResult');
+const newAnimalButton = document.getElementById('newAnimalButton');
+const eventOption = document.getElementById('eventOption');
+
+// Array with names of spirit animals
+const spiritAnimals = [
+    'The fullmoon wolf',
+    'The wise owl',
+    'The free-spirited dolphin',
+    'The peaceful panda',
+    'The adventurous eagle',
+    'The curious cat',
+    'The graceful gazelle',
+    'The playful monkey',
+    'The mysterious fox',
+    'The gentle butterfly'
+];
+
+// Function to generate a random spirit animal
+function generateSpiritAnimal() {
+    const randomIndex = Math.floor(Math.random() * spiritAnimals.length);
+    return spiritAnimals[randomIndex];
+}
+
+// event listener for the "Generate Spirit Animal" button
+generateButton.addEventListener('click', function () {
+    const name = nameInput.value.trim();
+    const selectedEvent = eventOption.value;
+
+    if (name === '') {
+        alert('Please enter your name.');
+    } else {
+        if (selectedEvent === 'click') {
+            const spiritAnimal = generateSpiritAnimal();
+            spiritAnimalResult.textContent = `Name: ${name}: ${name} - ${spiritAnimal}`;
+        }
+    }
+});
+
+// Event listener for input field (hover)
+nameInput.addEventListener('mouseenter', function () {
+    const name = nameInput.value.trim();
+    const selectedEvent = eventOption.value;
+
+    if (selectedEvent === 'hover') {
+        if (name === '') {
+            alert('Please enter your name.');
+        } else {
+            const spiritAnimal = generateSpiritAnimal();
+            spiritAnimalResult.textContent = `Name: ${name}: ${name} - ${spiritAnimal}`;
+        }
+    }
+});
+
+// Event listener for input field (text input)
+nameInput.addEventListener('input', function () {
+    const name = nameInput.value.trim();
+    const selectedEvent = eventOption.value;
+
+    if (selectedEvent === 'input') {
+        if (name === '') {
+            alert('Please enter your name.');
+        } else {
+            const spiritAnimal = generateSpiritAnimal();
+            spiritAnimalResult.textContent = `Name: ${name}: ${name} - ${spiritAnimal}`;
+        }
+    }
+});
+
+// event listener for button "Generate New Spirit Animal"
+newAnimalButton.addEventListener('click', function () {
+    const name = nameInput.value.trim();
+    const selectedEvent = eventOption.value;
+
+    if (name === '') {
+        alert('Please enter your name.');
+    } else {
+        const spiritAnimal = generateSpiritAnimal();
+        spiritAnimalResult.textContent = `Name: ${name}: ${name} - ${spiritAnimal}`;
+    }
+});
