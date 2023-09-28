@@ -50,7 +50,7 @@ function generateSpiritAnimal() {
     const randomIndex = Math.floor(Math.random() * spiritAnimals.length);
     const spiritAnimal = spiritAnimals[randomIndex];
 
-    resultElement.textContent = `Name: ${userName} - ${spiritAnimal}`;
+    resultElement.textContent = spiritAnimal;
 }
 
 document.getElementById("generate").addEventListener("click", generateSpiritAnimal);
