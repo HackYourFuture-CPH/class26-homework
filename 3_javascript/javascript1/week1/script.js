@@ -27,7 +27,7 @@ console.log(dogAgeStringOutput);
 // House price 
 
 let gardenSizeInM2 = 100;
-function housePrice(volumeInMeters,gardenSizeInM2){
+function getHousePrice(volumeInMeters,gardenSizeInM2){
   return  volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
 }
 //peter's house
@@ -37,7 +37,7 @@ let PDepth = 10;
 let pVolumeInMeters = pHeight * pWidth * PDepth;
 let pGardenSize = 100;
 let peterHasPayed = 2500000;
-let  peterHousePrice = housePrice(pVolumeInMeters,pGardenSize)
+let  peterHousePrice = getHousePrice(pVolumeInMeters,pGardenSize)
 if (peterHasPayed < peterHousePrice ) {
   console.log(`Peter has payed ${peterHasPayed} too little for the house ${peterHousePrice}.`);
 } else if (peterHasPayed > peterHousePrice) {
@@ -53,7 +53,7 @@ let jDepth = 11;
 let jVolumeInMeters = jHheight * jWidth * jDepth;
 let jGardenSize = 70;
 let juiliaHasPayed = 1000000;
-let  juiliaHousePrice = housePrice(jVolumeInMeters,jGardenSize)
+let  juiliaHousePrice = getHousePrice(jVolumeInMeters,jGardenSize)
 if (juiliaHasPayed < juiliaHousePrice ) {
   console.log(`juilia has payed ${juiliaHasPayed} too little for the house ${juiliaHousePrice}.`);
 } else if (juiliaHasPayed > juiliaHousePrice) {
