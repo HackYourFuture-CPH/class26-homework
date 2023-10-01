@@ -53,7 +53,7 @@ let jDepth = 11;
 let jVolumeInMeters = jHheight * jWidth * jDepth;
 let jGardenSize = 70;
 let juiliaHasPayed = 1000000;
-let  juiliaHousePrice = getHousePrice(jVolumeInMeters,jGardenSize)
+let  juiliaHousePrice = getHougitsePrice(jVolumeInMeters,jGardenSize)
 if (juiliaHasPayed < juiliaHousePrice ) {
   console.log(`juilia has payed ${juiliaHasPayed} too little for the house ${juiliaHousePrice}.`);
 } else if (juiliaHasPayed > juiliaHousePrice) {
