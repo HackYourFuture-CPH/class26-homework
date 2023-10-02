@@ -10,7 +10,7 @@ function renderProducts(products) {
 products.forEach(product => {
     const li = document.createElement("li");
     li.innerHTML = 
-     `<strong>${product.title}</strong><br>
+     `<strong>${product.name}</strong><br>
      Price: ${product.price}<br>
      Rating: ${product.rating}`;
 
