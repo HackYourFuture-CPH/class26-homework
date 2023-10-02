@@ -1,126 +1,83 @@
-// --> Find and count the Danish letters
-
-function countDanishLetters(str) {
-    // Create an object to store the number of letters
-    const counts = {
-        total: 0,
-        æ: 0,
-        ø: 0,
-        å: 0,
-    };
-
-    // Using a regular expression to find Danish letters (æ, ø, å) in a string
-    const danishLetters = str.match(/[æøå]/g);
-
-    // If Danish letters are found, count their number
-    if (danishLetters) {
-        danishLetters.forEach((letter) => {
-            counts.total++;
-            counts[letter] = (counts[letter] || 0) + 1;
-        });
+//Find and count the Danish letters//
+function countDanishLetters(inputString) {
+    const danishLetters = { æ: 0, ø: 0, å: 0 }; // Initialize counts for each letter
+    let total = 0; // Initialize total count
+  
+    // Loop through the characters in the input string
+    for (const char of inputString) {
+      // Check if the character is a Danish letter
+      if (danishLetters.hasOwnProperty(char)) {
+        danishLetters[char]++; // Increment the count for the specific letter
+        total++; // Increment the total count
+      }
     }
+  
+    // Create the result object
+    const result = { total, ...danishLetters };
+  
+    return result;
+  }
+  
+  const danishString = "Jeg har en blå bil";
+  console.log(countDanishLetters(danishString)); // returns { total: 1, æ: 0, ø: 0, å: 1 }
+  
+  const danishString2 = "Blå grød med røde bær";
+  console.log(countDanishLetters(danishString2)); // returns { total: 4, æ: 1, ø: 2, å: 1 }
 
-    // Removing zero values
-    for (const key in counts) {
-        if (counts[key] === 0) {
-            delete counts[key];
-        }
-    }
+  
 
-    return counts;
-}
+  // Spirit animal name generator//
 
+  //Setting up Events://
 
-const danishString = "Jeg har en blå bil";
-console.log(countDanishLetters(danishString));
-
-const danishString2 = "Blå grød med røde bær";
-console.log(countDanishLetters(danishString2));
-
-
-
-// --> 2. Spirit animal name generator//
-
+  // Get references to the input field, button, and the tag to display the spirit animal
 const nameInput = document.getElementById('nameInput');
 const generateButton = document.getElementById('generateButton');
-const spiritAnimalResult = document.getElementById('spiritAnimalResult');
-const newAnimalButton = document.getElementById('newAnimalButton');
-const eventOption = document.getElementById('eventOption');
+const spiritAnimalTag = document.getElementById('spiritAnimal');
 
-// Array with names of spirit animals
+// Add an event listener to the button
+generateButton.addEventListener('click', generateSpiritAnimal);
+
+//Spirit Animal Part://
+
+// Array of spirit animals
 const spiritAnimals = [
-    'The fullmoon wolf',
-    'The wise owl',
-    'The free-spirited dolphin',
-    'The peaceful panda',
-    'The adventurous eagle',
-    'The curious cat',
-    'The graceful gazelle',
-    'The playful monkey',
-    'The mysterious fox',
-    'The gentle butterfly'
-];
+    'The Agile Antelope',
+    'The Playful Platypus',
+    'The Daring Dingo',
+    'The Wandering Wallaby',
+    'The Swift Seahorse',
+    'The Enchanting Eel',
+    'The Vibrant Vulture',
+    'The Whimsical Warthog',
+    'The Mystical Meerkat',
+    'The Jubilant Jellyfish',
+    'The Artistic Aardvark',
+    'The Harmonious Hummingbird',
+    'The Radiant Rhinoceros',
+    'The Cheerful Chimpanzee',
+    'The Luminous Lemming'
+];;
 
-// Function to generate a random spirit animal
+// Function to generate a random spirit animal name
 function generateSpiritAnimal() {
-    const randomIndex = Math.floor(Math.random() * spiritAnimals.length);
-    return spiritAnimals[randomIndex];
+    const userName = nameInput.value.trim();
+    if (userName !== '') {
+        const randomIndex = Math.floor(Math.random() * spiritAnimals.length);
+        const spiritAnimal = spiritAnimals[randomIndex];
+        spiritAnimalTag.textContent = `${userName} - ${spiritAnimal}`;
+    }
 }
 
-// event listener for the "Generate Spirit Animal" button
-generateButton.addEventListener('click', function () {
-    const name = nameInput.value.trim();
-    const selectedEvent = eventOption.value;
+//New Spirit Animal://
+// Function to generate a new spirit animal on button click
+generateButton.addEventListener('click', generateSpiritAnimal);
 
-    if (name === '') {
-        alert('Please enter your name.');
-    } else {
-        if (selectedEvent === 'click') {
-            const spiritAnimal = generateSpiritAnimal();
-            spiritAnimalResult.textContent = `Name: ${name}: ${name} - ${spiritAnimal}`;
-        }
-    }
-});
 
-// Event listener for input field (hover)
-nameInput.addEventListener('mouseenter', function () {
-    const name = nameInput.value.trim();
-    const selectedEvent = eventOption.value;
+// Event Types - Optional and Tricky://
 
-    if (selectedEvent === 'hover') {
-        if (name === '') {
-            alert('Please enter your name.');
-        } else {
-            const spiritAnimal = generateSpiritAnimal();
-            spiritAnimalResult.textContent = `Name: ${name}: ${name} - ${spiritAnimal}`;
-        }
-    }
-});
+// Function to generate a new spirit animal on input hover
+nameInput.addEventListener('mouseover', generateSpiritAnimal);
 
-// Event listener for input field (text input)
-nameInput.addEventListener('input', function () {
-    const name = nameInput.value.trim();
-    const selectedEvent = eventOption.value;
-
-    if (selectedEvent === 'input') {
-        if (name === '') {
-            alert('Please enter your name.');
-        } else {
-            const spiritAnimal = generateSpiritAnimal();
-            spiritAnimalResult.textContent = `Name: ${name}: ${name} - ${spiritAnimal}`;
-        }
-    }
-});
-
-// event listener for button "Generate New Spirit Animal"
-newAnimalButton.addEventListener('click', function () {
-    const name = nameInput.value.trim();
-    const selectedEvent = eventOption.value;
-
-    if (name === '') {
-        alert('Please enter your name.');
-    } else {
-        const spiritAnimal = generateSpiritAnimal();
-        spiritAnimalResult.textContent = `Name: ${name}: ${name} - ${spiritAnimal}`;
-    }
-});
+// Function to generate a new spirit animal on input text change
+nameInput.addEventListener('input', generateSpiritAnimal);

@@ -70,3 +70,4 @@ window.getAvailableProducts = function() {
   
     return availableProducts;
   };
+  
