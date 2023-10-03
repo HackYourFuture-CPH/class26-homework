@@ -48,9 +48,9 @@ function generateSpiritAnimal() {
         return;
     }
 
-const spiritAnimal = getRandomSpiritAnimal();
-const result = `${userName} - ${spiritAnimal}`;
-getResult.textContent = result;
+    const spiritAnimal = getRandomSpiritAnimal();
+    const result = `${userName} - ${spiritAnimal}`;
+    getResult.textContent = result;
 }
 
-
+generateBtn.addEventListener("click", generateSpiritAnimal);
