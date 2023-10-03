@@ -7,8 +7,8 @@ function getFullname(firstname, surname) {
 }
 
 // Call the getFullname function and assign the results to variables
-var fullname1 = getFullname("Benjamin", "Hughes");
-var fullname2 = getFullname("John", "Smith");
+const fullname1 = getFullname("Benjamin", "Hughes");
+const fullname2 = getFullname("John", "Smith");
 
 // Log out the two fullname variables
 console.log(fullname1); // "Benjamin Hughes"
