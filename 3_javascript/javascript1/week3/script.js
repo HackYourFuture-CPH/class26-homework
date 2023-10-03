@@ -50,13 +50,13 @@ const seriesDurations = [
       minutes: 0,
     },
     {
-      title: "friends",
+      title: "Friends",
       days: 3,
       hours: 14,
       minutes: 0,
     },
     {
-      title: "the wire",
+      title: "The wire",
       days: 2,
       hours: 12,
       minutes: 0,
@@ -113,11 +113,11 @@ function getNote(id) {
   
 const undefinedNote = getNote();
 const firstNote = getNote(1);
-const fnotFoundNote = getNote(3);
+const notFoundNote = getNote(3);
 
 console.log(undefinedNote);
 console.log(firstNote); // {content: 'Pick up groceries', id: 1}
-console.log(fnotFoundNote);
+console.log(notFoundNote);
 
 //Log out notes
 function logOutNotesFormatted() {
