@@ -39,39 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const generateButton = document.getElementById("generateButton");
   const spiritAnimalElement = document.getElementById("spiritAnimal");
   const newAnimalButton = document.getElementById("newAnimalButton");
-  const eventSelector = document.getElementById("eventSelector");
   const generateEventButton = document.getElementById("generateEventButton");
 
-  generateButton.addEventListener("click", function () {
-    generateSpiritAnimal();
-  });
+  generateButton.addEventListener("click", generateSpiritAnimal());
 
-  newAnimalButton.addEventListener("click", function () {
-    generateSpiritAnimal();
-  });
+  newAnimalButton.addEventListener("click", generateSpiritAnimal());
 
-  generateEventButton.addEventListener("click", function () {
-    const selectedEvent = eventSelector.value;
-    if (selectedEvent === "click") {
-      generateSpiritAnimal();
-    }
-  });
-
-  document.getElementById("nameInput").addEventListener("input", function () {
-    const selectedEvent = eventSelector.value;
-    if (selectedEvent === "input") {
-      generateSpiritAnimal();
-    }
-  });
-
-  document
-    .getElementById("nameInput")
-    .addEventListener("mouseover", function () {
-      const selectedEvent = eventSelector.value;
-      if (selectedEvent === "hover") {
-        generateSpiritAnimal();
-      }
-    });
+  generateEventButton.addEventListener("click", generateSpiritAnimal());
 
   function generateSpiritAnimal() {
     const name = document.getElementById("nameInput").value;
