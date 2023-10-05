@@ -1,26 +1,28 @@
-console.log('Script loaded');
+
+
+console.log("Script loaded");
 
 const products = getAvailableProducts();
-const productsUl = document.querySelector('section.products ul');
-console.log(productsUl);
+console.log(products);
+
+
+const ul = document.querySelector("#productList")
 
 function renderProducts(products) {
-    products.forEach(product => {
-        const li = document.createElement('li');
+products.forEach(product => {
+    const li = document.createElement("li");
+    li.innerHTML = 
+     `<strong>${product.name}</strong><br>
+     Price: ${product.price}<br>
+     Rating: ${product.rating}`;
 
-        let shipsToHTML = '';
-        product.shipsTo.forEach(country => shipsToHTML += `<li>${country}</li>`);
+     ul.appendChild(li);
+});
+};
 
-        li.innerHTML = `
-            <ul>
-                <li>${product.name}</li>
-                <li>${product.price}</li>
-                <li>${product.rating}</li>
-                <ul class="ships-to">${shipsToHTML}</ul>
-            </ul>
-        `;
-        productsUl.appendChild(li);
-    });
-}
 
-renderProducts(products);
+renderProducts(products); 
+
+//2.1. Filter product
+
+
