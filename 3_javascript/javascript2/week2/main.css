@@ -1,18 +1,42 @@
-body {
-    font-family: "Open Sans", sans-serif;
-    background-color: #F9FBFD;
-}
 
-* {
-    box-sizing: border-box;
-}
-
-body, h1, h2 {
-    margin: 0;
-}
-
-ul {
-    list-style-type: none;
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
+    align-items: center;
+    text-align: center;
+}
+
+#searchInput, #highRate, #maxPriceInput {
+    display: inline-block;
+    width: 50%;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    border: 1px;
+    padding: 5px 0;
+    margin: 0;
+    margin-top: 30px;
+    line-height: 1;
+    background-color: white;
+    transition: 0.15s ease margin-top;
+    cursor: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+#highRate {
+    margin-bottom: 30px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+li {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
 }
