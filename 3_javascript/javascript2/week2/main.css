@@ -41,7 +41,7 @@ ul {
     border-radius: 5px;
     background: #f8f5f5;
 }
-#searchButton {
+#searchButton , #clearFiltersButton{
     border-radius: 7px;
     padding: 6px 12px;
     background: rgb(66, 150, 66);

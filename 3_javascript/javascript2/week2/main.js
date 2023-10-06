@@ -50,4 +50,24 @@ const searchButton = document.getElementById("searchButton");
       });
 
       renderProducts(filteredProducts);
+
+      // some extra feature
+
+      const clearFiltersButton = document.getElementById('clearFiltersButton');
+      clearFiltersButton.addEventListener('click', clearFilters);
+
+      function clearFilters() {
+        const searchInput = document.getElementById('searchInput');
+        const priceInput = document.getElementById('priceInput');
+        searchInput.value = '';
+        priceInput.value = ''; 
+        filteredProducts(products); 
+        } ;
+      
+        clearFilters();
+
     });
+
+
+  
+
