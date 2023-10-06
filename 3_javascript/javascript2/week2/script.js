@@ -44610,3 +44610,79 @@ const movies = [
     running_times: 5580,
   },
 ];
+
+//short movie title
+const shortTitleMovies = movies
+  .filter((movie) => movie.title.length <= 7)
+  .map((movie) => movie.title);
+
+console.log(shortTitleMovies);
+
+//long movie titles
+const longTitleMovies = movies
+  .filter((movie) => movie.title.length >= 8)
+  .map((movie) => movie.title);
+
+console.log(longTitleMovies);
+
+//number of movies made between 1980-1989
+const startYear = 1980;
+const endYear = 1989;
+movies.forEach((movie) => {
+  if (movie.year >= startYear && movie.year <= endYear) {
+    console.log(movie.title);
+  }
+});
+
+//The tag is based on the rating
+const moviesBasedOnRating = movies.map((movie) => {
+  let tag;
+  if (movie.rating >= 7) {
+    tag = "Good";
+  } else if (movie.rating >= 4 && movie.rating < 7) {
+    tag = "Average";
+  } else if (movie.rating < 4) {
+    tag = "Bad";
+  }
+  console.log(`${movie.title}'s rating is ${tag}`);
+});
+
+//chaining
+const highRatedMovies = movies
+  .filter((movie) => movie.rating > 7)
+  .map((movie) => movie.rating);
+console.log(highRatedMovies);
+
+//Coun total number of keywords: Surfer, Alien or Benjamin movies //case insensitive?! need some time to study this part in order to find a solution!
+const moviesWithKeyword = movies.filter((movie) => {
+  let totalNumber = 0;
+  if (movie.title.includes("Surfer")) {
+    totalNumber++;
+  } else if (movie.title.includes("Alien")) {
+    totalNumber++;
+  } else if (movie.title.includes("Benjamin")) {
+    totalNumber++;
+  }
+  return totalNumber;
+});
+
+console.log(moviesWithKeyword);
+
+//Dublicated words
+function hasDuplicatedWord(title) {
+  const words = title.split(" ");
+  for (let i = 0; i < words.length; i++) {
+    for (let j = i + 1; j < words.length; j++) {
+      if (words[i] === words[j]) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+const moviesWithDuplicatedWord = movies
+  .filter((movie) => hasDuplicatedWord(movie.title))
+  .map((movie) => movie.title);
+
+console.log(moviesWithDuplicatedWord);
