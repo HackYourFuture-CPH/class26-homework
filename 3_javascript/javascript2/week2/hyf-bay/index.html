@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyfBay - Buy the okay'est products</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="wrapper">
+                <h1>HyfBay</h1>
+                <h2>- Buy the okay'est products</h2>
+            </div>
+        </header>
+        <section class="table-view-control">
+            <div class="search">
+                <label for="product-search">What are you looking for?</label>
+                <input type="text" id="product-search" placeholder="Search for products">
+            </div>
+            <div class="sort">
+                <label for="sort-select">Sort:</label>
+                <select id="sort-select">
+                    <option value="cheap">Cheap first</option>
+                    <option value="expensive">Expensive first</option>
+                    <option value="name">Name</option>
+                </select>
+            </div>
+            <div class="filters">
+                <div class="country">
+                    <label for="country-select">Ships to</label>
+                    <select id="country-select">
+                        <option value="all">All</option>
+                        <option value="denmark">Denmark</option>
+                        <option value="sweden">Sweden</option>
+                        <option value="norway">Norway</option>
+                        <option value="germany">Germany</option>
+                        <option value="iceland">Iceland</option>
+                        <option value="england">England</option>
+                    </select>
+                </div>
+                <div class="price">
+                    <input type="range" id="price-range" name="price-range" min="0" max="10000">
+                    <label for="price-range">Max Price:</label>
+                </div>
+            </div>
+        </section>
+        <section class="products">
+            <ul id="product-list"></ul>
+        </section>
+        <section class="cart">
+            <h2>Your shopping cart</h2>
+            <div class="total">
+                <p>Total price: <span id="cart-total"></span> DKK</p>
+            </div>
+            <ul id="cart-items"></ul>
+        </section>
+    </main>
+    <script src="hyfBayHelpers.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
