@@ -50,8 +50,8 @@ function calculateHousePrice(volumeInMeters,gardenSizeInM2 ) {
   let peterHouseVolume = peterHouse.width * peterHouse.depth * peterHouse.height ;
   let juliaHouseVolume = juliaHouse.width * juliaHouse.depth * juliaHouse.height ;
   
-  let peterExpectedPrice = calculateHousePrice(peterHouseVolume, peterHouse.garden);
-  let juliaExpectedPrice = calculateHousePrice(juliaHouseVolume, juliaHouse.garden);
+  const peterExpectedPrice = calculateHousePrice(peterHouseVolume, peterHouse.garden);
+  const juliaExpectedPrice = calculateHousePrice(juliaHouseVolume, juliaHouse.garden);
   
   if (peterHouse.price > peterExpectedPrice) {
    console.log("Peter is paying too low.");
