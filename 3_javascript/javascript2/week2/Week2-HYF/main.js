@@ -32,7 +32,7 @@ function filterProducts(keyword) {
 const maxPriceInput = document.getElementById("maxPriceInput");
 
 maxPriceInput.addEventListener("input", () => {
-  const maxPrice = parseFloat(maxPriceInput.value); // Get the maximum price as a number
+  const maxPrice = parseFloat(maxPriceInput.value);
   const filteredProducts = filterProductsByMaxPrice(maxPrice);
   updateDisplayedProducts(filteredProducts);
 });
