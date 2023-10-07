@@ -11,7 +11,7 @@ function renderProducts(products) {
     ul.appendChild(li);
   });
 }
-renderProducts(products);
+console.log(renderProducts(products));
 
 //filter by title
 const searchInput = document.querySelector(".search input");
