@@ -137,8 +137,6 @@ const jokes = [
     "What's orange and sounds like a parrot? A carrot!",
 ];
 
-
-
 function getReply(command) {
     if (command.startsWith("Hello my name is ")) {
         const newName = command.replace("Hello my name is ", ""); // if someone writes this twice
@@ -207,3 +205,7 @@ console.log(getReply("Hello my name is Benjamin")); // "We already know each oth
 console.log(getReply("What is my name?")); // "Your name is Benjamin"
 console.log(getReply("Add fishing to my todo")); // "fishing added to your todo"
 console.log(getReply("Tell me a joke"));
+console.log(getReply("What is 3 + 3")); // "6"
+console.log(getReply("What is 4 * 12")); // "48"
+console.log(getReply("What is 3 + 3")) //again
+console.log(getReply("what is 3 + 3")) //again
