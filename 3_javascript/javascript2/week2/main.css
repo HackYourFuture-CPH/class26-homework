@@ -1,0 +1,84 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f9fbfd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.Okay-products {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+body,
+h1,
+h2 {
+  margin: 0;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: cadetblue;
+}
+
+.calendar-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: absolute;
+  left: 10%;
+  top: 16%;
+  transform: translate(-45%, -50%);
+  width: 230px;
+  height: 150px;
+  animation: rotate 10s linear infinite;
+}
+
+.month {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.input-field {
+  border: 1px solid #3333339f;
+  width: 180px;
+  border-radius: 10px;
+}
+
+.input-field::placeholder {
+  color: #999;
+  font-style: italic;
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 2em;
+}
+
+.content {
+  padding-bottom: 50px;
+}
+
+.footer {
+  margin-top: 7px;
+  background-color: #3333339f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
