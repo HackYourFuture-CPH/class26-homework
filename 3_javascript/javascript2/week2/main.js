@@ -52,4 +52,4 @@ maximumPrice.addEventListener('input', function () {
 
 //2.5 the code is in the css file
 
-//2.6 can't get find my way around it SOORY!!
+//2.6 can't get/find my way around it SOORY!!
