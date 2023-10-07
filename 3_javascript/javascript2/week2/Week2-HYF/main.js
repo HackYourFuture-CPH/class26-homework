@@ -21,11 +21,21 @@ searchInput.addEventListener("input", () => {
   updateDisplayedProducts(filteredProducts);
 });
 
-//filter products based on the search keyword
+//Searching for products
 function filterProducts(keyword) {
   return products.filter((product) => {
-    return product.title.toLowerCase().includes(keyword);
+    return product.title.includes(keyword);
   });
 }
 
-//update the displayed products
+//Filter products based on max price
+const maxPriceInput = document.getElementById("maxPriceInput");
+
+maxPriceInput.addEventListener("input", () => {
+  const maxPrice = parseFloat(maxPriceInput.value); // Get the maximum price as a number
+  const filteredProducts = filterProductsByMaxPrice(maxPrice);
+  updateDisplayedProducts(filteredProducts);
+});
+function filterProductsByMaxPrice(maxPrice) {
+  return products.filter((product) => product.price <= maxPrice);
+}
