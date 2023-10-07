@@ -1,7 +1,7 @@
 //Age-ify (A future age calculator)
 
-const yearOfBirth = "1997";
-const yearFuture = "2057";
+const yearOfBirth = 1997;
+const yearFuture = 2057;
 const age = yearFuture- yearOfBirth;
 console.log(`you will be in ${age} years old in ${yearFuture}`);
 
@@ -9,65 +9,61 @@ console.log(`you will be in ${age} years old in ${yearFuture}`);
 //Goodboy-Oldboy (A dog age calculator)
 
 
-const dogYearOfBirth = 2017;
+const dogYearOfBirth = 2015;
 const dogYearFuture = 2027;
 const shouldShowResultInDogYears = true;
+
 const dogAgeInHumanYears = dogYearFuture - dogYearOfBirth;
 const dogAgeInDogYears = dogAgeInHumanYears * 7;
+
+let resultString;
+
 if (shouldShowResultInDogYears) {
-  console.log(
-    `Your dog will be ${dogAgeInDogYears} dog years old in ${dogYearFuture}`
-  );
+  resultString = `Your dog will be ${dogAgeInDogYears} dog years old in ${dogYearFuture}`;
 } else {
-  console.log(
-    `Your dog will be ${dogAgeInHumanYears} human years old in ${dogYearFuture}`
-  );
+  resultString = `Your dog will be ${dogAgeInHumanYears} human years old in ${dogYearFuture}`;
 }
+
+console.log(resultString);
 
 
 //Housey pricey (A house price estimator)
 
-function calculateHousePrice(volumeInMeters,gardenSizeInM2 ) {
+function calculateHousePrice(volumeInMeters, gardenSizeInM2) {
   return volumeInMeters * 2.5 * 1000 + gardenSizeInM2 * 300;
-  }
-  
-  let peterHouse = {
-      width : 8,
-      depth : 10,
-      height :10,
-      garden : 100,
-      price : 2500000
-  };
-  
-  let juliaHouse = {
-      width : 5,
-      depth : 11,
-      height : 8,
-      garden : 70,
-      price : 1000000
-  };
-  
-  let peterHouseVolume = peterHouse.width * peterHouse.depth * peterHouse.height ;
-  let juliaHouseVolume = juliaHouse.width * juliaHouse.depth * juliaHouse.height ;
-  
-  const peterExpectedPrice = calculateHousePrice(peterHouseVolume, peterHouse.garden);
-  const juliaExpectedPrice = calculateHousePrice(juliaHouseVolume, juliaHouse.garden);
-  
-  if (peterHouse.price > peterExpectedPrice) {
-   console.log("Peter is paying too low.");
-  } else if (peterHouse.price < peterExpectedPrice){
-      console.log("Peter is paying too high");
-  } else {
-      console.log("Peter is paying accurate and correct" )
-  }
-  
-  if (juliaHouse.price > juliaExpectedPrice) {
-      console.log("Julia is paying too low.");
-     } else if (juliaHouse.price < juliaExpectedPrice){
-         console.log("Julia is paying too high");
-     } else {
-         console.log("Julia is paying accurate and correct" )
-     }
+}
+
+const peterHouseVolume = 8 * 10 * 10;
+const peterGardenSize = 100;
+const peterExpectedPrice = calculateHousePrice(
+  peterHouseVolume,
+  peterGardenSize
+);
+const peterActualPrice = 2500000;
+
+const juliaHouseVolume = 5 * 11 * 8;
+const juliaGardenSize = 70;
+const juliaExpectedPrice = calculateHousePrice(
+  juliaHouseVolume,
+  juliaGardenSize
+);
+const juliaActualPrice = 1000000;
+
+if (peterActualPrice < peterExpectedPrice) {
+  console.log("Peter is paying too little for the house.");
+} else if (peterActualPrice > peterExpectedPrice) {
+  console.log("Peter is paying too much for the house.");
+} else {
+  console.log("Peter is paying the expected price for the house.");
+}
+
+if (juliaActualPrice < juliaExpectedPrice) {
+  console.log("Julia is paying too little for the house.");
+} else if (juliaActualPrice > juliaExpectedPrice) {
+  console.log("Julia is paying too much for the house.");
+} else {
+  console.log("Julia is paying the expected price for the house.");
+}
 
 
      //Ez Namey (Startup name generator) Optional 

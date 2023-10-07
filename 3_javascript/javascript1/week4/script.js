@@ -6,7 +6,7 @@ let timer;
 
 function getReply(command) {
   if (command.startsWith("Hello my name is ")) {
-    
+
     const name = command.replace("Hello my name is ", "");
     userName = name;
     return `Nice to meet you ${userName}`;
@@ -18,14 +18,14 @@ function getReply(command) {
     }
   } else if (command.startsWith("Add ")) {
     if (command.includes("to my todo")) {
-      
+
       const todoItem = command.replace("Add ", "").replace(" to my todo", "");
       todoList.push(todoItem);
       return `${todoItem} added to your todo`;
     }
   } else if (command.startsWith("Remove ")) {
     if (command.includes("from my todo")) {
-      
+
       const todoItem = command.replace("Remove ", "").replace(" from my todo", "");
       const index = todoList.indexOf(todoItem);
       if (index !== -1) {
@@ -48,14 +48,14 @@ function getReply(command) {
     const options = { year: "numeric", month: "long", day: "numeric" };
     return currentDate.toLocaleDateString(undefined, options);
   } else if (command.includes("Set a timer for")) {
-    
+
     const time = parseInt(command.match(/\d+/)[0]);
     timer = setTimeout(() => {
       console.log("Timer done");
     }, time * 60000); // Convert minutes to milliseconds
     return `Timer set for ${time} minutes`;
   } else if (command.includes("What is ")) {
-    
+
     try {
       const result = eval(command.replace("What is ", ""));
       return result;
