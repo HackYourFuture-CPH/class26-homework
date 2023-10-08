@@ -1,6 +1,5 @@
-console.log("Script loaded");
-
 const products = getAvailableProducts();
+
 function renderProducts(products) {
   const ul = document.querySelector("#product-list");
   products.forEach((product) => {
@@ -11,31 +10,32 @@ function renderProducts(products) {
     ul.appendChild(li);
   });
 }
-console.log(renderProducts(products));
 
-//filter by title
+//rendering of products
+renderProducts(products);
+
+// Filter by title
 const searchInput = document.querySelector(".search input");
 searchInput.addEventListener("input", () => {
   const searchKeyword = searchInput.value.toLowerCase();
   const filteredProducts = filterProducts(searchKeyword);
-  updateDisplayedProducts(filteredProducts);
+  renderProducts(filteredProducts);
 });
 
-//Searching for products
-function filterProducts(keyword) {
-  return products.filter((product) => {
-    return product.title.includes(keyword);
-  });
-}
-
-//Filter products based on max price
-const maxPriceInput = document.getElementById("maxPriceInput");
-
+// Filter products based on max price
+const maxPriceInput = document.getElementById("start");
 maxPriceInput.addEventListener("input", () => {
   const maxPrice = parseFloat(maxPriceInput.value);
   const filteredProducts = filterProductsByMaxPrice(maxPrice);
-  updateDisplayedProducts(filteredProducts);
+  renderProducts(filteredProducts);
 });
+
+function filterProducts(keyword) {
+  return products.filter((product) => {
+    return product.title.toLowerCase().includes(keyword);
+  });
+}
+
 function filterProductsByMaxPrice(maxPrice) {
   return products.filter((product) => product.price <= maxPrice);
 }

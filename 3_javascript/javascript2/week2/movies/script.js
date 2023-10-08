@@ -44627,8 +44627,16 @@ const highRatedMovies = movies
   .map((movie) => movie.rating);
 console.log(highRatedMovies);
 
-//Coun total number of keywords: Surfer, Alien or Benjamin movies //case insensitive?! need some time to study this part in order to find a solution!
+//Coun total number of keywords: Surfer, Alien or Benjamin movies //case insensitive?
+const keywords = ["Surfer", "Alien", "Benjamin"];
 const moviesWithKeyword = movies.filter((movie) => {
+  const title = movie.title.toLowerCase();
+  return keywords.some((keyword) => title.includes(keyword.toLowerCase()));
+});
+
+console.log(moviesWithKeyword);
+
+/*const moviesWithKeyword = movies.filter((movie) => {
   let totalNumber = 0;
   if (movie.title.includes("Surfer")) {
     totalNumber++;
@@ -44641,19 +44649,30 @@ const moviesWithKeyword = movies.filter((movie) => {
 });
 
 console.log(moviesWithKeyword);
+*/
 
-//Dublicated words
+//Dublicated words - Case in sensetive
 function hasDuplicatedWord(title) {
   const words = title.split(" ");
   for (let i = 0; i < words.length; i++) {
     for (let j = i + 1; j < words.length; j++) {
-      if (words[i] === words[j]) {
+      if (words[i].toUpperCase() === words[j].toUpperCase()) {
         return true;
       }
     }
   }
   return false;
 }
+/*
+const duplicatedWordMovies = movies
+  .filter((movie) =>
+    movie.title
+      .split(" ")
+      .some((word, index, words) => words.indexOf(word) !== index)
+  )
+  .map((movie) => movie.title);
+console.log(duplicatedWordMovies);
+*/
 
 const moviesWithDuplicatedWord = movies
   .filter((movie) => hasDuplicatedWord(movie.title))
