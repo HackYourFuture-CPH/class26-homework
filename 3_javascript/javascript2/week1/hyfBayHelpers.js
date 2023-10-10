@@ -1,6 +1,6 @@
 /* DONT MODIFY ANY OF THIS CODE!!!*/
 
-window.getAvailableProducts = function() {
+window.getAvailableProducts = function () {
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -15,32 +15,32 @@ window.getAvailableProducts = function() {
 
   function getRandomProductname() {
     const preWords = [
-      "Used",
-      "Fantastic",
+      'Used',
+      'Fantastic',
       '"Used"',
-      "Broken",
-      "Beautiful",
-      "Wet",
-      "Green",
-      "Sloppy",
-      "Dirty"
+      'Broken',
+      'Beautiful',
+      'Wet',
+      'Green',
+      'Sloppy',
+      'Dirty',
     ];
     const productNames = [
-      "Carrot",
-      "Drone",
-      "Giftcard",
-      "Puppy",
-      "Car",
-      "Shirt",
-      "Milk",
-      "Chalk",
-      "Fish fingers",
-      "Socks",
-      "Chocolate",
-      "Toothbrush",
-      "Computer",
-      "Nokia",
-      "Cologne"
+      'Carrot',
+      'Drone',
+      'Giftcard',
+      'Puppy',
+      'Car',
+      'Shirt',
+      'Milk',
+      'Chalk',
+      'Fish fingers',
+      'Socks',
+      'Chocolate',
+      'Toothbrush',
+      'Computer',
+      'Nokia',
+      'Cologne',
     ];
 
     let chosenProductName = getRandomItem(productNames);
@@ -64,7 +64,7 @@ window.getAvailableProducts = function() {
       id: `${name}${getRandomInt(0, 100000)}`,
       name,
       price: getRandomInt(0, 10000),
-      rating: getRandomInt(1, 10)
+      rating: getRandomInt(1, 10),
     };
   });
 

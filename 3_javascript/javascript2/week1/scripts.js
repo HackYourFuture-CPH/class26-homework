@@ -27,7 +27,6 @@ countDanishLetters(danishString);
 
 const danishString2 = 'Blå grød med røde bær';
 countDanishLetters(danishString2);
- 
 
 /// 2. Spirit animal name generator ////
 
@@ -50,7 +49,6 @@ const spiritAnimalString = [
 
 generateButton.addEventListener('click', generateSpiritAnimal);
 
-
 const triggerEvent = 'inputHover';
 function generateSpiritAnimal() {
   const userName = nameInput.value.trim();
@@ -69,4 +67,3 @@ nameInput.addEventListener('mouseenter', () => {
     generateSpiritAnimal();
   }
 });
-
