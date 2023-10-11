@@ -9,12 +9,17 @@ setTimeout (function (){
 // 2. Create a function that takes 2 parameters: delay and stringToLog. Calling this function should log out 
 // the stringToLog after delay seconds. Call the function you have created with some different arguments.
 
-function (delay, stringToLog) {
-
+function logAfterDelay(delay, stringToLog) {
+    const firstFunction = (delay) => {
+        console.log(stringToLog + ' logged after ' + delay + ' seconds');
+    };
+    setTimeout(firstFunction, delay * 1000, delay);
 }
 
-console.log (function(5, "loaded in 5 seconds"));
-console.log (function(3, "loaded in 3 seconds"));
+logAfterDelay(3, "This string"); // This will log "This string logged after 3 seconds"
+logAfterDelay(5, "Content of this string"); // This will log "Cntent of this string logged after 5 seconds"
+
+
 
 // 3. Create a button in html. When clicking this button, use the function you created in the previous task to log out 
 // the text: Called after 5 seconds 5 seconds after the button is clicked.
