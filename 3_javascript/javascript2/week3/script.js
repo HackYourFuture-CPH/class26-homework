@@ -51,4 +51,22 @@ planetLogFunction(bluePlanet);
 planetLogFunction(redPlanet);
 
 
+// 5. Create a button, When clicked the location should be logged out
+const button2 = document.getElementById('loc');
+
+button2.addEventListener('click', getLocation);
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    button2.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  button2.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+}
+
 }
