@@ -28,7 +28,7 @@ document.addEventListener("keydown", (event) => {
       score++;
       sCount++;
     } else if (event.key === "B" || event.key === "b") {
-      bCount += 2; // Bonus points
+      bCount += 2;
     }
     updateGameDisplay();
   }
@@ -86,4 +86,23 @@ function determineWinner() {
   } else {
     winnerDisplay.textContent = "It's a draw!";
   }
+}
+
+//3.3 Confetti
+function triggerConfetti() {
+  const confettiSettings = {
+    target: "confetti-canvas",
+    max: 100,
+  };
+
+  const confetti = new ConfettiGenerator(confettiSettings);
+  confetti.render();
+}
+
+if (lCount > sCount) {
+  winnerDisplay.textContent = "'L' is the winner!";
+  triggerConfetti();
+} else if (sCount > lCount) {
+  winnerDisplay.textContent = "'S' is the winner!";
+  triggerConfetti();
 }
