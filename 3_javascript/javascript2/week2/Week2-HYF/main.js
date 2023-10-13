@@ -62,6 +62,4 @@ function renderProducts(products) {
     productsUl.appendChild(li);
   });
 }
-
-// Initial rendering of all products
 renderProducts(products);
