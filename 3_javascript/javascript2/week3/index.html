@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delayed Log Button</title>
+</head>
+<body>
+    <button id="delayedLogButton">Click Me</button>
+    <script>
+        function delayedLog() {
+            setTimeout(function() {
+                console.log("Called after 5 seconds 5 seconds after the button is clicked.");
+            }, 5000);
+        }
+
+        document.getElementById("delayedLogButton").addEventListener("click", delayedLog);
+    </script>
+    
+    <button id="logLocationButton">Log location</button>
+    <p id="locationInfo"></p>
+    <script>
+        // Function to log the user's location
+        function logLocation() {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    const locationInfo = `Latitude: ${latitude}, Longitude: ${longitude}`;
+                    document.getElementById("locationInfo").textContent = locationInfo;
+                    console.log(locationInfo);
+                });
+            } else {
+                document.getElementById("locationInfo").textContent = "Geolocation is not available in this browser.";
+            }
+        }
+
+        // Add a click event listener to the button
+        document.getElementById("logLocationButton").addEventListener("click", logLocation);
+    </script>
+    <script src="s2-w3.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
