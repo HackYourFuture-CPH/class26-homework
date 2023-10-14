@@ -61,7 +61,7 @@ console.log(shortMovieTitle);
 
 //Create an array of movie titles with long movie titles
 
-const longMovieTitle = movies.filter((movie) => movie.title.length > 10);
+const longMovieTitle = movies.filter((movie) => movie.title.length >= 10);
 
 console.log(longMovieTitle);
 
@@ -90,9 +90,12 @@ console.log(higherRatedMovies);
 //Count the total number of movies containing any of following keywords: Surfer, Alien or Benjamin. 
 //So if there were 3 movies that contained Surfer, 1 with Alien and 2 with Benjamin, you would return 6. Can you make sure the search is case insensitive?
 
-const moviesWithTheseWords = movies.filter((movie) => movie.title.includes( "Bangkok") || movie.title.includes( "Surfer") || movie.title.includes( "Alien")|| movie.title.includes(  "Benjamin") );
+const keywords = ["bangkok", "surfer", "alien", "benjamin"];
 
-console.log(moviesWithTheseWords); 
+const moviesWithTheseWords = movies.filter((movie) => keywords.some((keyword) => movie.title.toLowerCase().includes(keyword)) 
+);
+console.log(moviesWithTheseWords);
+
 
 //Create an array of movies where a word in the title is duplicated. Fx "Star Wars: The Clone Wars" the word Wars is duplicated. 
 //Here are some madeup examples of movies with duplicated words in the title: "The three men and the pistol", "Chase three - The final chase"
