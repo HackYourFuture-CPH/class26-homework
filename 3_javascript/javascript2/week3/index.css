@@ -1,0 +1,55 @@
+h1 {
+  color: dimgrey;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  justify-content: center;
+}
+
+#gameButton,
+#restart {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: lightgreen;
+  font-size: 12px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: aliceblue;
+  border-radius: 7px;
+  border: 1opx solid;
+  border-color: green;
+  box-shadow: 0rem;
+  margin: auto;
+  margin-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#restart {
+  margin: auto;
+  margin-top: 10px;
+}
+
+#setTime {
+  display: flex;
+  justify-content: space-evenl;
+  border-radius: 6px;
+  margin: auto;
+  padding: 6px;
+}
+
+#sWonContainer,
+#lWonContainer {
+  font-size: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* #lWonContainer {
+  justify-content: flex-end;
+}
+
+#sWonContainer {
+  justify-content: center;
+} */
