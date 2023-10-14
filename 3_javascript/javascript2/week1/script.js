@@ -59,6 +59,7 @@ document.getElementById("generateButton").addEventListener("click", generateSpir
 // 2.2. Setting up the events
 
 
+
 const generateButton = document.getElementById("generateButton");
 const spiritAnimalDiv = document.getElementById("spirit-animal");
 
@@ -89,16 +90,16 @@ function generateSpiritAnimalName() {
 
     
     const randomSpiritAnimal = spiritAnimals[Math.floor(Math.random() * spiritAnimals.length)];
-    const spiritAnimalName = name + " - " + randomSpiritAnimal;
+    const spiritAnimalName = `${name} - ${randomSpiritAnimal}`;
 
-    
-    spiritAnimalDiv.innerText = spiritAnimalName;
+    spiritAnimalDiv.innerText = `Name: ${spiritAnimalName}`;
 }
 
 
 generateButton.addEventListener("click", generateSpiritAnimalName);
 
-//2.3. Spirit animal part
+
+
 
 
 
