@@ -118,3 +118,64 @@ function logBadJoke() {
     console.log(BadJoke)
 }
 jokeCreator(true, logFunnyJoke, logBadJoke)
+
+
+
+//2. Function as a variable
+//--> 2.1
+const myArr = [
+    function function1() {
+        console.log("function1")
+    },
+    function function2() {
+        console.log("function2")
+    },
+    function function3() {
+        console.log("function3")
+    },
+]
+//Iteration with for
+for (let i = 0; i < myArr.length; i++) {
+    myArr[i]()
+}
+
+//Iteration with forEach
+myArr.forEach(function (func) {
+    func();
+});
+
+// Iteration with for of
+for (const func of myArr) {
+    func();
+}
+
+//Iteration with method map
+const results = myArr.map(function (func) {
+    return func();
+});
+
+
+//--> Create function as const and normally.
+
+// Create a function as a const
+const functionAsConst = function () {
+    console.log("This is a function declared as const");
+};
+
+// creating a function normally
+function functionNormally() {
+    console.log("This is a function declared normally");
+};
+
+functionAsConst();
+functionNormally();
+
+
+// --> Create an object that has a key whose value is a function
+const myObject = {
+    keyValueAsFunction: function () {
+        console.log("Value of My function")
+    }
+}
+
+myObject.keyValueAsFunction()
