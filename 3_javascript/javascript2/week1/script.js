@@ -1,41 +1,24 @@
 // --> Find and count the Danish letters
 
-function countDanishLetters(str) {
-    // Create an object to store the number of letters
-    const counts = {
-        total: 0,
-        æ: 0,
-        ø: 0,
-        å: 0,
-    };
+function countDanishLetters(inputString) {
+    const danishLetters = { æ: 0, ø: 0, å: 0 };
 
-    // Using a regular expression to find Danish letters (æ, ø, å) in a string
-    const danishLetters = str.match(/[æøå]/g);
-
-    // If Danish letters are found, count their number
-    if (danishLetters) {
-        danishLetters.forEach((letter) => {
-            counts.total++;
-            counts[letter] = (counts[letter] || 0) + 1;
-        });
-    }
-
-    // Removing zero values
-    for (const key in counts) {
-        if (counts[key] === 0) {
-            delete counts[key];
+    for (let char of inputString.toLowerCase()) { // Convert the character to lowercase to ensure case insensitivity
+        if (danishLetters.hasOwnProperty(char)) {
+            danishLetters[char]++;
         }
     }
 
-    return counts;
+    const totalDanishLetters = Object.values(danishLetters).reduce((acc, count) => acc + count, 0);
+
+    return { total: totalDanishLetters, ...danishLetters };
 }
 
-
 const danishString = "Jeg har en blå bil";
-console.log(countDanishLetters(danishString));
+console.log(countDanishLetters(danishString)); // {total: 1, å: 1}
 
 const danishString2 = "Blå grød med røde bær";
-console.log(countDanishLetters(danishString2));
+console.log(countDanishLetters(danishString2)); // {total: 4, æ: 1, ø: 2, å: 1}
 
 
 
@@ -44,7 +27,7 @@ console.log(countDanishLetters(danishString2));
 
 
 
-
+//--> 2. Spirit animal name generator <--
 
 // --> Getting references to DOM elements
 const nameInput = document.getElementById('nameInput');
@@ -67,59 +50,7 @@ const spiritAnimals = [
     'The gentle butterfly'
 ];
 
-// Function to generate a random spirit animal
-function generateSpiritAnimal() {
-    const randomIndex = Math.floor(Math.random() * spiritAnimals.length);
-    return spiritAnimals[randomIndex];
-}
-
-// event listener for the "Generate Spirit Animal" button
-generateButton.addEventListener('click', function () {
-    const name = nameInput.value.trim();
-    const selectedEvent = eventOption.value;
-
-    if (name === '') {
-        alert('Please enter your name.');
-    } else {
-        if (selectedEvent === 'click') {
-            const spiritAnimal = generateSpiritAnimal();
-            spiritAnimalResult.textContent = `Name: ${name}: ${name} - ${spiritAnimal}`;
-        }
-    }
-});
-
-// Event listener for input field (hover)
-nameInput.addEventListener('mouseenter', function () {
-    const name = nameInput.value.trim();
-    const selectedEvent = eventOption.value;
-
-    if (selectedEvent === 'hover') {
-        if (name === '') {
-            alert('Please enter your name.');
-        } else {
-            const spiritAnimal = generateSpiritAnimal();
-            spiritAnimalResult.textContent = `Name: ${name}: ${name} - ${spiritAnimal}`;
-        }
-    }
-});
-
-// Event listener for input field (text input)
-nameInput.addEventListener('input', function () {
-    const name = nameInput.value.trim();
-    const selectedEvent = eventOption.value;
-
-    if (selectedEvent === 'input') {
-        if (name === '') {
-            alert('Please enter your name.');
-        } else {
-            const spiritAnimal = generateSpiritAnimal();
-            spiritAnimalResult.textContent = `Name: ${name}: ${name} - ${spiritAnimal}`;
-        }
-    }
-});
-
-// event listener for button "Generate New Spirit Animal"
-newAnimalButton.addEventListener('click', function () {
+function handleSpiritAnimalGeneration() {
     const name = nameInput.value.trim();
     const selectedEvent = eventOption.value;
 
@@ -129,4 +60,23 @@ newAnimalButton.addEventListener('click', function () {
         const spiritAnimal = generateSpiritAnimal();
         spiritAnimalResult.textContent = `Name: ${name}: ${name} - ${spiritAnimal}`;
     }
-});
+}
+
+// Event listener for the "Generate Spirit Animal" button
+generateButton.addEventListener('click', handleSpiritAnimalGeneration);
+
+// Event listener for input field (hover)
+nameInput.addEventListener('mouseenter', handleSpiritAnimalGeneration);
+
+// Event listener for input field (text input)
+nameInput.addEventListener('input', handleSpiritAnimalGeneration);
+
+// Event listener for button "Generate New Spirit Animal"
+newAnimalButton.addEventListener('click', handleSpiritAnimalGeneration);
+
+// Function to generate a random spirit animal
+function generateSpiritAnimal() {
+    return spiritAnimals[Math.floor(Math.random() * spiritAnimals.length)];
+}
+
+
