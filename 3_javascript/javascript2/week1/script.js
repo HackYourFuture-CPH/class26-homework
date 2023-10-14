@@ -56,5 +56,51 @@ function generateSpiritAnimalName() {
 
 document.getElementById("generateButton").addEventListener("click", generateSpiritAnimalName);
 
+// 2.2. Setting up the events
+
+
+const generateButton = document.getElementById("generateButton");
+const spiritAnimalDiv = document.getElementById("spirit-animal");
+
+
+function generateSpiritAnimalName() {
+    
+    const nameInput = document.getElementById("nameInput");
+    const name = nameInput.value;
+
+    
+    if (name.trim() === "") {
+        alert("Please enter your name before generating your spirit animal name.");
+        return;
+    }
+
+    const spiritAnimals = [
+        "The Fullmoon Wolf",
+        "The Wise Owl",
+        "The Mystic Panther",
+        "The Majestic Eagle",
+        "The Graceful Swan",
+        "The Fierce Tiger",
+        "The Playful Dolphin",
+        "The Gentle Gazelle",
+        "The Mysterious Fox",
+        "The Loyal Dog"
+    ];
+
+    
+    const randomSpiritAnimal = spiritAnimals[Math.floor(Math.random() * spiritAnimals.length)];
+    const spiritAnimalName = name + " - " + randomSpiritAnimal;
+
+    
+    spiritAnimalDiv.innerText = spiritAnimalName;
+}
+
+
+generateButton.addEventListener("click", generateSpiritAnimalName);
+
+//2.3. Spirit animal part
+
+
+
 
 
