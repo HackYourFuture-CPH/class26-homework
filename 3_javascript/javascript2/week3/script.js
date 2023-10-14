@@ -1,6 +1,5 @@
 console.log("It's homework time");
 
-
 // 1. & 2.
 domListener();
 
@@ -60,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function (){
            navigator.geolocation.getCurrentPosition(function(position) {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
-            locationOutput.innerText = `This is the latitide : ${latitude}  This is the longitude: ${longitude} :` // how to make it in 2 different line ?
+            locationOutput.innerText = `This is the latitide : ${latitude}  This is the longitude: ${longitude}` // how to make it in 2 different line ?
            })
        }
     }
@@ -103,6 +102,72 @@ document.addEventListener("click", function(){
 //9.
 
 function jokeCreator (shouldTellFunnyJoke, logFunnyJoke, logBadJoke) {
-     
+     if (shouldTellFunnyJoke === true) {
+        logFunnyJoke()
+     } else { 
+        logBadJoke()
+     }
 }
+
+function logFunnyJoke () {
+    console.log("What is the area at the Danish/German border called? The DaneGer zone!")
+}
+
+function logBadJoke () {
+    console.log("If you go to a Scandinavian bakery you could Finnish a Swedish Danish. Norway I'd make this up!")
+}
+
+jokeCreator(true, logBadJoke, logFunnyJoke);
+jokeCreator(false, logBadJoke, logFunnyJoke);
+
+
+//2. Function as a variable
+//1. (Create an array with 3 items. All items should be functions. Iterate through the array and call all the functions.)
+const functionArray = [
+    function item1 () {
+        console.log("Hello function array 1")
+    },
+    function item2 () {
+        console.log("Hello function array 2")
+    },
+    function item3 () {
+        console.log("Hello function array 3")
+    }
+]
+
+for (let index = 0; index < functionArray.length; index++) {
+    const element = functionArray[index];
+    element()
+}
+
+//2. (Create a function as a const and try creating a function normally. Call both functions.)
+const firstFunction = function () {
+    return 5  ; 
+}
+
+function simpleFunction() {
+return 10 ;
+}
+
+const first = firstFunction();
+const second = simpleFunction();
+
+console.log(first);
+console.log(second);
+
+//3. (Create an object that has a key whose value is a function. Try calling this function.)
+const valueFunction = function ( message) {
+    console.log(message)
+}
+
+const obj = {valueFunction : "I love coding"}
+
+valueFunction(obj.valueFunction)
+
+//3. The fastest presser in this realm
+
+
+
+
+
 
