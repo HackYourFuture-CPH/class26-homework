@@ -2,38 +2,38 @@
 function countDanishLetters(inputString) {
     const danishLetters = "æøå";
     const letterCounts = {};
-  
+
     for (let i = 0; i < inputString.length; i++) {
-      const char = inputString[i];
-      if (danishLetters.includes(char)) {
-        if (letterCounts[char]) {
-          letterCounts[char]++;
-        } else {
-          letterCounts[char] = 1;
+        const char = inputString[i];
+        if (danishLetters.includes(char)) {
+            if (letterCounts[char]) {
+                letterCounts[char]++;
+            } else {
+                letterCounts[char] = 1;
+            }
         }
-      }
     }
-  
+
     let total = 0;
     const result = { total };
-  
+
     for (const letter in letterCounts) {
-      total += letterCounts[letter];
-      result[letter] = letterCounts[letter];
+        total += letterCounts[letter];
+        result[letter] = letterCounts[letter];
     }
-  
+
     return result;
-  }
-  
-  const danishString = "Jeg har en blå bil";
-  console.log(countDanishLetters(danishString)); 
-  
-  const danishString2 = "Blå grød med røde bær";
-  console.log(countDanishLetters(danishString2)); 
+}
 
-  // 2. Spirit animal name generator
+const danishString = "Jeg har en blå bil";
+console.log(countDanishLetters(danishString));
 
-  function generateSpiritAnimalName() {
+const danishString2 = "Blå grød med røde bær";
+console.log(countDanishLetters(danishString2));
+
+// 2. Spirit animal name generatorfind
+
+function generateSpiritAnimalName() {
     const name = document.getElementById("nameInput").value;
     const spiritAnimals = [
         "The Fullmoon Wolf",
@@ -56,6 +56,5 @@ function countDanishLetters(inputString) {
 
 document.getElementById("generateButton").addEventListener("click", generateSpiritAnimalName);
 
-  
-  
-  
+
+
