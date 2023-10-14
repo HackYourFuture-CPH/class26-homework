@@ -1,9 +1,35 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
-}
-
-#spirit-animal {
     margin: 20px;
 }
+
+h1 {
+    color: #333;
+}
+
+input {
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    font-weight: bold;
+    margin: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
