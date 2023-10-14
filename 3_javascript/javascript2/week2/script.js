@@ -57,7 +57,7 @@ const moviesWithTag = movies.map(movie => {
 
 //6-Count the total number of movies containing any of following keywords: Surfer, Alien or Benjamin. So if there were 3 movies that contained Surfer, 1 with Alien and 2 with Benjamin, you would return 6. Can you make sure the search is case insensitive?
   const keywords = ["Surfer", "Alien", "Benjamin"];
-
+  
     const filterWithWords = movies.filter(movie => {
       const lowercaseTitle = movie.title.toLowerCase();
       return keywords.some(keyword => lowercaseTitle.includes(keyword.toLowerCase()));
