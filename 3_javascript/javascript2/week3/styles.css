@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  #setTime {
+    margin: 10px;
+    padding: 5px;
+  }
+
+  #startGame, #restart {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  #startGame:hover, #restart:hover {
+    background-color: #2980b9;
+  }
+
+  span {
+    font-size: 24px;
+    margin: 10px;
+  }
