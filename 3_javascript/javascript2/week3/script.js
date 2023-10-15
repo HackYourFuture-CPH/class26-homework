@@ -122,8 +122,6 @@ function logBadJoke() {
     console.log("Why did the scarecrow win an award? Because he was outstanding in his field!");
 }
 
-
-
 jokeCreator(true, logFunnyJoke, logBadJoke);
 jokeCreator(false, logFunnyJoke, logBadJoke);
 
