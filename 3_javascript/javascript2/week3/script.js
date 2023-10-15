@@ -6,7 +6,6 @@ function logAfterDelay(delay, stringToLog) {
     }, delay * 1000);
 }
 
-
 logAfterDelay(2.5, "Called after 2.5 seconds");
 logAfterDelay(5, "Called after 5 seconds");
 logAfterDelay(1, "Called after 1 second");
@@ -122,6 +121,7 @@ function logFunnyJoke() {
 function logBadJoke() {
     console.log("Why did the scarecrow win an award? Because he was outstanding in his field!");
 }
+
 
 
 jokeCreator(true, logFunnyJoke, logBadJoke);
