@@ -125,5 +125,47 @@ function logBadJoke() {
 jokeCreator(true, logFunnyJoke, logBadJoke);
 jokeCreator(false, logFunnyJoke, logBadJoke);
 
+// 2. Function as a variable
+
+// Array of functions
+const functionArray = [
+    function() {
+      console.log("Function 1 called");
+    },
+    function() {
+      console.log("Function 2 called");
+    },
+    function() {
+      console.log("Function 3 called");
+    }
+  ];
+  
+  
+  functionArray.forEach(func => func());
+
+  // Function created as a const
+const constFunction = function() {
+    console.log("Function created as a const called");
+  };
+  
+
+  function normalFunction() {
+    console.log("Function created normally called");
+  }
+  
+  constFunction();
+  normalFunction();
+  
+  // Object with a key whose value is a function
+const functionObject = {
+    sayHello: function() {
+      console.log("Hello from the function inside the object");
+    }
+  };
+  
+  
+  functionObject.sayHello();
+  
+
 
 
