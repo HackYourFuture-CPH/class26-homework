@@ -40,13 +40,13 @@ function logEarth() {
     planetLogFunction();
   }
   
-  // Call the third function with the Earth function
+  
   logPlanet(logEarth);
   
-  // Call the third function with the Saturn function
+  
   logPlanet(logSaturn);
 
-  //
+  
   // Function to handle location logging
 function logLocation() {
     if ("geolocation" in navigator) {
