@@ -30,7 +30,7 @@ function logEarth() {
     console.log("Earth");
   }
   
-  // Function to log "Saturn"
+
   function logSaturn() {
     console.log("Saturn");
   }
