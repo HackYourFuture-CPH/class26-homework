@@ -10,108 +10,126 @@ console.log(`you will be in ${age} years old in ${yearFuture}`);
 
 //Goodboy-Oldboy (A dog age calculator)
 
-let dogYearOfBirth = 2017;
-let dogYearFuture = 2027;
+const dogYearOfBirth = 2017;
+const dogYearFuture = 2027;
+let humanYears = dogYearFuture - dogYearOfBirth; 
+let dogYears = humanYears*7; 
 let shouldShowResultInDogYears = true;
- 
 
-let dogAgeInHumanYears = dogYearFuture - dogYearOfBirth;
+if (shouldShowResultInDogYears === true) {
 
-let dogAgeInDogYears = dogAgeInHumanYears * 7;
-
-if (shouldShowResultInDogYears) {
-  console.log(`your dog will be ${dogAgeInDogYears} dog years old in ${dogYearFuture}`);
-} else {
-  console.log(`your dog will be ${dogAgeInHumanYears} human years old in ${dogYearFuture}`);
+console.log(`Your dog will be ${dogYears} dog years in ${dogYearFuture}`);
 }
+else {
+    console.log(`Your dog will be ${humanYears} human years old in ${dogYearFuture}`);
+}
+
 
 
 
 
 //Housey pricey (A house price estimator)
 
-
-const friendsHouse = [
+const houseDetails = [
   {
-    name: "Peter",
-    housePrice: 2500000, //2030000
-    width: 8,
-    depth: 10,
-    height: 10,
-    gardenSizeInM2: 100,
+  name:"Peter",
+  width:8,
+  depth:10,
+  height:10,
+  gardenSizeInM2:100,
+  houseCost:2500000,
   },
   {
-    name: "Julia",
-    housePrice: 1000000, //1121000
-    width: 5,
-    depth: 11,
-    height: 8,
-    gardenSizeInM2: 70,
-  },
+  name:"Julia",
+  width:5,
+  depth:11,
+  height:8,
+  gardenSizeInM2:70,
+  houseCost:1000000,
+  }    
 ];
 
-function calculateHouseCost(person) {
-  return (
-    person.width * person.height * person.depth * 2.5 * 1000 +
-    person.gardenSizeInM2 * 300
-  );
+function calculateHousePrice(house) {
+  return house.width*house.depth*house.height*2.5*1000 + house.gardenSizeInM2*300;
 }
-
-const peterHouseCost = calculateHouseCost(friendsHouse[0]);
-const juliaHouseCost = calculateHouseCost(friendsHouse[1]);
-
-console.log("Peter's house cost:", peterHouseCost);
-console.log("Julia's house cost:", juliaHouseCost);
-
-if (friendsHouse[0].housePrice  > peterHouseCost) {
-  console.log(`${friendsHouse[0].name} is paying too much`);
-} else {
-  console.log(
-    `${friendsHouse[0].name} is paying ${peterHouseCost} which is reasonable`
-  );
+function dealOrNoDeal(house) {
+  const housePrice = calculateHousePrice(house);
+  if (housePrice>house.houseCost) {
+      console.log(`${house.name} is getting a life changing deal`);
+  }
+  else
+  {
+      console.log(`${house.name} is being ripped off by the seller`);
+  }
 }
+houseDetails.forEach(dealOrNoDeal);
 
-if ( friendsHouse[1].housePrice > juliaHouseCost) {
-  console.log(
-    `${friendsHouse[1].name} is paying ${juliaHouseCost} which is too much`
-  );
-} else {
-  console.log(
-    `${friendsHouse[1].name} is paying ${juliaHouseCost} which is reasonable`
-  );
-}
+//     const peterHousePrice = 
+//     houseDetails[0].width*
+//     houseDetails[0].depth*
+//     houseDetails[0].height*
+//     2.5*1000 + houseDetails[0].gardenSizeInM2*300;
 
-//Ez Namey (Startup name generator) Optional
+//     const juliaHousePrice = 
+//     houseDetails[1].width*
+//     houseDetails[1].depth*
+//     houseDetails[1].height*
+//     2.5*1000 + houseDetails[1].gardenSizeInM2*300;
+  
+// if (peterHousePrice > houseDetails[0].houseCost) {
+//     console.log(`${houseDetails[0].name} is paying too much for his house`
+//     );
+// }
+// else 
+// {
+//     console.log(`${houseDetails[0].name} is getting a good deal for his money`
+//     );
+// }
 
-const firstWords = [
-  "Easy",
-  "Awesome",
-  "Corporate",
-  "apple",
-  "banana",
-  "tallent",
-  "smart",
-  "ugly",
-  "tallent",
-  "grapes",
-];
-const secondWords = [
-  "cat",
-  "dog",
-  "tiger",
-  "pigeon",
-  "horse",
-  "parrot",
-  "box",
-  "random",
-  "solution",
-  "words",
-  "tech",
-];
-const randomNumberone = Math.floor(Math.random() * firstWords.length);
-const randomNumbertwo = Math.floor(Math.random() * secondWords.length);
-const startupName = firstWords[randomNumberone] + secondWords[randomNumbertwo];
+// if (juliaHousePrice > houseDetails[1].houseCost) {
+//     console.log(`${houseDetails[1].name} is paying too much for her house`
+//     );
+// }
+// else 
+// {
+//     console.log(`${houseDetails[1].name} is getting a good deal for her money`
+//     );
+// }
 
-console.log(
-  `The startup: "${startupName}" contains ${startupName.length} characters`
-);
+
+
+
+
+//Ez Namey (Startup name generator) Optional 
+     
+     const firstWords = [
+      "Easy",
+      "Awesome",
+      "Corporate",
+      "Cat",
+      "Bunny",
+      "Hamster",
+      "Bad",
+      "Good",
+      "Luplup",
+      "Grapes",
+    ];
+    const secondWords = [
+      "Lily",
+      "Melly",
+      "Hufhuf",
+      "Cucuk",
+      "Sucuk",
+      "Molly",
+      "Sweety",
+      "Hayal",
+      "Tecno",
+      "Rock",
+    ];
+    const randomNumberone = Math.floor(Math.random() * firstWords.length);
+    const randomNumbertwo = Math.floor(Math.random() * secondWords.length);
+    const startupName = firstWords[randomNumberone] + secondWords[randomNumbertwo];
+
+    console.log(
+      `The startup: "${startupName}" contains ${startupName.length} characters`
+    );
