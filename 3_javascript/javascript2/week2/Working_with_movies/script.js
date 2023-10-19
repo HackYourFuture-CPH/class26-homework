@@ -44624,14 +44624,15 @@ const rantingSixOrMore = movies
 console.log(rantingSixOrMore);
 
 console.log("Task 6");
-// NECESITO AGREGAR INSENTIVE CASE
 const followingKeywords = movies.filter(
   (element) =>
-    element.title.includes("Surfer") ||
-    element.title.includes("Alien") ||
-    element.title.includes("Benjamin")
+
+    element.title.toLowerCase().includes("surfer") ||
+    element.title.toLowerCase().includes("alien") ||
+    element.title.toLowerCase().includes("benjamin")
 );
 const numberOfKeywords = followingKeywords.length;
+console.log(followingKeywords);
 console.log(numberOfKeywords);
 
 console.log("Task 7");
