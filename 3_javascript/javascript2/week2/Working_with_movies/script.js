@@ -44626,7 +44626,6 @@ console.log(rantingSixOrMore);
 console.log("Task 6");
 const followingKeywords = movies.filter(
   (element) =>
-
     element.title.toLowerCase().includes("surfer") ||
     element.title.toLowerCase().includes("alien") ||
     element.title.toLowerCase().includes("benjamin")
