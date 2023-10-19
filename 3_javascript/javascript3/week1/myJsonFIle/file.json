@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Lionel",
+        "lastName": "Messi",
+        "teams": [
+            "Barcelona FC",
+            "Paris Saint Germain",
+            "Inter Miami"
+        ],
+        "worldCups": 1
+    },
+    {
+        "name": "Cristiano",
+        "lastName": "Ronalddo",
+        "teams": [
+            "Sporting Club",
+            "Manchester United",
+            "Juventus",
+            "All Nassr"
+        ],
+        "worldCups": 0
+    }
+]
