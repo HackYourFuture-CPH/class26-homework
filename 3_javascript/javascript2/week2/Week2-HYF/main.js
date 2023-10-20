@@ -37,8 +37,8 @@ sortSelect.addEventListener("change", () => {
 
 shipsToSelect.addEventListener("change", () => {
   const selectedCountry = shipsToSelect.value;
-  const filteredProducts = products.filter((product) =>
-    product.shipsTo.includes(selectedCountry)
+  const filteredProducts = products.filter(
+    (product) => product.shipsTo && product.shipsTo.includes(selectedCountry)
   );
   renderProducts(filteredProducts);
 });
@@ -52,14 +52,15 @@ function renderProducts(products) {
       (country) => (shipsToHTML += `<li>${country}</li>`)
     );
     li.innerHTML = `
-            <ul>
-                <li>${product.name}</li>
-                <li>${product.price} DKK</li>
-                <li>Rating: ${product.rating}</li>
-                <ul class="ships-to">${shipsToHTML}</ul>
-            </ul>
-        `;
+        <ul>
+            <li>${product.name}</li>
+            <li>${product.price} DKK</li>
+            <li>Rating: ${product.rating}</li>
+            <ul class="ships-to">${shipsToHTML}</ul>
+        </ul>
+    `;
     productsUl.appendChild(li);
   });
 }
+
 renderProducts(products);
