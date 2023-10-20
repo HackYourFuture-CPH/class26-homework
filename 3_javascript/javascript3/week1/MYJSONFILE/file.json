@@ -1,0 +1,24 @@
+{
+    "pets": [
+    {
+        "name": "Molly",
+        "type": "Cat"
+    },
+    {
+        "name": "Pofis",
+        "type": "Bunny"
+    },
+    {
+        "name": "Ciklet",
+        "type": "Bird"
+    },
+    {
+        "name": "Cooper",
+        "type": "Dog"
+    },
+    {
+        "name": "Minik",
+        "type": "Hamster"
+    }
+]
+}

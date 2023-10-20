@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Let your users Vote on Kitties</title>
+</head>
+<body>
+  <div id="vote-options" class="vote-options">
+  <button onClick="vote(1)">Vote Up </button>
+  <button onClick="vote(-1)">Vote Down </button>
+  <button onClick="showHistoricVotes()">History </button>
+    
+<div>
+  <img id="image-to-vote-on" class="col-lg"></img>
+  </div>
+  
+  </div>
+
+  <div id="vote-results"  class="vote-results">
+  <button onClick="showVoteOptions()">Show Vote Options</button>
+    <div id="grid" class="imgrid"/>
+ </div>
+  <script src="script.js"></script>
+</body>
+</html>
