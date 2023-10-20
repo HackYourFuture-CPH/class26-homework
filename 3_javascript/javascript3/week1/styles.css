@@ -1,0 +1,80 @@
+/* Reset default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+h1 {
+    background-color: #1976D2;
+    color: #fff;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.container {
+    margin: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #1976D2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1565C0;
+}
+
+#weatherInfo {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    text-align: left;
+}
+
+#weatherInfo h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#temperature {
+    font-size: 36px;
+    color: #1976D2;
+}
+
+#weatherIcon {
+    max-width: 50px;
+}
+
+#windSpeed, #cloudiness, #sunrise, #sunset {
+    font-size: 18px;
+    color: #555;
+}
+
+#map {
+    margin-top: 20px;
+    height: 100px;
+}
+
+#loading, #error {
+    font-size: 18px;
+    color: #FF0000;
+    margin-top: 20px;
+}

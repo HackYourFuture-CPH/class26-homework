@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Weather App</h1>
+    <div class="container">
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button id="fetchWeather">Get Weather</button>
+        <div id="weatherInfo" style="display: none;">
+            <h2>Weather in <span id="cityName"></span></h2>
+            <p>Temperature: <span id="temperature"></span>&deg;C</p>
+            <img id="weatherIcon" src="" alt="Weather Icon">
+            <p>Wind Speed: <span id="windSpeed"></span> m/s</p>
+            <p>Cloudiness: <span id="cloudiness"></span></p>
+            <p>Sunrise: <span id="sunrise"></span></p>
+            <p>Sunset: <span id="sunset"></span></p>
+        </div>
+        <div id="map" style="display: none;"></div>
+        <div id="loading" style="display: none;">Loading...</div>
+        <div id="error" style="display: none;">City not found. Please try again.</div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="weather.js"></script>
+</body>
+</html>
