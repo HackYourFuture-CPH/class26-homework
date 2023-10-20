@@ -1,0 +1,20 @@
+[
+    {
+        "NameOfTheMovie": "lord of the ring",
+        "Type": " Fantasy/Adventure",
+        "year": 2001,
+        "duration": 120
+    },
+    {
+        "NameOfTheMovie": "titanic",
+        "Type": " romantic",
+        "year": 1997,
+        "duration": 220
+    },
+    {
+        "NameOfTheMovie": "the mother",
+        "Type": " drama",
+        "year": 2022,
+        "duration": 120
+    }
+]
