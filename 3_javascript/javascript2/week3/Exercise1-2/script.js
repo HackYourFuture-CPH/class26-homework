@@ -2,7 +2,7 @@
 function delayedFunction(delay, stringToLog) {
   setTimeout(function () {
     console.log(stringToLog);
-  }, delay * 2500);
+  }, delay * 1000);
 }
 delayedFunction(2.5, "Called after 2.5 seconds");
 
