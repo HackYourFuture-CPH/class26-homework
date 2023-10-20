@@ -11,7 +11,7 @@ function sendApiRequest() {
        .then((response) => response.json())
        .then((json) => {
            const resultContainer = document.getElementById("search-result");
-           resultContainer.innerHTML = ''; // Clear previous results
+           resultContainer.innerHTML = '';
 
            json.data.forEach((gifData) => {
                const imgPath = gifData.images.fixed_height.url;
