@@ -3,21 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="./script.js"></script>
+    <title>Weather API</title>
   </head>
   <body>
-    <button id="btn">Get weather data</button>
-    <p>
-      City: <span id="city"></span> <br />
-      Temperature: <span id="temp"></span> <br />
+    <h1>Weather api implementation</h1>
 
-      Weather type: <span id="type"></span> <br />
-      Wind speed: <span id="wind"></span> <br />
-
-      Cloud status: <span id="cloud"></span> <br />
-      Sun rise: <span id="rise"></span> <br />
-      Sun set: <span id="set"></span> <br />
-    </p>
+    <div id="weather-app">
+      <input type="text" id="city-input" placeholder="Enter city name" />
+      <button id="search-btn">Search</button>
+    </div>
+    <div id="weather-results"></div>
+    <script src="./weather_city.js"></script>
   </body>
 </html>
