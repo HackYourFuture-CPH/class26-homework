@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <select id="unit-selector">
+      <option value="metric">Celsius</option>
+      <option value="imperial">Fahrenheit</option>
+      <option value="standard">Kelvin</option>
+    </select>
+
+    <div id="weather-container">
+      <h2 id="city-name"></h2>
+      <p id="temperature"></p>
+      <img id="weather-icon" alt="Weather Icon" />
+      <p id="wind-speed"></p>
+      <p id="cloudiness"></p>
+      <div>
+        <p id="sunrise">Sunrise: <span id="sunrise-time"></span></p>
+        <p id="sunset">Sunset: <span id="sunset-time"></span></p>
+      </div>
+      <button id="get-weather-btn">Get Weather</button>
+    </div>
+
+    <script src="/WeatherApp/weatherapp.js"></script>
+  </body>
+</html>
