@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+  text-align: center;
+}
+body {
+  background-image: url("weather-pic.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.weather-container {
+  width: 50%;
+  margin: 10px auto;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+}
+h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+#cityInput {
+  padding: 5px;
+  font-size: 18px;
+  margin-right: 10px;
+}
+#getWeatherButton {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#getWeatherButton:hover {
+  background-color: #258ac6;
+}
+.error {
+  color: red;
+  font-size: 16px;
+  margin: 5px 0;
+}
