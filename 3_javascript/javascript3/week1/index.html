@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://kit.fontawesome.com/1aa1814c94.js"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./index.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="cityName" placeholder="Enter Location" />
+      <button id="getCityName">Find City</button>
+    </div>
+
+    <div class="displayWeather">
+      <h1 id="temp">---°C</h1>
+      <p id="desc">---</p>
+      <p id="windSpeed">---</p>
+      <div id="weatherInfo">
+        <i id="weatherIcon" class="fas fa-cloud-sun-rain"></i>
+      </div>
+      <i id="windIcon" class="fas fa-rabbit-running"></i>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
