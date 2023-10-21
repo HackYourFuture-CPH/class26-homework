@@ -1,0 +1,35 @@
+{
+    "instruments": [
+        {
+            "name": "Guitar",
+            "type": "String",
+            "origin": "Spain",
+            "description": "A versatile string instrument with a wide range of playing styles."
+        },
+        {
+            "name": "Piano",
+            "type": "Keyboard",
+            "origin": "Italy",
+            "description": "A classical keyboard instrument with a wide range of notes and tones."
+        },
+        {
+            "name": "Violin",
+            "type": "String",
+            "origin": "Italy",
+            "description": "A beautiful bowed string instrument known for its rich sound."
+        },
+        {
+            "name": "Drums",
+            "type": "Percussion",
+            "origin": "Worldwide",
+            "description": "A group of percussion instruments that produce rhythm and beats."
+        },
+        {
+            "name": "Saxophone",
+            "type": "Woodwind",
+            "origin": "Belgium",
+            "description": "A versatile woodwind instrument used in various music genres."
+        }
+    ]
+}
+  
