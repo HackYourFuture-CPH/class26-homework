@@ -108,25 +108,3 @@ const newAnimalButton = document.getElementById("newAnimalButton");
 newAnimalButton.addEventListener("click", function () {
   generateSpiritAnimal();
 });
-
-
-
-//hyfBay - get the okay'est products here
-
-const products = getAvailableProducts();
-
-function renderProducts(products) {
-  const productList = document.querySelector("ul");
-
-  for (const product of products) {
-    const listItem = document.createElement("li");
-
-    listItem.innerHTML = `<strong>${product.name}</strong><br>
-                          Price: $${product.price}<br>
-                          Rating: ${product.rating}`;
-
-    productList.appendChild(listItem);
-  }
-}
-
-renderProducts(products);
