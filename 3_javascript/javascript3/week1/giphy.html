@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Giphy GIF Search</title>
+  <link rel="stylesheet" type="text/css" href="giphy.css">
+</head>
+<body>
+  <h1>Giphy GIF Search</h1>
+  <form id="search-form">
+    <label for="search-term">Enter a word to find GIFs:</label>
+    <input type="text" id="search-term" placeholder="e.g., cat, dog, funny" required>
+    <label for="num-results">Number of results:</label>
+    <input type="number" id="num-results" min="1" value="5">
+    <button type="submit">Search</button>
+  </form>
+  <div id="result"></div>
+  <script src="giphy.js"></script>
+</body>
+</html>

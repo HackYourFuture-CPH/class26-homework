@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: antiquewhite;
+  }
+  
+  #search-form {
+    margin: 20px;
+  }
+  
+  #result {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
