@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+}
+
+.loading {
+    display: none;
+}
+
+.weather-info {
+    display: none;
+}
+
+#weather-icon {
+    width: 50px;
+    height: 50px;
+}
