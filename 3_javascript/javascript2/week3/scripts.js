@@ -4,11 +4,13 @@ function domListener() {
 }
 
 function domLoader() {
-  const startButton = document.getElementById('startGame');
+  const gameButton = document.getElementById('gameButton');
   const inputTime = document.getElementById('setTime');
 
   var confettiSettings = { target: 'my-canvas' };
   var confetti = new ConfettiGenerator(confettiSettings);
+
+  let secondsGame;
 
   inputTime.addEventListener('input', function () {
     secondsGame = inputTime.value;
@@ -28,8 +30,8 @@ function domLoader() {
         scoreL++;
         confetti.render();
       } else console.log('Draw');
-      document.getElementById('lWon').textContent = scoreL;
-      document.getElementById('sWon').textContent = scoreS;
+      document.getElementById('lWonContainer').textContent = scoreL;
+      document.getElementById('sWonContainer').textContent = scoreS;
       inputTime.value = '';
       setTimeout(() => {
         confetti.clear();
@@ -37,7 +39,7 @@ function domLoader() {
     }, secondsGame * 1000);
   }
 
-  startButton.addEventListener('click', setTimeGame);
+  gameButton.addEventListener('click', setTimeGame);
   document.addEventListener('keydown', eventPressKey);
 
   let counterS = 0;
@@ -58,14 +60,14 @@ function domLoader() {
     }
   }
 
-  const restartButton = document.getElementById('restart');
+  const restartButton = document.getElementById('restartButton');
   restartButton.addEventListener('click', restartFunction);
 
   function restartFunction() {
     scoreS = 0;
     scoreL = 0;
-    document.getElementById('lWon').textContent = scoreL;
-    document.getElementById('sWon').textContent = scoreS;
+    document.getElementById('lWonContainer').textContent = scoreL;
+    document.getElementById('sWonContainer').textContent = scoreS;
     confetti.clear();
     alert('Game restarted');
   }
