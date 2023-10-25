@@ -96,10 +96,6 @@ houseDetails.forEach(dealOrNoDeal);
 //     );
 // }
 
-
-
-
-
 //Ez Namey (Startup name generator) Optional 
      
      const firstWords = [
