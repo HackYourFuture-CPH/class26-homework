@@ -1,0 +1,83 @@
+/* Reset some default styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Center the container */
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the title */
+#title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Style the input and button */
+#nameCity {
+  flex: 1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#searchButtom {
+  flex: 0;
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#searchButtom:hover {
+  background-color: #0056b3;
+}
+
+/* Style the weather information list */
+#weatherInfo {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style the city name */
+.cityName {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+/* Style the weather icon */
+li i {
+  font-size: 48px;
+}
+
+/* Style the wind info */
+li:nth-child(3) {
+  font-size: 18px;
+}
+
+/* Style the cloud info */
+li:nth-child(4) {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+/* Style the sunrise and sunset info */
+p {
+  font-size: 16px;
+}
