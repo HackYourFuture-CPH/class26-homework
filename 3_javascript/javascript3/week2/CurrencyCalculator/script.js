@@ -194,14 +194,14 @@ function domLoader() {
 
   function addListOfCurrencies() {
     currencies.forEach((currency) => {
-      var selectToCurrency = document.getElementById("toCurrency");
-      var newCurrencyTo = document.createElement("option");
+      const selectToCurrency = document.getElementById("toCurrency");
+      const newCurrencyTo = document.createElement("option");
       newCurrencyTo.value = currency;
       newCurrencyTo.text = currency;
       selectToCurrency.appendChild(newCurrencyTo);
 
-      var selectFromCurrency = document.getElementById("fromCurrency");
-      var newCurrencyFrom = document.createElement("option");
+      const selectFromCurrency = document.getElementById("fromCurrency");
+      const newCurrencyFrom = document.createElement("option");
       newCurrencyFrom.value = currency;
       newCurrencyFrom.text = currency;
       selectFromCurrency.appendChild(newCurrencyFrom);
