@@ -8,10 +8,10 @@ fetch("https://open.er-api.com/v6/latest/USD")
   .then((response) => response.json())
   .then((data) => {
     exchangeRates = data.rates;
-    initializeDropdowns();
+    dropdownsFunction();
   });
 
-function initializeDropdowns() {
+function dropdownsFunction() {
   const currencies = Object.keys(exchangeRates);
   fromCurrencySelect.innerHTML = createOptions(currencies, "EUR");
   toCurrencySelect.innerHTML = createOptions(currencies, "DKK");

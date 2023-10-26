@@ -7,11 +7,18 @@
   text-align: center;
 }
 
+#container {
+  border: 2px solid #582137;
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+}
+
 h1 {
   background-color: #582137;
   color: white;
   padding: 20px 0;
-  margin: 50px;
+  margin: 30px;
 }
 
 label {
@@ -26,6 +33,7 @@ select {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 #result {
