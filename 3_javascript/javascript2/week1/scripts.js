@@ -29,6 +29,9 @@ countDanishLetters(danishString2); // returns {total: 4, æ: 1, ø: 2, å: 1}
 =======
 countDanishLetters(danishString2);
  
+<<<<<<< HEAD
+>>>>>>> parent of 8834aba (feedback modify)
+=======
 >>>>>>> parent of 8834aba (feedback modify)
 
 /// 2. Spirit animal name generator ////
@@ -53,7 +56,10 @@ const spiritAnimalString = [
 generateButton.addEventListener('click', generateSpiritAnimal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 8834aba (feedback modify)
 
 const triggerEvent = 'inputHover';
 >>>>>>> parent of 8834aba (feedback modify)
