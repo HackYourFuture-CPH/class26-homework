@@ -8,25 +8,27 @@ function countDanishLetters(inputString) {
   };
 
   for (const char of inputString) {
-    if (danishLetters.hasOwnProperty(char)) {
+    if (danishLetters[char]) {
       danishLetters[char]++;
     }
   }
-
   const total = Object.values(danishLetters).reduce(
     (acc, count) => acc + count,
     0
   );
-
-  console.log('Result:');
-  console.log({ total, danishLetters });
+  return { total, danishLetters };
 }
 
+/// Examples of what it returns ///
 const danishString = 'Jeg har en blå bil';
-countDanishLetters(danishString);
+countDanishLetters(danishString); // returns {total: 1, å: 1}
 
 const danishString2 = 'Blå grød med røde bær';
+<<<<<<< HEAD
 countDanishLetters(danishString2);
+=======
+countDanishLetters(danishString2); // returns {total: 4, æ: 1, ø: 2, å: 1}
+>>>>>>> parent of 20fa6a7 (Feedback Modified)
 
 /// 2. Spirit animal name generator ////
 
@@ -49,7 +51,10 @@ const spiritAnimalString = [
 
 generateButton.addEventListener('click', generateSpiritAnimal);
 
+<<<<<<< HEAD
 const triggerEvent = 'inputHover';
+=======
+>>>>>>> parent of 20fa6a7 (Feedback Modified)
 function generateSpiritAnimal() {
   const userName = nameInput.value.trim();
 
