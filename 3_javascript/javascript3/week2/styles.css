@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: none;
+  outline: none;
+}
+body {
+  background-color: aliceblue;
+}
+.wrapper {
+  width: 90%;
+  max-width: 25em;
+  background-color: azure;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  padding: 2em;
+  border-radius: 0.8em;
+}
+.app-details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.app-icon {
+  width: 9.37em;
+}
+.app-title {
+  font-size: 1.6em;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
