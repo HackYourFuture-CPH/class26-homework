@@ -1,0 +1,81 @@
+/* index.css */
+body {
+  background: url('https://i.postimg.cc/jjgTCN5B/wallet-2292428-1920.webp')
+    bottom  / 90% auto;
+    color:rgb(165, 42, 42);
+  /* background-size: cover; */
+}
+
+
+
+
+
+h1{
+  display: flex;
+  font-style: italic;
+  font-size: 60px;
+  justify-content: center;
+}
+
+
+
+
+
+
+#amount {
+  display: flex;
+  width: 20%;
+  padding: 10px;
+  margin: auto;
+  border: 0, solid #cccccc17;
+  border-radius: 10px;
+}
+
+#amount::placeholder {
+  animation: movePlaceholder 2s linear infinite;
+}
+
+form {
+  text-align: center;
+  border: 8px solid #ccc;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 7px;
+}
+
+
+#fromCurrency {
+  margin-right: 25px;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+
+}
+
+#toCurrency {
+  margin-right: 0px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+#convert {
+  display: flex;
+  margin: auto;
+  margin-top: 10px;
+  font-size: 20px;
+  border-radius: 6px;
+
+
+}
+
+@keyframes movePlaceholder {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

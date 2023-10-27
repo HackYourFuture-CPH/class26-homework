@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Calculator</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <h1>Currency Calculator</h1>
+    <input id="amount" placeholder="Insert the amount to exchange" />
+    <div id="currencyContainer">
+      <label for="from">From</label>
+      <select name="fromCurrency" id="fromCurrency">
+        <option value="EUR">EUR</option>
+      </select>
+      <label for="to">To</label>
+      <select name="toCurrency" id="toCurrency">
+        <option value="DKK">DKK</option>
+      </select>
+      <button id="convert">Convert</button>
+    </div>
+    <div id="conversionResult"></div>
+  </body>
+</html>
