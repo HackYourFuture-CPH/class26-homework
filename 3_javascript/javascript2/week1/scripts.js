@@ -24,7 +24,12 @@ const danishString = 'Jeg har en blå bil';
 countDanishLetters(danishString); // returns {total: 1, å: 1}
 
 const danishString2 = 'Blå grød med røde bær';
+<<<<<<< HEAD
 countDanishLetters(danishString2); // returns {total: 4, æ: 1, ø: 2, å: 1}
+=======
+countDanishLetters(danishString2);
+ 
+>>>>>>> parent of 8834aba (feedback modify)
 
 /// 2. Spirit animal name generator ////
 
@@ -47,6 +52,11 @@ const spiritAnimalString = [
 
 generateButton.addEventListener('click', generateSpiritAnimal);
 
+<<<<<<< HEAD
+=======
+
+const triggerEvent = 'inputHover';
+>>>>>>> parent of 8834aba (feedback modify)
 function generateSpiritAnimal() {
   const userName = nameInput.value.trim();
 
