@@ -16,7 +16,6 @@ const convert = document.getElementById("convert");
          .then(data => {
             let rate = data.rates[toCurrency];
             let total = rate * amt;
-            result.innerHTML = `${amt} ${fromCurrency} = ${total}
-            ${toCurrency}`;
+            result.innerHTML = `${amt} ${fromCurrency} = ${total} ${toCurrency}`;
          });
       });
