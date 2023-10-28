@@ -9,7 +9,7 @@ async function fetchExchangeRates() {
         const fromCurrencySelect = document.getElementById('fromCurrency');
         const toCurrencySelect = document.getElementById('toCurrency');
 
-        
+
         currencies.forEach((currency) => {
             const option1 = document.createElement('option');
             option1.value = currency;

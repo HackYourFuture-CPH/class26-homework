@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,12 +6,12 @@ body {
     background-image: url(changer.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    
+
 }
 
 h1 {
     text-align: center;
-    color:#fff
+    color: #fff
 }
 
 div {
@@ -26,7 +25,8 @@ label {
     display: block;
 }
 
-input, select {
+input,
+select {
     padding: 5px;
 }
 
@@ -36,7 +36,7 @@ button {
     color: #fff;
     border: none;
     cursor: pointer;
-    margin: 0 auto; 
+    margin: 0 auto;
     display: block;
 }
 
