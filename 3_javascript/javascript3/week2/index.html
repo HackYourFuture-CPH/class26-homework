@@ -15,15 +15,15 @@
       <div class="app-details"></div>
       <img src="currency.png" class="app-icon" />
       <h1 class="app-title">Currency Converter</h1>
+      <div class="dropdowns">
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" value="100" />
+        <select id="from-currency"></select>
+        <select id="to-currency"></select>
+        <button id="convert-button">Convert</button>
+        <p id="result"></p>
+      </div>
     </div>
-    <label for="amount">Amount</label>
-    <input type="number" id="amount" value="100" />
-    <div class="dropdowns">
-      <select id="from-currency"></select>
-      <select id="to-currency"></select>
-    </div>
-    <button id="convert-button">Convert</button>
-    <p id="result"></p>
     <script src="currencies.js"></script>
     <script src="api-key.js"></script>
     <script src="index.js"></script>
