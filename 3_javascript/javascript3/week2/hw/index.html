@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles1.css" />
+    <script src="./script1.js"></script>
+</head>
+<body>
+    <h1>Currency Calculator</h1>
+    <input id="amount" placeholder="Enter your amount" type="text">
+    <div class="convert">
+       
+        <div id="myDropdown" class="dropdown-content">
+            <label>From
+                <select id="from-currency">
+                </select>
+            </label>
+            <label>To
+                <select id="to-currency">
+                </select>
+            </label>
+           
+        </div>
+        <button class="convert-button">Convert</button>
+    </div>
+    
+    <p>Converted Amount: <span id="result"></span></p>

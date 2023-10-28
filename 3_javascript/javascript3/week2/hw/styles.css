@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+    text-align:center;
+    background-color: #eefcea;
+}
+.convert-button {
+    background-color: #4bbe2e;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius:10px;
+  }
+ 
+
+.convert-button:hover, .convert-button:focus {
+    background-color: #0b7024;
+  }
+  
+  
+  .dropdown-content{
+    position: relative;
+    display: inline-block;
+  }
+  
+
+ 
