@@ -1,0 +1,50 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+    background-image: url(changer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+h1 {
+    text-align: center;
+    color:#fff
+}
+
+div {
+    margin: 10px;
+    text-align: center;
+    color: white;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+}
+
+input, select {
+    padding: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto; 
+    display: block;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    font-size: 1.5em;
+    font-weight: bold;
+}
