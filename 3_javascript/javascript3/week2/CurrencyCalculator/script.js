@@ -28,185 +28,30 @@ function domLoader() {
   let toCurrency = "DKK";
   let amount = 0;
 
-  const currencies = [
-    "AED",
-    "AFN",
-    "ALL",
-    "AMD",
-    "ANG",
-    "AOA",
-    "ARS",
-    "AUD",
-    "AWG",
-    "AZN",
-    "BAM",
-    "BBD",
-    "BDT",
-    "BGN",
-    "BHD",
-    "BIF",
-    "BMD",
-    "BND",
-    "BOB",
-    "BRL",
-    "BSD",
-    "BTN",
-    "BWP",
-    "BYN",
-    "BZD",
-    "CAD",
-    "CDF",
-    "CHF",
-    "CLP",
-    "CNY",
-    "COP",
-    "CRC",
-    "CUP",
-    "CVE",
-    "CZK",
-    "DJF",
-    "DKK",
-    "DOP",
-    "DZD",
-    "EGP",
-    "ERN",
-    "ETB",
-    "EUR",
-    "FJD",
-    "FKP",
-    "FOK",
-    "GBP",
-    "GEL",
-    "GGP",
-    "GHS",
-    "GIP",
-    "GMD",
-    "GNF",
-    "GTQ",
-    "GYD",
-    "HKD",
-    "HNL",
-    "HRK",
-    "HTG",
-    "HUF",
-    "IDR",
-    "ILS",
-    "IMP",
-    "INR",
-    "IQD",
-    "IRR",
-    "ISK",
-    "JEP",
-    "JMD",
-    "JOD",
-    "JPY",
-    "KES",
-    "KGS",
-    "KHR",
-    "KID",
-    "KMF",
-    "KRW",
-    "KWD",
-    "KYD",
-    "KZT",
-    "LAK",
-    "LBP",
-    "LKR",
-    "LRD",
-    "LSL",
-    "LYD",
-    "MAD",
-    "MDL",
-    "MGA",
-    "MKD",
-    "MMK",
-    "MNT",
-    "MOP",
-    "MRU",
-    "MUR",
-    "MVR",
-    "MWK",
-    "MXN",
-    "MYR",
-    "MZN",
-    "NAD",
-    "NGN",
-    "NIO",
-    "NOK",
-    "NPR",
-    "NZD",
-    "OMR",
-    "PAB",
-    "PEN",
-    "PGK",
-    "PHP",
-    "PKR",
-    "PLN",
-    "PYG",
-    "QAR",
-    "RON",
-    "RSD",
-    "RUB",
-    "RWF",
-    "SAR",
-    "SBD",
-    "SCR",
-    "SDG",
-    "SEK",
-    "SGD",
-    "SHP",
-    "SLE",
-    "SOS",
-    "SRD",
-    "SSP",
-    "STN",
-    "SYP",
-    "SZL",
-    "THB",
-    "TJS",
-    "TMT",
-    "TND",
-    "TOP",
-    "TRY",
-    "TTD",
-    "TVD",
-    "TWD",
-    "TZS",
-    "UAH",
-    "UGX",
-    "USD",
-    "UYU",
-    "UZS",
-    "VES",
-    "VND",
-    "VUV",
-    "WST",
-    "XAF",
-    "XCD",
-    "XDR",
-    "XOF",
-    "XPF",
-    "YER",
-    "ZAR",
-    "ZMW",
-    "ZWL",
-  ];
+  
 
-  function addListOfCurrencies() {
-    currencies.forEach((currency) => {
+function addListOfCurrencies() {
+  fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`)
+    .then((data) => data.json())
+    .then((data) => {
+      let currencies = data.conversion_rates;
+
       const selectToCurrency = document.getElementById("toCurrency");
-      const newCurrencyTo = document.createElement("option");
-      newCurrencyTo.value = currency;
-      newCurrencyTo.text = currency;
-      selectToCurrency.appendChild(newCurrencyTo);
-
       const selectFromCurrency = document.getElementById("fromCurrency");
-      const newCurrencyFrom = document.createElement("option");
-      newCurrencyFrom.value = currency;
-      newCurrencyFrom.text = currency;
-      selectFromCurrency.appendChild(newCurrencyFrom);
+
+      Object.keys(currencies).forEach((currency) => {
+        const newCurrencyTo = document.createElement("option");
+        newCurrencyTo.value = currency;
+        newCurrencyTo.text = currency;
+        selectToCurrency.appendChild(newCurrencyTo);
+
+        const newCurrencyFrom = document.createElement("option");
+        newCurrencyFrom.value = currency;
+        newCurrencyFrom.text = currency;
+        selectFromCurrency.appendChild(newCurrencyFrom);
+      });
     });
-  }
+}
 
   addListOfCurrencies();
 
