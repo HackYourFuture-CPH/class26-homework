@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomeWork JS3 Week3</title>
+  </head>
+  <body>
+    <h1>Screenshoter</h1>
+
+    <form id="screenshotForm">
+      <label for="inputurl">Input website URL</label>
+      <input id="inputurl" type="text" placeholder="Enter your URL here" />
+      <button id="inputbutton" type="submit">Save Screenshot</button>
+    </form>
+
+    <div id="screenshotContainer">
+      <img id="screenshotImage" src="" alt="Screenshot" />
+    </div>
+
+    <button id="getScreenshotListButton">Get My Screenshots</button>
+
+    <ul id="screenshotList"></ul>
+
+    <button id="deleteScreenshotButton">Delete Screenshot</button>
+
+    <script src="./secret.js"></script>
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>
