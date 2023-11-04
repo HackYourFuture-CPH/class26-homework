@@ -1,4 +1,4 @@
-
+let exchangeRates, currencyList;
 
 // Function to fetch data from the API
 async function fetchData() {
@@ -23,22 +23,21 @@ function populateDropdowns() {
 
     // Check if currencyList is defined
     if (currencyList) {
-        // Populate 'From' and 'To' dropdowns with currency options
         currencyList.forEach(currency => {
-            const option1 = document.createElement('option');
-            option1.value = currency;
-            option1.textContent = currency;
-            fromCurrencyDropdown.appendChild(option1);
+            const fromCurrencyOption = document.createElement('option');
+            fromCurrencyOption.value = currency;
+            fromCurrencyOption.textContent = currency;
+            fromCurrencyDropdown.appendChild(fromCurrencyOption);
 
-            const option2 = document.createElement('option');
-            option2.value = currency;
-            option2.textContent = currency;
-            toCurrencyDropdown.appendChild(option2);
+            const toCurrencyOption = document.createElement('option');
+            toCurrencyOption.value = currency;
+            toCurrencyOption.textContent = currency;
+            toCurrencyDropdown.appendChild(toCurrencyOption);
         });
 
         // Set default values for dropdowns
-        fromCurrencyDropdown.value = 'EUR';
-        toCurrencyDropdown.value = 'DKK';
+        document.getElementById('fromCurrency').value = 'EUR';
+        document.getElementById('toCurrency').value = 'DKK';
     }
 }
 
