@@ -1,0 +1,167 @@
+:root {
+  --clr--light-100: #fff;
+  --clr--light-200: #e4e0e0;
+  --clr--blue-200: rgb(85, 85, 217);
+  --clr--dark-500: #313e45;
+  --clr--dark-800: #263238;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-accent: "Playfair Display", serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1,
+h2 {
+  color: var(--clr--light-100);
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+body {
+  background-color: #263238;
+  font-family: var(--ff-primary);
+}
+
+.wrapper {
+  width: min(90%, 50rem);
+  margin-inline: auto;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 1.5rem;
+  transition: all 1s ease;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  background-color: #313e45;
+  border-radius: 15px;
+  padding: 2rem 0;
+  transition: all 1s ease;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+input {
+  width: 18rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0.9rem;
+  color: var(--clr--dark-500);
+  font-weight: 700;
+  font-size: 0.8rem;
+  background-color: var(--clr--light-100);
+  text-align: center;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--clr--blue-200);
+  color: var(--clr--light-100);
+  cursor: pointer;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#shot-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+img {
+  border-radius: 5px;
+  max-width: 100%;
+}
+
+#savedShot {
+  padding: 0 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  overflow-y: auto;
+  max-width: 100%;
+  max-height: 50rem;
+}
+
+#savedShot > div {
+  position: relative;
+}
+
+#savedShot img {
+  width: 100%;
+  height: auto;
+}
+
+#savedShot > div > button {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  padding: 1rem;
+  background-color: crimson;
+  font-size: 1rem;
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+  right: 10px;
+}
+
+#savedShot > div > p {
+  color: var(--clr--light-100);
+  font-size: 1rem;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+@media (min-width: 900px) {
+  .wrapper {
+    width: min(90%, 77rem);
+    flex-direction: row;
+    transition: all 1s ease-in;
+  }
+
+  input {
+    max-width: 80%;
+  }
+}
