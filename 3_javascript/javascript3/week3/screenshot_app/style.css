@@ -1,0 +1,114 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+
+.container {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.button-container {
+  display: flex; 
+  justify-content: center; 
+  margin: 5px 0;
+}
+
+
+#inputURL {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 8px;
+  width: 40%;
+  margin: 10px 0;
+}
+
+button {
+  color: #fff;
+  border-radius: 5px;
+  padding: 8px 16px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#takeURLButton {
+  background-color: #007d0f;
+  border: 2px solid #000000;
+}
+
+#showURLButton {
+  background-color: #2fa03d;
+  border: 2px solid #000000;
+}
+
+#deleteSelectedScreenshotButton {
+  background-color: #e74c3c;
+  border: 2px solid #c0392b;
+}
+
+#selectScreenshot {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 8px;
+  width: 30%;
+  margin: 10px 0;
+}
+
+#screenshotList {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+#screenshotList li {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+}
+
+#screenshotList li a {
+  text-decoration: none;
+  color: #000; 
+  text-transform: uppercase;
+}
+
+#screenshotList li a:hover {
+  text-decoration: underline;
+}
+
+#title {
+  font-family: "Satisfy", cursive;
+  font-size: 40px;
+  color: #393939;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.loading {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
