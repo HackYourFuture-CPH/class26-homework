@@ -12,14 +12,19 @@ jsonData.then((response) => {
 
 //Weather App 
 
-document.addEventListener("DOMContentLoaded", function () {
+const button = document.getElementById("btn");
+const cityNameInput= document.getElementById("city-name");
 
+button.addEventListener("click", function () {
+    const cityName = cityNameInput.value;
+    fetchWeatherApi(cityName);
 });
 
-const button = document.getElementById("btn");
-button.addEventListener("click", function () {
-    const cityName = document.getElementById("city-name").value;
-    fetchWeatherApi(cityName);
+cityNameInput.addEventListener("keypress", function(event){
+    if (event.key === "Enter") {
+        const cityName = cityNameInput.value;
+        fetchWeatherApi(cityName)
+    }
 });
 
 function fetchWeatherApi(query) {
@@ -32,6 +37,7 @@ function fetchWeatherApi(query) {
             renderWeather(data);
         })
         .catch(error => {
+            renderError("Error: Failed to fetch weather data")
             console.error('Error:', error);
         });
 }
@@ -71,7 +77,6 @@ function renderWeather(weather) {
         resultContainer.appendChild(cloudiness);
     }
 }
-
 
 
 

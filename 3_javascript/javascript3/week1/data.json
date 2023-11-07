@@ -6,10 +6,12 @@
     "Country" : "Denmark",
     "Address" : "Copenhagen",
     "Status" : "Married",
-    "favourite food" : "Pizza",
-    "favourite color" : "Red",
-    "favourite thing" : "To learn about coding",
-    "favourite place" : "Home",
-    "favourite gadgets" : "Laptop",
-    "favourite animal" : "Dog"
+    "favourities" : [
+        {"category": "food", "name": "Pizza"},
+        {"category": "color", "name": "Red"},
+        {"category": "thing", "name": "To learn about coding"},
+        {"category": "place", "name": "Home"},
+        {"category": "gadgets", "name": "laptop"},
+        {"category": "animal", "name": "Dog"}
+    ]
 }
