@@ -1,8 +1,9 @@
-let userName = [];
+let userNames = [];
 const toDoList = [];
 let timer;
 
 function getReply(command) {
+    command = command.toLowerCase();
     if (command.includes("Hello my name is")) {
         const name = command.split("Hello my name is ")[1];
 
