@@ -63,7 +63,7 @@ SELECT status.name, COUNT(*) AS status_count
 FROM status
 JOIN task ON task.status_id = status.id
 GROUP BY status.name 
-ORDER BY status.name;
+ORDER BY status_count DESC;
 
 
 
