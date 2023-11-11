@@ -40,7 +40,7 @@ FROM task;
 
 -- 8.Get the title and status (as text) of all tasks
 SELECT task.title, status.name
-FROM task, status
+FROM task, status;
 
 
 
@@ -57,4 +57,5 @@ FROM status
 LEFT JOIN task ON status.id = task.status_id
 GROUP BY status.name
 ORDER BY task_count DESC;
+
 
