@@ -43,7 +43,6 @@ SELECT task.title, status.name
 FROM task, status;
 
 
-
 -- 9.Get the name of each status, along with a count of how many tasks have that status
 SELECT status.name AS status_name, COUNT(task.id) AS task_count
 FROM status
