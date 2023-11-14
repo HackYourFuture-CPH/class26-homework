@@ -27,6 +27,6 @@ SET status_id = 3
 WHERE title = 'Wash clothes';
 
 --6. Delete a task
+DELETE FROM task
+WHERE title = 'Wash clothes';
 
-
---7. In all the above queries, you choose which is the task that you will modify/delete.
