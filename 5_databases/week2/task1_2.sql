@@ -1,6 +1,8 @@
+USE hyf_lesson1;
+
 --1. Add a task  with these attributes: title, description, created, updated, due_date, status_id, user_id
 INSERT INTO task (title, description, created, updated, due_date, status_id, user_id)
-VALUES ('Be good', 'Stop beating your husband', 'created', 'updated', 'due_date', 'status_id', 'user_id');
+VALUES ('Be good', 'Stop beating your husband', '2023-11-16 12:00:00', '2023-11-16 12:00:00', '2023-12-01 12:00:00', 1, 3);
 
 --2. Change the title of a task
 UPDATE task
@@ -13,13 +15,16 @@ from task;
 
 --3. Change a task due date
 UPDATE task
-SET due_date = 2017-10-15 13:05:09
+SET due_date = 2017-10-15 
 WHERE title = 'Wash clothes';
 
 --4. Change a task status
 UPDATE status
 SET name = 'Yet to begin'
 WHERE name = 'Not started';
+
+SELECT *
+from status;
 
 --5. Mark a task as complete
 UPDATE task
@@ -36,7 +41,7 @@ Student: with the columns: id, name, email, phone, class_id (foreign key) */
 
 
 CREATE DATABASE dbweek2
-    DEFAULT CHARACTER SET = 'utf8mb4' SET DATEFORMAT "YYYY-MM-DD HH:MM:SS";
+    DEFAULT CHARACTER SET = 'utf8mb4';
     
     USE dbweek2;
 
@@ -53,7 +58,7 @@ CREATE TABLE `student` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(255) NULL,
-  `class_id` int(10) unsigned NULL,
+  `class_id` int(10) unsigned NULL, BIGINT
   PRIMARY KEY (`id`),
     CONSTRAINT `fk_class` FOREIGN KEY (`class_id`) REFERENCES `class` (`id`) ON DELETE CASCADE,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -65,4 +70,5 @@ CREATE INDEX idx_name student (name);
 /*Add a new column to the class table named status which can only have the following 
 values: not-started, ongoing, finished (hint: enumerations). */
 ALTER TABLE class
-ADD COLUMN status ENUM('not-started', 'ongoing', 'finished') NOT NULL;
+ADD status ENUM('not-started', 'ongoing', 'finished') NOT NULL;
+
