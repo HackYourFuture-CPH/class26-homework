@@ -12,9 +12,6 @@ WHERE `user`.email LIKE '%@spotify.com'
 
 
 -- Get all the tasks for 'Donald Duck' with status 'Not started'
-SELECT *
-from status
-
 SELECT task.title, status_id, USER.name
 FROM task JOIN `user`
 WHERE status_id = 1 AND name = 'Donald Duck'

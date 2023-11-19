@@ -52,3 +52,4 @@ INSERT INTO PlayerGames (player_id, game_id) VALUES (2, 1);
 INSERT INTO PlayerGames (player_id, game_id) VALUES (1, 3);
 INSERT INTO PlayerGames (player_id, game_id) VALUES (2, 3);
 INSERT INTO PlayerGames (player_id, game_id) VALUES (1, 4);
+

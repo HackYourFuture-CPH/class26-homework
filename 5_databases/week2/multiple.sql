@@ -69,3 +69,4 @@ ON student (name);
 ALTER TABLE class
 ADD COLUMN status ENUM('not-started', 'ongoing', 'finished') NOT NULL;
 
+
