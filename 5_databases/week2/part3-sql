@@ -1,3 +1,4 @@
+-- Active: 1699187035090@@127.0.0.1@3306@HYF_lesson2
 USE hyf_lesson2;
 
 --Get all the tasks assigned to users whose email ends in @spotify.com
