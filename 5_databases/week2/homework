@@ -1,0 +1,145 @@
+INSERT INTO task (title, description, created, updated, due_date, status_id)
+VALUES ('Learn an  instrument', 'Maybe violin', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, '2023-12-31', 1);
+
+
+UPDATE task
+SET title = 'Learn an game'
+WHERE title = 'Learn an  instrument';
+
+
+
+UPDATE task
+SET due_date = '2023-01-01 00:00:00'
+WHERE id = 1;
+
+
+
+UPDATE task
+SET status_id = '2'
+WHERE id = "1";
+
+
+UPDATE task
+SET status_id = (SELECT id FROM status WHERE name = 'Done')
+WHERE id = 5;
+
+DELETE FROM task
+WHERE id = 18;
+
+--Part 2: School database
+ -- Create a new database
+CREATE DATABASE IF NOT EXISTS school_database;
+USE school_database;
+
+-- Create the Class table
+CREATE TABLE Class (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  begins DATE NOT NULL,
+  ends DATE NOT NULL,
+  status ENUM('not-started', 'ongoing', 'finished') NOT NULL
+);
+
+-- Create the Student table
+CREATE TABLE Student (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  phone VARCHAR(255),
+  class_id INT UNSIGNED,
+  FOREIGN KEY (class_id) REFERENCES Class(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- Create an index on the name column of the Student table
+CREATE INDEX idx_name ON Student (name);
+
+
+--Part 3: More queries
+-- Get all tasks assigned to users whose email ends in @spotify.com
+
+SELECT *
+FROM task JOIN `user` on email LIKE "%@spotify.com"
+
+
+-- Get all tasks for 'Donald Duck' with status 'Not started'
+
+SELECT task.title, user.name, status_id
+FROM task JOIN `user` on name = "Donald Duck"
+Where status_id = 1
+
+--Get all the tasks for 'Maryrose Meadows' that were created in september (hint: month(created)=month_number)
+
+SELECT task.title, user.name, created
+FROM task JOIN `user` on name = "Maryrose Meadows"
+WHERE month(created)= 09
+
+--Find how many tasks where created in each month, e.g. how many tasks were created in october, how many tasks were created in november, etc. (hint: use group by)
+SELECT MONTH (created), COUNT(*)
+FROM task
+GROUP BY MONTH(created)
+
+
+
+
+--Part 4: Creating a database
+
+CREATE TABLE Book (
+  book_id INT PRIMARY KEY,
+  title VARCHAR(255),
+  author VARCHAR(255),
+  ISBN VARCHAR(20)
+);
+
+CREATE TABLE Genre (
+  genre_id INT PRIMARY KEY,
+  name VARCHAR(50)
+);
+
+CREATE TABLE Rack (
+  rack_id INT PRIMARY KEY,
+  location VARCHAR(50)
+);
+
+CREATE TABLE Member (
+  member_id INT PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(255)
+);
+
+CREATE TABLE Borrowing (
+  borrowing_id INT PRIMARY KEY,
+  borrow_date DATE,
+  return_date DATE
+);
+
+CREATE TABLE Book_Genre (
+  book_id INT,
+  genre_id INT,
+  PRIMARY KEY (book_id, genre_id),
+  FOREIGN KEY (book_id) REFERENCES Book(book_id),
+  FOREIGN KEY (genre_id) REFERENCES Genre(genre_id)
+);
+
+CREATE TABLE Book_Rack (
+  book_id INT,
+  rack_id INT,
+  PRIMARY KEY (book_id, rack_id),
+  FOREIGN KEY (book_id) REFERENCES Book(book_id),
+  FOREIGN KEY (rack_id) REFERENCES Rack(rack_id)
+);
+
+CREATE TABLE Member_Borrowing (
+  member_id INT,
+  borrowing_id INT,
+  PRIMARY KEY (member_id, borrowing_id),
+  FOREIGN KEY (member_id) REFERENCES Member(member_id),
+  FOREIGN KEY (borrowing_id) REFERENCES Borrowing(borrowing_id)
+);
+
+CREATE TABLE Borrowing_Book (
+  borrowing_id INT,
+  book_id INT,
+  PRIMARY KEY (borrowing_id, book_id),
+  FOREIGN KEY (borrowing_id) REFERENCES Borrowing(borrowing_id),
+  FOREIGN KEY (book_id) REFERENCES Book(book_id)
+);
