@@ -8,6 +8,10 @@ SELECT task.title, user.name, status_id
 FROM task JOIN `user` on name = "Donald Duck"
 Where status_id = 1
 
+SELECT task.title, user.name, status_id
+FROM task JOIN `user` 
+Where status_id = 1 AND NAME = "Donald Duck"
+
 --Get all the tasks for 'Maryrose Meadows' that were created in september (hint: month(created)=month_number)
 
 SELECT task.title, user.name, created
