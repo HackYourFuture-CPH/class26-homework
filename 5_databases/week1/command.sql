@@ -28,17 +28,14 @@ left JOIN user ON user.id = task.user_id
 WHERE status.name <> 'done';
 
 -- 5. Get all the tasks, sorted with the most recently created first
-SELECT status.name, created
-FROM task
-JOIN status ON task.status_id = status.id
-LEFT JOIN user ON user.id = task.user_id
-ORDER BY created;
+
+SELECT * 
+FROM task 
+ORDER BY created DESC;
 
 -- 6. Get the single most recently created task
-SELECT status.name, created
+SELECT *
 FROM task
-JOIN status ON task.status_id = status.id
-LEFT JOIN user ON user.id = task.user_id
 ORDER BY created DESC LIMIT 1;
 
 -- 7. Get the title and due date of all tasks where the title or description contains database
