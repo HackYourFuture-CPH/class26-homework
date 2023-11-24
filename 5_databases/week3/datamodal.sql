@@ -42,6 +42,12 @@ VALUES(1, "2", "2", "2023-11-23 18:21:00", "+45 12345678", "Leon", "leon@gmail.c
 INSERT INTO reservation ( id, number_of_guests, meal_id, created_date, contact_phonenumber, contact_name, contact_email )
 VALUES(2, "4", "1", "2023-11-25 18:24:00", "+45 98765432", "Tim", "tim@gmail.com" );
 
+INSERT INTO reservation ( id, number_of_guests, meal_id, created_date, contact_phonenumber, contact_name, contact_email )
+VALUES(4, "2", "3", "2023-11-27 18:24:00", "+45 98765632", "Karan", "karan@gmail.com" );
+
+INSERT INTO reservation ( id, number_of_guests, meal_id, created_date, contact_phonenumber, contact_name, contact_email )
+VALUES(5, "2", "5", "2023-11-27 18:24:00", "+45 985839532", "Mohit", "mohit@gmail.com" );
+
 --meal
 
 INSERT INTO meal (id, title, description, location, `when`, max_reservations, price, reated_date)
@@ -50,6 +56,13 @@ VALUES(1, "Veg Dum biryani", "Rice with some spices and vegetables", "India spic
 INSERT INTO meal (id, title, description, location, `when`, max_reservations, price, reated_date)
 VALUES(2, "Butter paneer", "paneer curry alog with rice", "Indian lounge", "2023-05-21 11:21:00", 8, "500", "2023-07-11 18:21:00");
 
+INSERT INTO meal (id, title, description, location, `when`, max_reservations, price, reated_date)
+VALUES(5, "Raita", "Yogurt with spices", "Indian lounge", "2023-05-21 11:21:00", 8, "40", "2023-07-11 18:21:00");
+
+INSERT INTO meal (id, title, description, location, `when`, max_reservations, price, reated_date)
+VALUES(4, "Papadam", "Crunchy like chips", "Indian Royal", "2023-05-21 11:21:00", 8, "20", "2023-07-11 18:21:00");
+
+
 --review
 
 INSERT INTO review (id, title, description, meal_id, stars, created_date )
@@ -57,4 +70,10 @@ VALUES(1, "Bestever Veg Dum biryani", "the combination of Rice with some spices 
 
 INSERT INTO review (id, title, description, meal_id, stars, created_date )
 VALUES(2, "Bestever butter paneer", "the combination of Rice with paneer curry was awesome", "2", 4, "2023-06-22 10:21:00");
+
+INSERT INTO review (id, title, description, meal_id, stars, created_date )
+VALUES(4, "Best papadam", "the crunchiness was awesome", "4", 4, "2023-06-22 10:21:00");
+
+INSERT INTO review (id, title, description, meal_id, stars, created_date )
+VALUES(5, "Bestever boondi raita", "so delicious", "5", 4, "2023-05-22 10:21:00");
 

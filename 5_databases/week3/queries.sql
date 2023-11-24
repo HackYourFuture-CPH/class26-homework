@@ -81,8 +81,52 @@ WHERE review.id = 3;
 
     ------ Additional queries -------
 
+-- Get meals that has a price smaller than a specific price fx 90
+SELECT *
+FROM meal
+WHERE price <90 ;
 
+--Get meals that still has available reservations
+SELECT *
+FROM meal
+WHERE max_reservations > (
+    SELECT COUNT(*)
+    FROM reservation
+    WHERE meal_id = meal.id
+);
 
+--Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
+SELECT title
+FROM meal
+WHERE title LIKE "%butter%";
+
+--Get meals that has been created between two dates
+SELECT *
+FROM meal
+WHERE meal.reated_date BETWEEN "2023-05-23" AND  "2023-07-22";
+
+--Get only specific number of meals fx return only 3 meals
+SELECT *
+FROM meal
+LIMIT 3;
+
+--Get the meals that have good reviews
+SELECT *
+FROM review
+WHERE stars >= 3;
+
+--Get reservations for a specific meal sorted by created_date
+SELECT *
+FROM reservation
+WHERE meal_id = 3
+ORDER BY created_date;
+
+--Sort all meals by average number of stars in the reviews
+SELECT meal.*, AVG(review.stars) AS avg_stars
+FROM meal
+LEFT JOIN review ON meal.id = review.meal_id
+GROUP BY meal.id
+ORDER BY avg_stars DESC;
 
 
 
