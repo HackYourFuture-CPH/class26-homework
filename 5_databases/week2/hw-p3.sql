@@ -2,7 +2,12 @@ use lesson2;
 
 --Get all the tasks assigned to users whose email ends in @spotify.com
 
-SELECT * FROM user WHERE email LIKE '%@spotify.com';
+SELECT *
+FROM user
+    JOIN user_task ON user.id = user_task.user_id
+    JOIN task ON user_task.task_id = task.id
+WHERE
+    email LIKE '%@spotify.com';
 
 --Get all the tasks for 'Donald Duck' with status 'Not started'
 
