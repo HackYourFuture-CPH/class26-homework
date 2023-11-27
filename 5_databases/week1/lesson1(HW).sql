@@ -26,10 +26,12 @@ LIMIT 1;
 
 SELECT task.title, task.due_date
 FROM task
-WHERE title LIKE "%database%";
+WHERE title LIKE "%database%"
+OR description LIKE "%database%";
 
 SELECT task.title, status.name
-FROM task JOIN status;
+FROM task 
+JOIN status ON status.id = task.status_id;
 
 SELECT status.name , COUNT(task.id)
 FROM status JOIN task ON status.id = task.status_id
