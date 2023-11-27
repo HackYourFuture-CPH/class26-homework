@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `Student` (
     FOREIGN KEY (class_id) REFERENCES Class(id)
 );
 
-CREATE INDEX idx_name ON Student (name);
+CREATE INDEX idx_name ON Student(name);
 
 ALTER TABLE Class
 ADD COLUMN status ENUM('not-started', 'ongoing', 'finished') NOT NULL DEFAULT 'not-started';
