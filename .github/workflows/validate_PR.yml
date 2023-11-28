@@ -17,7 +17,7 @@ jobs:
           echo $branch_name
           invalid_branch=true 
           for str in "${allowed_strings[@]}"; do
-            if [[ "$branch_name" == "$str"* ]]; then
+            if [[ "$branch_name" == "$str/"* ]]; then
               invalid_branch=false 
               echo "Match found for $str"
               break
