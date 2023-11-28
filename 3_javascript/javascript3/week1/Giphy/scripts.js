@@ -3,19 +3,17 @@ function domListener() {
   document.addEventListener("DOMContentLoaded", domLoader);
 }
 
+
 function domLoader() {
   const inputSearch = document.getElementById("search");
   const clickSearch = document.getElementById("click");
   const numberOfSearch = document.getElementById("quantity");
   const resultOfSearch = document.getElementById("result");
 
-  let toSearch = "";
-  let limitOfSearch = 25;
 
-  inputSearch.addEventListener(
-    "input",
-    () => (toSearch = inputSearch.value.toLowerCase())
-  );
+  let gifSearch = "";
+  let searchLimit = 25;
+  const APIKEY = "S6BbyLq63tmjQgRUkQ7T3wfVR0Jkr0Yy";
 
   clickSearch.addEventListener("click", parameterSearch);
   inputSearch.addEventListener("keydown", (event) => {
@@ -26,15 +24,14 @@ function domLoader() {
 
   numberOfSearch.addEventListener(
     "input",
-    () => (limitOfSearch = numberOfSearch.value)
+    () => (searchLimit = numberOfSearch.value)
   );
 
   function parameterSearch() {
-    console.log(toSearch);
-    const apiKey = "S6BbyLq63tmjQgRUkQ7T3wfVR0Jkr0Yy";
-
+    console.log(gifSearch);
+    gifSearch = inputSearch.value.toLowerCase()
     fetch(
-      `https://api.giphy.com/v1/gifs/search?q=${toSearch}&api_key=${apiKey}&limit=${limitOfSearch}`
+      `https://api.giphy.com/v1/gifs/search?q=${gifSearch}&api_key=${APIKEY}&limit=${searchLimit}`
     )
       .then((response) => response.json())
       .then((data) => {

@@ -8,10 +8,10 @@ function domLoader() {
   const searchButtom = document.getElementById("searchButtom");
   const weatherInfo = document.getElementById("weatherInfo");
 
-  let nameOfCity = "copenhagen";
+  let city = "copenhagen";
 
   inputCity.addEventListener("input", function () {
-    nameOfCity = inputCity.value.toLowerCase();
+    city = inputCity.value.toLowerCase();
   });
 
   searchButtom.addEventListener("click", weatherFunction);
@@ -19,7 +19,7 @@ function domLoader() {
   function weatherFunction() {
     weatherInfo.innerText = "";
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${nameOfCity}&appid=62550c6942b65218b08fefa7f3bf246e&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=62550c6942b65218b08fefa7f3bf246e&units=metric`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -34,9 +34,9 @@ function domLoader() {
         weatherIcon.className = weatherIconClass;
         weatherInfo.appendChild(weatherIcon);
 
-        windInfo(data);
+        windInfo(data.wind);
         cloudInfo(data);
-        dayTime(data);
+        dayTime(data.sys);
       });
   }
 
@@ -69,9 +69,9 @@ function domLoader() {
     }
   }
 
-  function windInfo(data) {
+  function windInfo(wind) {
     const windInfo = document.createElement("li");
-    windInfo.innerText = "🌬️ " + data.wind.speed.toFixed(1) + " m/s";
+    windInfo.innerText = "🌬️ " + wind.speed.toFixed(1) + " m/s";
     weatherInfo.appendChild(windInfo);
   }
 
@@ -81,9 +81,9 @@ function domLoader() {
     weatherInfo.appendChild(cloudInfo);
   }
 
-  function dayTime(data) {
-    const sunriseTimestamp = data.sys.sunrise;
-    const sunsetTimestamp = data.sys.sunset;
+  function dayTime(sys) {
+    const sunriseTimestamp = sys.sunrise;
+    const sunsetTimestamp = sys.sunset;
 
     const sunriseInfo = document.createElement("p");
     const sunsetInfo = document.createElement("p");
