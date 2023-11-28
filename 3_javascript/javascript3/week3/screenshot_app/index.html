@@ -3,30 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Screenshot App</title>
+     <title>Screenshot App</title>
     <script src="script.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
+     <link rel="stylesheet" type="text/css" href="styles.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link
       href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <p1 id="title">Screenshot App</p1>
-
-<input type="text" placeholder="Your URL here" id="inputURL"></input>
-
-<div class="button-container">
-    <button id="takeURLButton">Save Screenshot</button>
-    <button id="showURLButton">Show Screenshot</button>
-</div> 
+    
+     <label for="inputURL">Website URL for screenshot</label>
+     <input type="text" placeholder="Your URL here" id="inputURL"></input>
+     
+     <div class="button-container">
+      <button id="takeURLButton">Save Screenshot</button>
+      <button id="showURLButton">Show Screenshot</button>
+    </div> 
  
-<select id="selectScreenshot"></select>
+ <select id="selectScreenshot"></select>
   <button id="deleteSelectedScreenshotButton">Delete Screenshot</button>
-  <div id="loadingIndicator" class="loading">Loading...</div>
+    <div id="loadingIndicator" class="loading">Loading...</div>
 
-<ul id="screenshotList"></ul>
+    <ul id="screenshotList"></ul>
   </body>
 </html>

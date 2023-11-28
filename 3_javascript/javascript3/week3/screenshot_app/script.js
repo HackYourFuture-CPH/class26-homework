@@ -24,7 +24,7 @@ function domLoader() {
     return new Promise((resolve) => {
       const loadingIndicator = document.getElementById("loadingIndicator");
       loadingIndicator.style.display = "block";
-      const screenshotURL = getScreenshotURL(URL);
+      const screenshotURL = URL;
       const urlAPI = `https://website-screenshot6.p.rapidapi.com/screenshot?url=https%3A%2F%2F${screenshotURL}&width=1920&height=1080&fullscreen=true`;
       const options = {
         method: "GET",
@@ -48,10 +48,6 @@ function domLoader() {
             loadingIndicator.style.display = "none";
           });
     });
-  }
-
-  function getScreenshotURL(URL) {
-    return URL;
   }
 
   function saveScreenshot(screenshot) {
@@ -128,7 +124,7 @@ function domLoader() {
 
       fetchScreenshots()
         .then((data) => {
-          if (selectedIndex >= 0 && selectedIndex < data.length) {
+          if (data[selectedIndex] !== undefined) {
             const selectedScreenshot = data[selectedIndex];
             const screenshotId = selectedScreenshot._id;
             deleteScreenshotById(screenshotId);
