@@ -1,6 +1,6 @@
--- Active: 1698992883180@@127.0.0.1@3306@hyf_homework1
+-- Active: 1701191469073@@0.0.0.0@3306@hyf_homework1
 --1.Find out how many tasks are in the task table--
-SELECT COUNT (*)
+SELECT COUNT(*)
 FROM task;
 
 --2.Find out how many tasks in the task table do not have a valid due date
@@ -41,7 +41,7 @@ WHERE title LIKE '%database%' OR description LIKE '%database%';
 SELECT task.title,status.name AS task_status
 FROM task
 JOIN status
-ON task.status_id=status_id;
+ON status.id=task.status_id;
 
 --9.Get the name of each status, along with a count of how many 
 -- tasks have that status
@@ -51,6 +51,14 @@ FROM task
 JOIN status
 ON task.status_id =status.id
 GROUP BY status.name;
+
+
+--SELECT status.name,COUNT(*) AS task_count
+--FROM task
+--JOIN status
+--ON task.status_id =status.id
+--WHERE status.name = 'In progress'
+--GROUP BY status.name
 
 --10.Get the names of all statuses, sorted by the status with most tasks first
 
