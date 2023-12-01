@@ -4,7 +4,7 @@ insert into task (id, title, description, created, updated, due_date, status_id,
 
 UPDATE task
 SET title = "Become a trillionaire"
-WHERE title = "Become a billionaire"
+WHERE id = 1
 
 UPDATE task
 SET due_date = "2023-11-16 07:58:03"
