@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "minimist": "^1.2.8",
     "typescript": "^5.1.6"
   }
 }
