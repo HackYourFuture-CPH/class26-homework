@@ -6,13 +6,16 @@ SELECT *
 FROM `user`
 
 -- Get all the tasks assigned to users whose email ends in @spotify.com
-SELECT *
-FROM task JOIN `user`
-WHERE `user`.email LIKE '%@spotify.com'
+SELECT task.*
+FROM task
+JOIN user_task ON task.task_id = user_task.task_id
+JOIN user ON user_task.user_id = user.user_id
+WHERE user.email LIKE '%@spotify.com';
+
 
 
 -- Get all the tasks for 'Donald Duck' with status 'Not started'
-SELECT task.title, status_id, USER.name
+SELECT task.title, status_id, user.name
 FROM task JOIN `user`
 WHERE status_id = 1 AND name = 'Donald Duck'
 

@@ -2,17 +2,20 @@
 
 -- Part 1: Working with tasks
 SELECT *
-FROM task
+FROM task;
 
 
-INSERT INTO task (id, title, description, created, updated, due_date, status_id, user_id)
-VALUES (36, 'premier league', 'english football', '1992-02-20 12:22:12', '2023-11-16 12:22:12', '23-10-15 12:22:12', 2, '6'
-)
+REPLACE INTO task (id, title, description, created, updated, due_date, status_id, user_id)
+VALUES (36, 'clean clothes', 'new description', '1992-02-20 12:22:12', '2023-11-16 12:22:12', '2023-10-15 12:22:12', 2, 6);
+
+
 
 --- Change the title of a task
+-- Change the title of a task with a specific ID
 UPDATE task
 SET title = 'clean clothes'
-WHERE title = 'Wash clothes';
+WHERE id = 36;
+
 
 
 
@@ -62,8 +65,8 @@ CREATE TABLE student (
 
 
 
-CREATE INDEX  ind_name
-ON student (name);
+CREATE INDEX  idx_name
+ON student(name);
 
 
 ALTER TABLE class
