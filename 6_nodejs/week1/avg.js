@@ -5,7 +5,7 @@ const args = process.argv.slice(2);
 if (args.length === 0) {
   console.log('No numbers provided. Usage: node avg.js <num1> <num2> ...');
   process.exit(1); 
-}
+};
 
 
 const numbers = args.map(Number); 
