@@ -6,7 +6,7 @@ type Product = {
   //...
 };
 
-// Bonus: how it would look like as an interface?
+// Bonus: how does it look like as an interface?
 
 // Part 2: Union Types
 // Create a type 'CartItem' that can be either a 'Product' or a 'string' representing a discount code.
@@ -32,7 +32,7 @@ user.phone = "+1234567890";
 // Create an interface 'Order' with properties 'id' (number), 'user' (user object), and 'items' (array of 'CartItem').
 // interface ...
 
-// We have used the user type a few times now (Part 5 and here in Part 7
+// We have used the User type a few times now (Part 5 and here in Part 7).
 // Maybe it is about time to declare it as a type and use that instead?
 
 // Part 8: Extending
