@@ -9,7 +9,7 @@
     "build": "webpack --mode production",
     "start": "npm run build && node ./src/backend/server",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
-    "server": "nodemon ./src/backend/server",
+    "server": "nodemon app.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Benjamin Hughes",
