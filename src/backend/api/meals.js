@@ -3,6 +3,52 @@ const express = require("express");
 const router = express.Router();
 const knex = require("../database");
 
+//Week- 3
+
+//Returns all meals that are cheaper than maxPrice. Data type Number. api/meals?maxPrice=90
+
+router.get('/', async (req, res) => {
+  try {
+    const maxPrice = req.query.maxPrice;
+
+    if (maxPrice !== undefined && isNaN(maxPrice)) {
+      return res.status(400).json({ error: 'The maxPrice parameter accepts numbers only' });
+    }
+
+    const cheaperMeals = await knex('meal').where('price', '<', maxPrice);
+
+    res.json(cheaperMeals);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'An unexpected error occurred while processing your request.' });
+  }
+});
+
+//Returns all meals that still have available spots left, if true. 
+//If false, return meals that have no available spots left.1	api/meals?availableReservations=true
+
+router.get('/', async (req, res) => {
+  try {
+    const availableReservations = req.query.availableReservations;
+
+    if (availableReservations !== undefined && availableReservations !== 'true' && availableReservations !== 'false') {
+      return res.status(400).json({ error: 'The availableReservations parameter accepts true or false only' });
+    }
+
+    // Convert the string 'true' or 'false' to a boolean
+    const isAvailable = availableReservations === 'true';
+
+    // Use the boolean value in the query
+    const meals = await knex('meal').where('number_of_guests', '<', isAvailable ? 0 : Number.MAX_VALUE);
+
+    res.json(meals);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'An unexpected error occurred while processing your request.' });
+  }
+});
+
+// Week 2
 //GET - Returns all meals
 router.get("/", async (request, response) => {
   try {
