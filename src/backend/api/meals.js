@@ -7,7 +7,7 @@ const knex = require("../database");
 
 //Returns all meals that are cheaper than maxPrice. Data type Number. api/meals?maxPrice=90
 
-router.get('/', async (req, res) => {
+router.get('/maxPrice', async (req, res) => {
   try {
     const maxPrice = req.query.maxPrice;
 
@@ -24,10 +24,11 @@ router.get('/', async (req, res) => {
   }
 });
 
+
 //Returns all meals that still have available spots left, if true. 
 //If false, return meals that have no available spots left.1	api/meals?availableReservations=true
 
-router.get('/', async (req, res) => {
+router.get('/availableReservations', async (req, res) => {
   try {
     const availableReservations = req.query.availableReservations;
 
@@ -39,7 +40,7 @@ router.get('/', async (req, res) => {
     const isAvailable = availableReservations === 'true';
 
     // Use the boolean value in the query
-    const meals = await knex('meal').where('number_of_guests', '<', isAvailable ? 0 : Number.MAX_VALUE);
+    const meals = await knex('reservation').where('number_of_guests', '<', isAvailable ? 0 : Number.MAX_VALUE);
 
     res.json(meals);
   } catch (error) {
