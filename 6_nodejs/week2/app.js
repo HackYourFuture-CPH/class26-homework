@@ -56,47 +56,37 @@ app.get('/documents/:id', async (req, res) => {
 
 //POST /search
 
-app.post("/search", async (req, res) => {
+app.post('/search', async (req, res) => {
     try {
         const documents = JSON.parse(await fs.readFile('documents.json'));
-        const { q, fields } = req.query;
+        const { q } = req.query;
+        const fields = req.body;
 
         if (q && fields) {
-            return res.status(400).json({
-                message: "Query param and fields cannot be used together"
-            });
+            res.status(400).json({ error: "Bad Request: query and fields can't be provided at the same time." });
         }
 
-        let results = documents;
-
         if (q) {
-            results = filterByQueryParam(results, q);
+            const filteredDocuments = documents.filter(document =>
+                Object.values(document).some(value => String(value).includes(q))
+            );
+            res.json(filteredDocuments);
         }
 
         if (fields) {
-            results = filterByFields(results, fields);
+            const filteredDocuments = documents.filter(doc =>
+                (fields.price && doc.price.includes(fields.price)) ||
+                (fields.id && doc.id.includes(fields.id)) ||
+                (fields.description && doc.description.includes(fields.description)) ||
+                (fields.name && doc.name.includes(fields.name))
+            );
+            res.json(filteredDocuments);
         }
-
-        return res.json(results);
     } catch (error) {
         console.error(error);
-        return res.status(500).json({
-            error: 'An unexpected error occurred while processing your request.'
-        });
+        res.status(500).json({ error: 'An unexpected error occurred while processing your request.' });
     }
 });
-
-function filterByQueryParam(documents, query) {
-    return documents.filter(document =>
-        Object.values(document).some(value => String(value).includes(query))
-    );
-}
-
-function filterByFields(documents, filterFields) {
-    return documents.filter(document =>
-        Object.entries(filterFields).every(([key, value]) => document[key] === value)
-    );
-}
 
   app.listen(port, () => {
   console.log(`Listening on port ${port}`);
