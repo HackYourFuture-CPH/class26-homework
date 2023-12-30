@@ -40,7 +40,7 @@ app.get('/documents/:id', async (req, res) => {
     try {
         const documents = JSON.parse(await fs.readFile('documents.json'));
         const { id } = req.params;
-        const document = documents.find(doc => doc.id === id);
+        const document = documents.find(doc => doc.id === parseInt(id)); // its an integer
 
         if (document) {
             res.json(document);
@@ -60,7 +60,7 @@ app.post('/search', async (req, res) => {
     try {
         const documents = JSON.parse(await fs.readFile('documents.json'));
         const { q } = req.query;
-        const fields = req.body;
+        const {fields} = req.body;
 
         if (q && fields) {
             res.status(400).json({ error: "Bad Request: query and fields can't be provided at the same time." });
@@ -75,10 +75,10 @@ app.post('/search', async (req, res) => {
 
         if (fields) {
             const filteredDocuments = documents.filter(doc =>
-                (fields.price && doc.price.includes(fields.price)) ||
-                (fields.id && doc.id.includes(fields.id)) ||
-                (fields.description && doc.description.includes(fields.description)) ||
-                (fields.name && doc.name.includes(fields.name))
+                (fields.price  && doc.price === fields.price) ||
+                (!isNaN(fields.id)  && doc.id === parseInt(fields.id)) || // because its an integer
+                (fields.description && String(doc.description).includes(fields.description)) ||
+                (fields.name && String(doc.name).includes(fields.name))
             );
             res.json(filteredDocuments);
         }
