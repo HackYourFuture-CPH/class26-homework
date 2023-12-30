@@ -23,27 +23,26 @@ const contactsAPIRouter = express.Router();
 apiRouter.use("/contacts", contactsAPIRouter);
 
 contactsAPIRouter.get("/", async (req, res) => {
-  let query = knex.select("*").from("contacts");
-
-  if ("sort" in req.query) {
-    const orderBy = req.query.sort.toString();
-    if (orderBy.length > 0) {
-        //query = query.orderByRaw(orderBy); the following request will drop the contacts table /api/contacts?sort=DROP TABLE contacts
-      query = query.orderByRaw(knex.raw('??', [orderBy]));
-    }
-  }
-
-
-  console.log("SQL", query.toSQL().sql);
-
   try {
+    let query = knex.select("*").from("contacts");
+
+    if ("sort" in req.query) {
+      const orderBy = req.query.sort.toString();
+      if (orderBy.length > 0) {
+        query = query.orderByRaw(knex.raw('??', [orderBy]));
+      }
+    }
+
+    console.log("SQL", query.toSQL().sql);
+
     const data = await query;
     res.json({ data });
-  } catch (e) {
-    console.error(e);
+  } catch (error) {
+    console.error(error);
     res.status(500).json({ error: "Internal server error" });
   }
 });
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
