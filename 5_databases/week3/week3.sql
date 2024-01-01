@@ -28,7 +28,7 @@ from reservation;
 
 -- Add a new reservation
 INSERT INTO reservation (number_of_guests, meal_id, created_date, contact_phonenumber, contact_name, contact_email) VALUES 
-(6, 2, '2023-09-09 10:08:07', 22042021, 'Golf', 'golf@gmail.com');
+(6, 2, '2023-09-09 10:08:07', `22042021`, 'Golf', 'golf@gmail.com');
 
 -- Get a reservation with any id, fx 1
 
@@ -38,12 +38,13 @@ WHERE id = 1;
 
 -- Update a reservation with any id, fx 1. Update any attribute fx the title or multiple attributes
 UPDATE reservation
-SET contact_phonenumber = 206790
-WHERE contact_email like '%gmail%';
+SET contact_phonenumber = '206790'
+WHERE id = 2 AND contact_email LIKE '%gmail%';
+
 
 -- Delete a reservation
 DELETE FROM reservation
-WHERE LENGTH(contact_phonenumber) < 8;
+WHERE id = 3;
 
 -- Get all reviews
 SELECT *
@@ -72,22 +73,19 @@ DELETE FROM review
 WHERE YEAR(created_date) >= 2025;
 
 -- Get meals that has a price smaller than a specific price fx 90
-UPDATE meal
-SET location = 'Sychelles'
-WHERE price <= 150;
+SELECT *
+FROM meal
+WHERE price < 90;
 
 -- Get meals that still has available reservations
-SELECT
-    m.id AS meal_id,
-    m.title AS meal_title,
-    m.max_reservations AS max_reservations,
-    COUNT(r.id) AS reserved_guests,
-    m.max_reservations - COUNT(r.id) AS remaining_reservations
-FROM
-    meal m
-LEFT JOIN reservation r ON m.id = r.meal_id
-GROUP BY
-    m.id;
+SELECT *  
+FROM meal  
+WHERE max_reservations > (
+    SELECT COALESCE(SUM(number_of_guests), 0)
+    FROM reservation 
+    WHERE meal_id = meal.id
+);
+
 
 -- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
 SELECT *
@@ -97,7 +95,7 @@ WHERE title LIKE "%lamb%";
 -- Get meals that has been created between two dates
 SELECT *
 FROM meal
-WHERE MONTH(created_date) > 1 AND MONTH(created_date) < 6;
+WHERE created_date BETWEEN '2023-10-01' AND '2023-10-31';  
 
 -- Get only specific number of meals fx return only 5 meals
 
@@ -118,6 +116,6 @@ ORDER BY created_date;
 SELECT meal.id, meal.title, AVG(review.stars) AS avg_stars
 FROM meal
 LEFT JOIN review ON meal.id = review.meal_id
-GROUP BY meal.id, meal.title
+GROUP BY meal.id
 ORDER BY avg_stars DESC;
 
