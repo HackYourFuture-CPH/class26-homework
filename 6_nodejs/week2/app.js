@@ -8,29 +8,31 @@ app.use(express.json());
 app.get("/search", (req, res) => {
   const query = req.query.q;
 
-  try {
-    const data = fs.readFileSync("./documents.json", "utf8");
-    const documents = JSON.parse(data);
+  if (!query) {
+    return res.status(400).json({ error: "No query provided" });
+  }
 
-    if (!query) {
-      res.json(documents);
-    } else {
+  fs.readFile('./documents.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error("Error reading JSON file:", err);
+      return res.status(500).json({ error: "Error reading JSON file" });
+    }
+
+    try {
+      const documents = JSON.parse(data);
+
       const filteredDocuments = documents.filter((doc) => {
-        return (
-          (doc.name && doc.name.includes(query)) ||
-          (doc.price && doc.price.includes(query)) ||
-          (doc.description && doc.description.includes(query)) ||
-          (doc.type && doc.type.includes(query)) ||
-          (doc.value && doc.value.includes(query))
+        return Object.values(doc).some((value) =>
+          value && value.toString().toLowerCase().includes(query.toLowerCase())
         );
       });
 
       res.json(filteredDocuments);
+    } catch (error) {
+      console.error("Error parsing JSON data:", error);
+      res.status(500).json({ error: "Error parsing JSON data" });
     }
-  } catch (error) {
-    console.error("Error reading JSON file:", error);
-    res.status(500).json({ error: "Error reading JSON file" });
-  }
+  });
 });
 
 app.get("/documents/:id", (req, res) => {
