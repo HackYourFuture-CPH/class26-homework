@@ -1,5 +1,15 @@
 {
   "dependencies": {
     "typescript": "^5.1.6"
-  }
+  },
+  "name": "class26-homework",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
