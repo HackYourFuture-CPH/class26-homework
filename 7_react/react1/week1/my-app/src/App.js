@@ -1,13 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="logo.svg" alt="logo" />
-        
-        
 function ActivityHeading({ task }) {
   return (
     <tr>
@@ -26,7 +19,7 @@ function ActivityRow({ activity }) {
 
   return (
     <tr>
-      <td>{desc}</td>
+      <td>{name}</td>
       <td>{activity.when}</td>
     </tr>
   );
@@ -40,27 +33,61 @@ function ActivityTable({ activities }) {
     if (activity.category !== lastActivity) {
       rows.push(
         <ActivityRow
-          category={activity.category}
-          key={activity.category} />
+          activity={{ desc: activity.category }}
+          key={activity.category}
+        />
       );
     }
- 
-    
+    rows.push(
+      <ActivityRow
+        activity={activity}
+        key={activity.desc}
+      />
+    );
+    lastActivity = activity.category;
+  });
 
-const LIST = [
-  {category: "Task", desc: "Get out of bed", when: "Wed Sep 13 2017", deadlineMet: true},
-  {category: "Task", desc: "Brush teeth", when: "Thu Sep 14 2017", deadlineMet:false},
-  {category: "Task", desc: "Eat breakfast", when: "Fri Sep 15 2017", deadlineMet:true}
-];
-
-export default function App() {
-  return <FilterableProductTable products={PRODUCTS} />;
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Activity</th>
+          <th>Due date</th>
+        </tr>
+      </thead>
+      <tbody>{rows}</tbody>
+    </table>
+  );
 }
 
+function SearchBar() {
+  return (
+    <form>
+      <input type="text" placeholder="Search..." />
+      <label>
+        <input type="checkbox" />
+        {' '}
+        Show activities that were completed on time
+      </label>
+    </form>
+  );
+}
 
-      </header>
+function FilterableActivitiesTable({ activities }) {
+  return (
+    <div>
+      <SearchBar />
+      <ActivityTable activities={activities} />
     </div>
   );
 }
 
-export default App;
+const LIST = [
+  {category: "Task", desc: "Get out of bed", when: "Wed Sep 13 2017", deadlineMet: true},
+  {category: "Task", desc: "Brush teeth", when: "Thu Sep 14 2017", deadlineMet: false},
+  {category: "Task", desc: "Eat breakfast", when: "Fri Sep 15 2017", deadlineMet: true}
+];
+
+export default function App() {
+  return <FilterableActivitiesTable activities={LIST} />;
+}
