@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 function ActivityHeading({ task }) {
@@ -60,27 +59,6 @@ function ActivityTable({ activities }) {
   );
 }
 
-function SearchBar() {
-  return (
-    <form>
-      <input type="text" placeholder="Search..." />
-      <label>
-        <input type="checkbox" />
-        {' '}
-        Show activities that were completed on time
-      </label>
-    </form>
-  );
-}
-
-function FilterableActivitiesTable({ activities }) {
-  return (
-    <div>
-      <SearchBar />
-      <ActivityTable activities={activities} />
-    </div>
-  );
-}
 
 const LIST = [
   {category: "Task", desc: "Get out of bed", when: "Wed Sep 13 2017", deadlineMet: true},
@@ -89,5 +67,5 @@ const LIST = [
 ];
 
 export default function App() {
-  return <FilterableActivitiesTable activities={LIST} />;
+  return <ActivityTable activities={LIST} />;
 }
