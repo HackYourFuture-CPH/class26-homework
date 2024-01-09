@@ -3,22 +3,28 @@ import './App.css';
 
 function formatDate(rawDate) {
   const date = new Date(rawDate);
-  const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+  const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
   return date.toLocaleDateString('en-UK', options);
 }
 
+function isOverdue(dueDate, completionDate) {
+  const dueDateTime = new Date(dueDate);
+  const completionDateTime = new Date(completionDate);
+  return completionDateTime > dueDateTime;
+}
+
 function ActivityRow({ activity }) {
-  const description = activity.deadlineMet
-    ? activity.desc
-    : <span style={{ color: 'red' }}>{activity.desc}</span>;
-    const formattedDate = formatDate(activity.when);
-
-
+  const isTaskOverdue = isOverdue(activity.when, activity.completedAt);
+  const description = isTaskOverdue
+  ? <span style={{ color: 'red' }}>{activity.desc}</span>
+  : activity.desc;
+  const formattedDate = formatDate(activity.when);
+  
   return (
     <li>
-      <span style={{ color: activity.deadlineMet ? 'black' : 'red' }}>
-        {description}, {formattedDate}
-      </span>
+      <span style={{ color: isTaskOverdue ? 'red' : 'black' }}>
+        {description}, </span> {formattedDate}
+      
     </li>
   );
 }
@@ -39,9 +45,9 @@ function ActivityList({ activities }) {
 }
 
 const LIST = [
-  { desc: "Get out of bed", when: "Wed Sep 13 2017", deadlineMet: true },
-  { desc: "Brush teeth", when: "Thu Sep 14 2017", deadlineMet: false },
-  { desc: "Eat breakfast", when: "Fri Sep 15 2017", deadlineMet: true }
+  { desc: "Get out of bed", when: "Wed Sep 13 2017", completedAt: "Wed Sep 13 2017" },
+  { desc: "Brush teeth", when: "Thu Sep 14 2017", completedAt: "Thu Sep 15 2017" },
+  { desc: "Eat breakfast", when: "Fri Sep 15 2017", completedAt: "Fri Sep 11 2017" }
 ];
 
 export default function App() {
