@@ -1,71 +1,54 @@
+import React from 'react';
 import './App.css';
 
-function ActivityHeading({ task }) {
-  return (
-    <tr>
-      <th colSpan="2">
-        {task}
-      </th>
-    </tr>
-  );
+function formatDate(rawDate) {
+  const date = new Date(rawDate);
+  const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+  return date.toLocaleDateString('en-UK', options);
 }
 
 function ActivityRow({ activity }) {
-  const name = activity.deadlineMet ? activity.desc :
-    <span style={{ color: 'red' }}>
-      {activity.desc}
-    </span>;
+  const description = activity.deadlineMet
+    ? activity.desc
+    : <span style={{ color: 'red' }}>{activity.desc}</span>;
+    const formattedDate = formatDate(activity.when);
+
 
   return (
-    <tr>
-      <td>{name}</td>
-      <td>{activity.when}</td>
-    </tr>
+    <li>
+      <span style={{ color: activity.deadlineMet ? 'black' : 'red' }}>
+        {description}, {formattedDate}
+      </span>
+    </li>
   );
 }
 
-function ActivityTable({ activities }) {
-  const rows = [];
-  let lastActivity = null;
-
-  activities.forEach((activity) => {
-    if (activity.category !== lastActivity) {
-      rows.push(
-        <ActivityRow
-          activity={{ desc: activity.category }}
-          key={activity.category}
-        />
-      );
-    }
-    rows.push(
-      <ActivityRow
-        activity={activity}
-        key={activity.desc}
-      />
-    );
-    lastActivity = activity.category;
-  });
+function ActivityList({ activities }) {
+  const listItems = activities.map((activity) => (
+    <ActivityRow
+      activity={activity}
+      key={activity.desc}
+    />
+  ));
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Activity</th>
-          <th>Due date</th>
-        </tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
+    <ul>
+      {listItems}
+    </ul>
   );
 }
-
 
 const LIST = [
-  {category: "Task", desc: "Get out of bed", when: "Wed Sep 13 2017", deadlineMet: true},
-  {category: "Task", desc: "Brush teeth", when: "Thu Sep 14 2017", deadlineMet: false},
-  {category: "Task", desc: "Eat breakfast", when: "Fri Sep 15 2017", deadlineMet: true}
+  { desc: "Get out of bed", when: "Wed Sep 13 2017", deadlineMet: true },
+  { desc: "Brush teeth", when: "Thu Sep 14 2017", deadlineMet: false },
+  { desc: "Eat breakfast", when: "Fri Sep 15 2017", deadlineMet: true }
 ];
 
 export default function App() {
-  return <ActivityTable activities={LIST} />;
+  return (
+    <div>
+      <p>Todo List</p>
+      <ActivityList activities={LIST} />
+    </div>
+  );
 }
