@@ -6,7 +6,7 @@ function TodoItem(props){
         <>
         
         
-            <ul className="todoItem">&#9733;{props.description},{props.deadline}</ul>
+            <li className="todoItem">&#9733;{props.description},{props.deadline}</li>
         
         
         

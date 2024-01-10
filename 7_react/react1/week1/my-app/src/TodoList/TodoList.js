@@ -25,9 +25,9 @@ function TodoList(){
 
     return(
         <div>
-        <li className="todoList">
+        <ul className="todoList">
         {todoItemsComponents}
-        </li>
+        </ul>
         </div>
     )
 }
