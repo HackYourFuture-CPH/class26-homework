@@ -34,9 +34,9 @@ function Print(props) {
   const date = props.date;
 
   return (
-    <div>
+    <list>
       <span className="activity-color">{activity} </span> 
       <span className="date-color">{date}</span>
-    </div>
+    </list>
   );
 }
