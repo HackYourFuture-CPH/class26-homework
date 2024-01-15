@@ -1,73 +1,68 @@
-import React, {useState} from 'react';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import { v4 as uuidv4 } from "uuid";
 
-function formatDate(rawDate) {
-  const date = new Date(rawDate);
-  const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
-  return date.toLocaleDateString('en-UK', options);
-}
-
-function isOverdue(dueDate, completionDate) {
-  const dueDateTime = new Date(dueDate);
-  const completionDateTime = new Date(completionDate);
-  return completionDateTime > dueDateTime;
-}
-
-function ActivityRow({ activity }) {
-  const isTaskOverdue = isOverdue(activity.when, activity.completedAt);
-  const description = isTaskOverdue
-  ? <span style={{ color: 'red' }}>{activity.desc}</span>
-  : activity.desc;
-  const formattedDate = formatDate(activity.when);
-  
-  return (
-    <li>
-      <span style={{ color: isTaskOverdue ? 'red' : 'black' }}>
-        {description}, </span> {formattedDate}
-      
-    </li>
-  );
-}
-
-function ActivityList({ activities }) {
-  const listItems = activities.map((activity) => (
-    <ActivityRow
-      activity={activity}
-      key={activity.desc}
-    />
-  ));
-
-  return (
-    <ul>
-      {listItems}
-    </ul>
-  );
-}
-
-
-
-const LIST = [
-  { desc: "Get out of bed", when: "Wed Sep 13 2017", completedAt: "Wed Sep 13 2017" },
-  { desc: "Brush teeth", when: "Thu Sep 14 2017", completedAt: "Thu Sep 15 2017" },
-  { desc: "Eat breakfast", when: "Fri Sep 15 2017", completedAt: "Fri Sep 11 2017" }
+const todos = [
+  {
+    id: 1,
+    description: "Get out of bed",
+  },
+  {
+    id: 2,
+    description: "Brush teeth",
+  },
+  {
+    id: 3,
+    description: "Eat breakfast",
+  },
 ];
 
-const task1 =   { desc: "Put a smile on your face", when: "Wed Sep 12 2017", completedAt: "Wed Oct 13 2016" }
-
-const task2 =   { when: "Wed Sep 12 2017", completedAt: "Wed Oct 13 2016" }
-
-
 export default function App() {
-const [newList, setNewList] = useState(LIST)
-const addNewTask = () => {
-  setNewList(previousState => [...previousState, task1, task2] )
-}
+  const [list, setList] = useState(todos);
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCounter((prevCounter) => prevCounter + 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div>
-      <p>Todo List</p>
-      <ActivityList activities={newList} />
-      <button onClick={addNewTask}>Add activities</button>
+      <h1>Todolist</h1>
+      <p>You have used {counter} seconds on this website</p>
+      <button
+        onClick={() =>
+          setList([...list, { id: uuidv4(), description: "random text" }])
+        }
+      >
+        Add todo
+      </button>
+      <ul>
+      {list.length > 0 ? (
+        list.map((listItem) => {
+          return (
+            <li key={listItem.id} className="list-item">
+              <input type="checkbox" id={listItem.id} />
+              <label for={listItem.id} className="strikethrough">
+                {listItem.description}
+              </label>
+              <button
+                onClick={() => {
+                  setList(list.filter((e) => e.id !== listItem.id));
+                }}
+              >
+                Delete
+              </button>
+            </li>
+          );
+        })
+      ) : (
+        <div> No Items </div>
+      )}
+      </ul>
     </div>
   );
 }
