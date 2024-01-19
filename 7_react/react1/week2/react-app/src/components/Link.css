@@ -1,0 +1,29 @@
+
+
+li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  span {
+    flex-grow: 1;
+  }
+  
+  button {
+    background-color: #ff6961;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #d1483e;
+  }
+  
