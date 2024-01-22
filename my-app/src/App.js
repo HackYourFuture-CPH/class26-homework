@@ -1,15 +1,15 @@
 
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-const initialTodos = [
+const toDos = [
   { id: 1, description: 'Get out of bed', done: false },
   { id: 2, description: 'Brush teeth', done: false },
   { id: 3, description: 'Eat breakfast', done: false },
 ];
 
 const TodoList = () => {
-  const [todos, setTodos] = useState(initialTodos);
+  const [todos, setTodos] = useState(toDos);
   const [newTodoId, setNewTodoId] = useState(4); 
 
   const addRandomTodo = () => {
@@ -31,13 +31,6 @@ const TodoList = () => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      console.log('Timer: User spent some time on the website!');
-    }, 5000); 
-
-    return () => clearInterval(timer);
-  }, []); 
   return (
     <div>
       <h2>Todo List</h2>
