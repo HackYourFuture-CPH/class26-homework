@@ -22,6 +22,8 @@ const todos = [
 
 const TodoList = () => {
   const [todoList, setList] = useState(todos);
+  const [newTaskInput, setNewTaskInput] = useState('');
+
 
   const toggleDone = (id) => {
     setList((prevList) =>
@@ -48,16 +50,22 @@ const TodoList = () => {
   const addingTask = () => {
     const newTask = {
       id: todoList.length + 1,
-      description: "New Task",
+      description: newTaskInput,
       done: false,
     };
     setList((prevList) => [...prevList, newTask]);
+    setNewTaskInput("")
   };
 
   return (
     <div>
       <TodoHeader />
       {todoListItem}
+      <input
+        type="text"
+        value={newTaskInput}
+        onChange={(e) => setNewTaskInput(e.target.value)}
+      />
       {todoList.length === 0 && <p>No items...</p>}
       <button onClick={addingTask}>Add a task</button>
     </div>
