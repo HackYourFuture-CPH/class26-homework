@@ -1,7 +1,7 @@
 
 import './App.css';
  
-export default function TodoListApp (){
+export default function App (){
 
  return (
   <div>
