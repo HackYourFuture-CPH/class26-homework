@@ -1,25 +1,50 @@
-function searchGiphy() {
-  const apiKey = 'PU5iLuIRMeaU8eIU54pjosKIuBKwT31W';
-  const searchInput = document.getElementById('searchInput').value;
-  const resultCount = document.getElementById('resultCount').value || 5; 
-
-  const apiUrl = `https://api.giphy.com/v1/gifs/search?q=${searchInput}&api_key=${apiKey}&limit=${resultCount}`;
-
-  fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-          displayGifs(data.data);
-      })
-      .catch(error => console.error('Error fetching Giphy:', error));
+domListener();
+function domListener() {
+  document.addEventListener("DOMContentLoaded", domLoader);
 }
 
-function displayGifs(gifs) {
-  const gifContainer = document.getElementById('gifContainer');
-  gifContainer.innerHTML = '';
 
-  gifs.forEach(gif => {
-      const img = document.createElement('img');
-      img.src = gif.images.fixed_height.url;
-      gifContainer.appendChild(img);
+function domLoader() {
+  const inputSearch = document.getElementById("search");
+  const clickSearch = document.getElementById("click");
+  const numberOfSearch = document.getElementById("quantity");
+  const resultOfSearch = document.getElementById("result");
+
+
+  let gifSearch = "";
+  let searchLimit = 25;
+  const APIKEY = "S6BbyLq63tmjQgRUkQ7T3wfVR0Jkr0Yy";
+
+  clickSearch.addEventListener("click", parameterSearch);
+  inputSearch.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      parameterSearch();
+    }
   });
+
+  numberOfSearch.addEventListener(
+    "input",
+    () => (searchLimit = numberOfSearch.value)
+  );
+
+  function parameterSearch() {
+    console.log(gifSearch);
+    gifSearch = inputSearch.value.toLowerCase()
+    fetch(
+      `https://api.giphy.com/v1/gifs/search?q=${gifSearch}&api_key=${APIKEY}&limit=${searchLimit}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        resultOfSearch.innerHTML = "";
+        if (data.data.length === 0) {
+          resultOfSearch.innerHTML = "No results were found 😔 ";
+        } else {
+          data.data.forEach((gif) => {
+            let newImg = document.createElement("img");
+            newImg.src = gif.images.downsized.url;
+            resultOfSearch.appendChild(newImg);
+          });
+        }
+      });
+  }
 }
