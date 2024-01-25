@@ -9,18 +9,24 @@ const DataFetching = (props) => {
         .then(res => res.json())
         .then (result => {
             const { data } = result
-            const nextList = list.concat(data)
-            setList(nextList)
+            setList((lastState) => {
+                return list.concat(data)
+
+            }
+            )
         })
     }, [])
-    useEffect(() {
+    useEffect(() => {
         addTodo()
-    }, [])
+    }, [addTodo])
 
+    console.log(list)
     return (
         <div>
             Fetch my data
+            <button onClick={addTodo}>Add todo</button>
         </div>
     )
 
 }
+export default DataFetching;
