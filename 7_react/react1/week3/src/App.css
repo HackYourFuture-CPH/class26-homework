@@ -1,0 +1,21 @@
+*{
+  background-color: #f0f3fc;
+}
+
+.App {
+  text-align: left;
+  color: #023847;
+}
+
+.checked-item {
+  text-decoration: line-through;
+}
+
+
+.border {
+  border: 2px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+
+} 
+
