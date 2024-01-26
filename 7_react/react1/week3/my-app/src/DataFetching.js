@@ -17,16 +17,22 @@ const DataFetching = (props) => {
         })
     }, [])
     useEffect(() => {
-        addTodo()
-    }, [addTodo])
+        addList()
+    }, [addList])
 
     console.log(list)
     return (
         <div>
             Fetch my data
-            <button onClick={addTodo}>Add todo</button>
+            {list.map((list) => {
+                
+            return <result/>
+            })
+            }
+            <button onClick={addList}>Add todo</button>
         </div>
     )
 
-}
+};
+
 export default DataFetching;
