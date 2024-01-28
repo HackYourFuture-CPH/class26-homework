@@ -1,0 +1,12 @@
+ .headerTitle{
+    color:#730725 ;
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header{
+    width: 50%;
+    background-color: #e6e4e5;
+}
