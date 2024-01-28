@@ -9,7 +9,7 @@ export function ListItem(props) {
     };
 
     return (
-        <li key = {id} style={{ textDecorationLine: checked ?  'line-through' :'none'}}> {description}
+        <li style={{ textDecorationLine: checked ?  'line-through' :'none'}}> {description}
             <input 
             type="checkbox" 
             checked={checked}
