@@ -17,6 +17,7 @@ body {
   label {
     order: 1;
   }
+  
   input {
     order: 2;
   }
@@ -39,6 +40,8 @@ li::before {
 
 li {
   margin-bottom: 10px;
+  padding: 6px;
+  border: 3px solid black
 }
 
 input[type="checkbox"]:checked + label.strikethrough {
