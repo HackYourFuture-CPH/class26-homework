@@ -24,8 +24,11 @@ const App = () => {
   return (
     <div>
       <h1>Todolist</h1>
-      <div>
-        You have used <Counter /> seconds on this website
+      <div className="counter">
+        {`You have used `}
+        <Counter />
+         seconds on this website
+         
       </div>
 
       <div>

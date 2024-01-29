@@ -7,6 +7,10 @@ body {
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
+.counter {
+  display: flex;
+}
+
 .list-item {
   display: flex;
   margin-bottom: 1rem;
@@ -17,7 +21,7 @@ body {
   label {
     order: 1;
   }
-  
+
   input {
     order: 2;
   }
