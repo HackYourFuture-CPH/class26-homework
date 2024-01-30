@@ -1,0 +1,8 @@
+body {
+  padding: 20px;
+}
+
+.info-panels-container {
+  display: flex;
+  flex-direction: row;
+}

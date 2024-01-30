@@ -1,0 +1,22 @@
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 20px;
+  background-color: rgb(239, 239, 239);
+}
+
+.my-title {
+  color: #293a7d;
+  font-family: 'Space Mono',monospace;
+  margin: 0 0 5px 0;
+}
+
+.content {
+  padding: 20px;
+  font-size: 18px;
+  font-family: 'Work Sans',sans-serif;
+  line-height: 1.8rem;
+}
