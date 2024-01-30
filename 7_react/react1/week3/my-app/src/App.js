@@ -1,10 +1,10 @@
+// App.js
 import React, { useState, useEffect } from "react";
 import "./App.css";
-
 import fetchTodos from "./fetchTodos";
 import Counter from "./Counter";
 import AddTodo from "./AddTodo";
-import EditAndDeleteTodo from "./EditAndDeleteTodo"
+import TodoList from "./ToDoItems";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -25,25 +25,14 @@ const App = () => {
     <div>
       <h1>Todolist</h1>
       <div className="counter">
-        {`You have used `}
-        <Counter />
-         seconds on this website
-         
+      You have used <span style={{ margin: '0 5px' }}><Counter /></span> seconds on this website
       </div>
 
       <div>
         <AddTodo todos={todos} setTodos={setTodos} />
       </div>
 
-      <ul>
-        {todos.length > 0 ? (
-          todos.map((todo) => (
-           <EditAndDeleteTodo key={todo.id} todo={todo} todos={todos} setTodos={setTodos}/>
-          ))
-        ) : (
-          <div>No Items</div>
-        )}
-      </ul>
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };
