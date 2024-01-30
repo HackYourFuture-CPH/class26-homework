@@ -1,0 +1,45 @@
+
+
+.light {
+  color: black;
+
+  &.page-container {
+    background-color: rgb(228, 236, 237);
+  }
+
+  &.themed-header {
+    color: #007bff;
+  }
+
+  &.title {
+    color: black;
+  }
+
+  &.subtitle {
+    color: #666;
+  }
+
+  &.themed-btn {
+    margin: 5px;
+    font-size: 13pt;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #007bff;
+
+    &:hover {
+        background-color: #0069d9;
+        cursor: pointer;
+    }
+  }
+
+  &.statement-container {
+    background-color: white;
+  }
+
+  &.theme-container {
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  }
+}
