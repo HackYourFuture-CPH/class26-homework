@@ -15,13 +15,13 @@ const EditForm = ({ task, onCancel, onSave }) => {
   return (
     <div className="editForm">
       <form onSubmit={handleSubmit}>
-        <label>Description:</label>
+        <label for="description">Description:</label>
         <input
           type="text"
           value={editedDescription}
           onChange={(e) => setEditedDescription(e.target.value)}
         />
-        <label>Due Date:</label>
+        <label for="due date">Due Date:</label>
         <input
           type="date"
           value={editedDueDate}

@@ -60,7 +60,7 @@ const TaskList = (props) => {
   };
 
   const onClickEditItem = (task) => {
-    setEditingTaskId(task.id === "" ? null : task.id);
+    setEditingTaskId(task.id || null);
     setEditingTask(task);
   };
 
@@ -119,13 +119,13 @@ const TaskList = (props) => {
           onSave={onSave}
         />
       )}
-      {list.length ? (
+      {list.length && (
         <p>
           <button className="deleteButton" onClick={onClickRemoveItem}>
             Remove the selected task(s)
           </button>
         </p>
-      ) : null}
+      )}
     </div>
   );
 };

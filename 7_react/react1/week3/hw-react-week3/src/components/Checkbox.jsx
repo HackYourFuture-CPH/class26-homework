@@ -1,12 +1,7 @@
 import "../App.css";
 
-const Checkbox = (props) => {
-  const {
-    onChange,
-    data: { id, description, done },
-  } = props;
+const Checkbox = ({ onChange, data: { id, description, done } }) => {
   return (
-    <>
       <label className="newItem">
         <input
           className="toDoState"
@@ -17,7 +12,6 @@ const Checkbox = (props) => {
         />
         <div className={done ? "taskDone" : "task"}>{description}</div>
       </label>
-    </>
   );
 };
 
