@@ -1,4 +1,3 @@
-import React, { Fragment } from "react";
 import '../App.css';
 
 const Checkbox = props => {
@@ -7,7 +6,6 @@ const Checkbox = props => {
     data: { id, description, done }
   } = props;
   return (
-    <Fragment>
       <label className="newItem">
         <input
           className="toDoState"
@@ -18,7 +16,6 @@ const Checkbox = props => {
         />
         <div className= {done ? "taskDone" : "task"}>{description}</div>
       </label>
-    </Fragment>
   );
 };
 

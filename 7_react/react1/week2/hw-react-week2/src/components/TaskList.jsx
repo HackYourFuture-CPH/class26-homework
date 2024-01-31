@@ -1,7 +1,7 @@
 import Checkbox from "./Checkbox";
 
 const TaskList = props => {
-  const { list, setList } = props;
+  const { taskList, setTaskList } = props;
   const onChangeStatus = element => {
     const { name, checked } = element.target;
 
@@ -9,21 +9,21 @@ const TaskList = props => {
       ...item,
       done: item.id === name ? checked : item.done
     }));
-    setList(updateList);
+    setTaskList(updateList);
   };
 
   const onClickRemoveItem = () => {
-    const updateList = list.filter(item => !item.done);
-    setList(updateList);
+    const updateList = taskList.filter(item => !item.done);
+    setTaskList(updateList);
   };
 
-  const checkList = list.map(item => (
+  const checkList = taskList.map(item => (
     <Checkbox key={item.id} data={item} onChange={onChangeStatus} />
   ));
   return (
     <div className="todoList">
-      {list.length ? checkList : "Add your tasks"}
-      {list.length ? (
+      {taskList.length ? checkList : "Add your tasks"}
+      {taskList.length ? (
         <p>
           <button className="DeleteButtom" onClick={onClickRemoveItem}>
            {'Remove the selected task(s)'}

@@ -1,5 +1,5 @@
 import "./App.css";
-import Container from "./components/Container";
+import TaskListContainer from "./components/TaskListContainer";
 import Counter from "./components/Counter";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <h1>ToDo List</h1>
       <Counter />
-      <Container />
+      <TaskListContainer />
     </div>
   );
 }

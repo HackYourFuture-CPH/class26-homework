@@ -1,19 +1,18 @@
 import { useState } from "react";
-
 import TaskList from "./TaskList";
 import FormTodo from "./FormTodo";
 
-const Container = () => {
-  const [list, setList] = useState([]); 
+const TaskListContainer = () => {
+  const [taskList, setTaskList] = useState([]); 
   const handleAddItem = addItem => {
-    setList([...list, addItem]);
+    setList([...taskList, addItem]);
   };
   return (
     <div>
       <FormTodo handleAddItem={handleAddItem} />
-      <TaskList list={list} setList={setList} />
+      <TaskList list={taskList} setList={setTaskList} />
     </div>
   );
 };
 
-export default Container;
+export default TaskListContainer;
