@@ -19,20 +19,20 @@ const todo = [
 
 function ToDoList() {
   return (
-    <div>
-      {todo.map((todo) => {
-        const date = todo.date;
-        const activity = todo.activity;
+    <ul>
+      {todo.map((todos) => {
+        const date = todos.date;
+        const activity = todos.activity;
         return <ToDoItem date={date} activity={activity} />;
 
       })}
-    </div>
+    </ul>
   );
 }
 
 function ToDoItem(props) {
   return (
-    <div>{props.date} {props.activity}</div>
+    <li>{props.date} {props.activity}</li>
   );
 }
 
