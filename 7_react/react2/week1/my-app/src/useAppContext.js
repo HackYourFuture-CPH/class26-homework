@@ -1,10 +1,11 @@
+// useAppContext.js
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [query, setQuery] = useState('');
-  const [data, setData] = useState('');
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const fetchUsers = useCallback(async () => {
@@ -20,7 +21,7 @@ const AppProvider = ({ children }) => {
     } finally {
       setLoading(false);
     }
-  }, [query, setData, setLoading]);
+  }, [query]);
 
   useEffect(() => {
     if (query.length > 2) {
@@ -43,4 +44,4 @@ const useAppContext = () => {
   return context;
 };
 
-export { AppProvider, useAppContext };
+export { AppProvider, useAppContext };  // Updated export statement

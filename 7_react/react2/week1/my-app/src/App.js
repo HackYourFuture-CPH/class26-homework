@@ -1,21 +1,21 @@
 // App.js
 import React from 'react';
 import './App.css';
-import { useAppContext } from './Context/SearchContext';
-import InPut from './Components/InPut';
-import List from './Components/List';
-import Loading from './Components/Loading';
-
-
+import { AppProvider } from './useAppContext';
+import Input from './Input';
+import List from './List';
+import Loading from './Loading';
 
 function App() {
   return (
-    <div className="App">
-      <h1>GitHub User Searcher</h1>
-      <InPut />
-      <Loading />
-      <List />
-    </div>
+    <AppProvider>
+      <div className="App">
+        <h1>GitHub User Searcher</h1>
+        <Input />
+        <Loading />
+        <List />
+      </div>
+    </AppProvider>
   );
 }
 

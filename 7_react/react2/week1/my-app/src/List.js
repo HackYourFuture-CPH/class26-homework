@@ -1,5 +1,6 @@
+// List.js
 import React from 'react';
-import { useAppContext } from './context/SearchContext';
+import { useAppContext } from './useAppContext';
 
 function List() {
   const { data } = useAppContext();
