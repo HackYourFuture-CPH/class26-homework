@@ -1,10 +1,9 @@
-// App.js
 import React from 'react';
 import './App.css';
-import { AppProvider } from './useAppContext';
-import Input from './Input';
-import List from './List';
-import Loading from './Loading';
+import { AppProvider } from './Context/useAppContext';
+import Input from './Components/Input';
+import List from './Components/List';
+import Loading from './Components/Loading';
 
 function App() {
   return (

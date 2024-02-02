@@ -1,6 +1,5 @@
-// Loading.js
 import React from 'react';
-import { useAppContext } from './useAppContext';
+import { useAppContext } from '../Context/useAppContext';
 
 function Loading() {
   const { loading } = useAppContext();

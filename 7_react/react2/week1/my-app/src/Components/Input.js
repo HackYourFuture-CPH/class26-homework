@@ -1,6 +1,5 @@
-// Input.js
 import React from 'react';
-import { useAppContext } from './useAppContext';
+import { useAppContext } from '../Context/useAppContext';
 
 function Input() {
   const { setQuery } = useAppContext();

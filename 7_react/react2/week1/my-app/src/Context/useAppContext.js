@@ -1,4 +1,3 @@
-// useAppContext.js
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 const AppContext = createContext();
@@ -44,4 +43,4 @@ const useAppContext = () => {
   return context;
 };
 
-export { AppProvider, useAppContext };  // Updated export statement
+export { AppProvider, useAppContext }; 
