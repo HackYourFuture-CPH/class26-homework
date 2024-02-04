@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "typescript": "^5.1.6"
-=======
   "name": "meal-sharing",
   "version": "1.0.0",
   "description": "Website for sharing meals",
@@ -62,6 +58,5 @@
     "nodemon": "^2.0.15",
     "sequelize-cli": "^6.4.1",
     "webpack-dev-server": "^4.7.4"
->>>>>>> f108509449f0eea8809d785cad95193a1bc9a1e8
   }
 }
