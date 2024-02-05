@@ -9,7 +9,7 @@ const App = () => {
     const value = e.target.value;
     setQuery(value);
 
-    if (value.trim() !== '') {
+    if (value.trim()) {
       searchUsers(value);
     } else {
       clearUsers();
