@@ -18,6 +18,7 @@ const Search = () => {
 
   return (
     <div>
+    <h1>Github user searcher</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
