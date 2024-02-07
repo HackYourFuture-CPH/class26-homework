@@ -8,7 +8,7 @@ const la = [
   "You should make sure to use the right data types for your variables.", "You should indent your code properly.",
   "You should organize your files and folders in a way that makes it easy to find things.",
   "You should write your styles in css files and not in the html file.",
-];
+;
 const check = [ "Yes",  "No", "No", "Yes",
   "No", "No",
 ]
@@ -25,13 +25,13 @@ const doStuff =  {
 
 return <>
 <h1>This is how you read clean code:</h1>
-    <ol> <li class="green">[✓] la[0]<button click={x => doStuff2()}>Stuff 2</button></li>
-      <li style={{color: "red"}}>[x] la[1]<button click={x => doStuff()}>Yes</button></li>
-<li style={{color: "red"}}>[x] la[2]<button click={x => doStuff2()}></button></li> <li class="greeen">[✓] la[3]<button click={x => doStuff2()}>Stuff 2</button></li>
-          <li style={{color: "red"}}>[x] la[2]<button click={x => doStuff()}>Yes</button></li>
-      <li style={{color: "red"}}>[x] la[3]<button click={x => doStuff2()}>Yes</button></li>
+    <ol> <li class="green">[✓] la[0]<button click={doStuff2()}>Stuff 2</button></li>
+      <li style={{color: "red"}}>[x] la[1]<button click={doStuff()}>Yes</button></li>
+<li style={{color: "red"}}>[x] la[2]<button click={doStuff2()}></button></li> <li class="greeen">[✓] la[3]<button click={doStuff2()}>Stuff 2</button></li>
+          <li style={{color: "red"}}>[x] la[2]<button click={doStuff()}>Yes</button></li>
+      <li style={{color: "red"}}>[x] la[3]<button click={doStuff2()}>Yes</button></li>
     </ol>
-    <button click={x => doStuff()}>></button>
+    <button click={doStuff()}>></button>
   </>
 }
 
