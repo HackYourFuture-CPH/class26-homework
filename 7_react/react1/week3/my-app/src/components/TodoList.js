@@ -1,39 +1,40 @@
-import { ListItem } from "./ListItem";
+import { TodoItem } from "./TodoItem";
 import { useState } from "react"
 import { useEffect } from "react"
 import { WatchCount } from "./WatchCount";
 import * as React from 'react';
 
 
-export function List() {
-    const [list, setList] = useState([]);
+export function TodoList() {
+    const [todos, setTodos] = useState([]);
     const [description, setDescription ] = useState("")
     const [deadline, setDeadline] = useState("");
     const addTodo = () => {
         const newTodo = {
-            id: list.length + 1,
+            id: todos.length + 1,
             description: description,
             deadline: deadline,
 
         };
-        setList((previousState) => [...previousState, newTodo])
+        setTodos((previousState) => [...previousState, newTodo])
     };
 
     let Api = "https://gist.githubusercontent.com/benna100/391eee7a119b50bd2c5960ab51622532/raw";
     useEffect(() => {
         fetch(Api)
             .then(response => response.json())
-            .then(data => setList(data))
+            .then(data => setTodos(data))
             .catch(error => console.error('Error fetching todos:', error));
     }, []);
 
     const handleDeleteItem = (itemId) => {
-        setList(list.filter((item) => (item.id !== itemId)))
+        setTodos(todos.filter((item) => (item.id !== itemId)))
     }
 
     const onChangeDeadline = (event) => {
         setDeadline(event.target.value);
     };
+
     const onChangeDescription = (event) => {
         setDescription(event.target.value);
     };
@@ -58,13 +59,13 @@ export function List() {
             <WatchCount />
             <button onClick={addTodo}>Add todo</button>
             
-            {list.map((item) => (
-                <ListItem
-                    key={item.id}
-                    id={item.id}
+            {todos.map((item) => (
+                <TodoItem
+                    key = {item.id}
+                    id = {item.id}
                     description = {item.description}
                     deadline = {item.deadline}
-                    deleteItem={handleDeleteItem}
+                    deleteItem = {handleDeleteItem}
                 />
             ))}
         </ul>

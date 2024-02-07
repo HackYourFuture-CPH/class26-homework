@@ -1,12 +1,12 @@
 import './App.css';
-import { List } from './components/List';
+import { TodoList } from './components/TodoList';
 
 export default function App (){
 
  return (
   <div>
     <h1>To Do List</h1>
-    <List/>
+    <TodoList/>
   </div>
  )
 };

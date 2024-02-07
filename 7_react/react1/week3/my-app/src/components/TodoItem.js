@@ -1,7 +1,7 @@
 import { useState } from "react"
 
-export function ListItem(props) {
-    const {id, description, deadline, deleteItem } = props;
+export function TodoItem(props) {
+    const {id, description, deadline, deleteItem} = props;
     const [checked, setChecked] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
 
@@ -9,23 +9,36 @@ export function ListItem(props) {
         setChecked(!checked);
     };
     const handleEdit= (event) => {
-        event.preventDefault();
+        // event.preventDefault(); type button 
         setIsEditing(true);
     };
+const [newTodo, setNewTodo] = useState(description);
+const handelDescriptionEdit= (e) =>{
+    setNewTodo(e.target.value)
+   
+}
 
+function  handelDelete(){
+    deleteItem(id);
+ }
+     
+
+ function  handelUpDate (){
+    setIsEditing(false);
+ }
      
     if (isEditing) {
         return (
             <li style={{ textDecorationLine: checked ?  'line-through' :'none'}}> 
                 
-     
+     <input type ="text" value={newTodo} onChange={handelDescriptionEdit} ></input>
                 <input 
                 type="checkbox" 
                 checked={checked}
                 onChange={handleChange}>
                 </input>
-                <button onClick={()=>deleteItem(id)}>Delete</button>
-                <button >Edit</button>
+                <button onClick={handelDelete}>Delete</button>
+                <button onClick={handelUpDate}  >UpDate</button>
             </li>
         );
     }else {
@@ -37,8 +50,8 @@ export function ListItem(props) {
                 checked={checked}
                 onChange={handleChange}>
                 </input>
-                <button onClick={()=>deleteItem(id)}>Delete</button>
-                <button onClick={handleEdit}>Edit</button>
+                <button type="button" onClick={handelDelete}>Delete</button>
+                <button type="button" onClick={handleEdit}>Edit</button>
             </li>
         );
     }
