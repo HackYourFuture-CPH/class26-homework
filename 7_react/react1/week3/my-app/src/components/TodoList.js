@@ -7,7 +7,7 @@ import * as React from 'react';
 
 export function TodoList() {
     const [todos, setTodos] = useState([]);
-    const [description, setDescription ] = useState("")
+    const [description, setDescription] = useState("")
     const [deadline, setDeadline] = useState("");
     const addTodo = () => {
         const newTodo = {
@@ -27,6 +27,19 @@ export function TodoList() {
             .catch(error => console.error('Error fetching todos:', error));
     }, []);
 
+
+    const handelUpDateItem = (id, newTodo) => {
+     
+        setTodos(todos.map(
+        
+            (todo) => {
+                if (todo.id === id) {
+                    (todo.description = newTodo)
+                }
+                return todo
+            }
+        ))
+    }
     const handleDeleteItem = (itemId) => {
         setTodos(todos.filter((item) => (item.id !== itemId)))
     }
@@ -42,30 +55,30 @@ export function TodoList() {
     return (
         <ul>
             <label>
-                Todo description :  
-                <input 
-                name="myInput"
-                value={description} 
-                onChange={onChangeDescription} />
+                Todo description :
+                <input
+                    name="myInput"
+                    value={description}
+                    onChange={onChangeDescription} />
             </label>
-            <br/>
+            <br />
             <label>
-               deadline :
-               <input
-               type="date" 
-               value={deadline} 
-               onChange={onChangeDeadline} />
-             </label>
+                deadline :
+                <input
+                    type="date"
+                    value={deadline}
+                    onChange={onChangeDeadline} />
+            </label>
             <WatchCount />
             <button onClick={addTodo}>Add todo</button>
-            
+
             {todos.map((item) => (
                 <TodoItem
-                    key = {item.id}
-                    id = {item.id}
-                    description = {item.description}
-                    deadline = {item.deadline}
-                    deleteItem = {handleDeleteItem}
+                    key={item.id}
+                    id={item.id}
+                    description={item.description}
+                    deleteItem={handleDeleteItem}
+                    upDateItem={handelUpDateItem}
                 />
             ))}
         </ul>

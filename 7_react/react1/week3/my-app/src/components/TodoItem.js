@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export function TodoItem(props) {
-    const {id, description, deadline, deleteItem} = props;
+    const {id, description, deadline, deleteItem, upDateItem} = props;
     const [checked, setChecked] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
 
@@ -18,13 +18,15 @@ const handelDescriptionEdit= (e) =>{
    
 }
 
+
 function  handelDelete(){
     deleteItem(id);
- }
+}
      
 
  function  handelUpDate (){
     setIsEditing(false);
+    upDateItem(id,newTodo);
  }
      
     if (isEditing) {
@@ -36,6 +38,7 @@ function  handelDelete(){
                 type="checkbox" 
                 checked={checked}
                 onChange={handleChange}>
+                
                 </input>
                 <button onClick={handelDelete}>Delete</button>
                 <button onClick={handelUpDate}  >UpDate</button>
@@ -49,6 +52,7 @@ function  handelDelete(){
                 type="checkbox" 
                 checked={checked}
                 onChange={handleChange}>
+            
                 </input>
                 <button type="button" onClick={handelDelete}>Delete</button>
                 <button type="button" onClick={handleEdit}>Edit</button>
