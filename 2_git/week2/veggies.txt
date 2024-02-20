@@ -1,5 +1,7 @@
 Potatoes
 Tomatoes
-Spinach 
+Broccoli 
 Carrots
 Onions
+Lettuce
+Zucchini
