@@ -1,5 +1,7 @@
 Carrot
 Broccoli
-Spinach
+Eggplant
 Tomato
 Potato
+ttuce
+Cauliflower
