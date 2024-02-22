@@ -1,7 +1,5 @@
 cucumber
 tomato
-onion
+pepper
 spinach
 mushroom
-garlic
-eggplant
