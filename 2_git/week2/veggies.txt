@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 cucumber
 tomato
 pepper
 spinach
 mushroom
+=======
+Cabbage
+Cauliflower 1
+Zukini
+Bellpepper
+Tomato
+Potato
+Green Chillies
+>>>>>>> origin/feature/veggies
