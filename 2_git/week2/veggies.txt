@@ -8,3 +8,15 @@ Fermented vegetablesgit pull origin feature/veggies
 leafy green
 Peas
 Sweet potatoes
+cucumber
+tomato
+pepper
+spinach
+mushroom
+Cabbage
+Cauliflower 1
+Zukini
+Bellpepper
+Tomato
+Potato
+Green Chillies
