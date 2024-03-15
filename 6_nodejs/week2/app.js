@@ -39,3 +39,39 @@ app.get("/search", (req, res) => {
     res.json(documents);
   }
 });
+
+// GET /documents/:id
+app.get("/documents/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const document = documents.find(doc => doc.id === id);
+    if (document) {
+      res.json(document);
+    } else {
+      res.status(404).send("Document not found");
+    }
+  });
+  
+  // POST /search
+  app.post("/search", (req, res) => {
+    const query = req.query.q;
+    const fields = req.body.fields;
+  
+    if (query && fields) {
+      res.status(400).send("Both query parameter and fields in body cannot be provided simultaneously.");
+    } else if (query) {
+      const matchedDocuments = documents.filter(doc => Object.values(doc).some(value => typeof value === 'string' && value.includes(query)));
+      res.json(matchedDocuments);
+    } else if (fields) {
+      const filteredDocuments = documents.filter(doc => {
+        for (const field in fields) {
+          if (doc[field] !== fields[field]) {
+            return false;
+          }
+        }
+        return true;
+      });
+      res.json(filteredDocuments);
+    } else {
+      res.json(documents);
+    }
+  });
