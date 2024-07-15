@@ -3,10 +3,10 @@ USE hyf_lesson2;
 
 --Get all the tasks assigned to users whose email ends in @spotify.com
 
-SELECT * 
+SELECT user.name, user.email, task.title
 FROM user 
-WHERE email LIKE '%@spotify.com';
-
+JOIN task ON task.id = user.id
+WHERE user.email LIKE '%@spotify.com';
 
 --Get all the tasks for 'Donald Duck' with status 'Not started'
 
